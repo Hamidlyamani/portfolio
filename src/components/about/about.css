@@ -1,0 +1,38 @@
+.about-text {
+  padding: 20% 0%;
+}
+.left h3 {
+  text-align: right;
+  font-size: 2.6rem;
+  font-family: "PP_Gosha_b";
+  margin-right: 10px;
+  line-height: 1.618;
+}
+
+.right p {
+  font-size: 1.25rem;
+  padding-top: 5px;
+  margin-left: 10px;
+  line-height: 1.618;
+}
+@media only screen and (max-width: 1199px) {
+}
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+}
+@media screen and (max-width: 575px) {
+  .left h3 {
+    text-align: left;
+    font-size: 1.6rem;
+  }
+  .right p {
+    font-size: 1rem;
+     padding-top: 5px; 
+     margin-left: 0px;
+  }
+  .about-text {
+    
+  padding: 20% 0px 5% 0px ;
+}
+}

@@ -1,0 +1,215 @@
+.top-nav {
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+  display: flex;
+  z-index: 9999;
+  position: relative;
+}
+
+.logo-Name {
+  display: flex;
+  align-items: center;
+}
+.logo-Name p {
+  margin: 0px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: "PP_Gosha_b";
+}
+.cta {
+  background: var(--pcolor);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-family: "PP_Gosha_b";
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+.container_text_img {
+  position: relative;
+  margin: 2rem auto;
+}
+.background {
+  z-index: 0;
+  text-align: center;
+  color: #614c4c3d;
+  font-family: "consolas";
+  top: 0px;
+  z-index: 0;
+  position: relative;
+}
+.scale--js {
+  text-transform: uppercase;
+  display: inline-block;
+  transform-origin: 50% 0;
+  -webkit-font-smoothing: antialiased;
+  transform: translate3d(0, 0, 0);
+  line-height: 0.6 !important;
+}
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 70%;
+}
+.image-hero-src {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.image-hero-src img {
+  margin: auto;
+  display: block;
+  width: 45%;
+  height: auto;
+  top: -90%;
+  position: relative;
+}
+.developer {
+  text-align: center;
+  position: relative;
+  border-radius: 8px;
+  font-family: "PP_Gosha_b";
+  color: black;
+  bottom: 0;
+  height: 100%;
+}
+.de {
+  position: relative;
+  display: inline-block;
+}
+.de::before {
+  content: "junior";
+  position: absolute;
+  top: -4px;
+  font-size: 0.34rem !important;
+  left: 1px;
+  width: auto;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #e24800;
+  letter-spacing: 0.25px;
+  font-family: "PP_Gosha_r";
+}
+.joniur {
+  margin: 0px;
+  color: var(--pcolor);
+  position: absolute;
+  left: 30px;
+  font-family: "PP_Gosha_r";
+}
+
+@media only screen and (max-width: 1199px) {
+  .image-hero-src {
+    bottom: -20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+  .logo-Name p {
+    padding-left: 10px;
+  }
+  .cta {
+    background: var(--pcolor);
+    padding: 10px 20px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .image-hero-src {
+    top: -100%;
+  }
+  .content {
+    top: 105%;
+  }
+  .image-hero-src img {
+    width: 50%;
+  }
+}
+
+/*       ------------------------------- Scroll Down -------------------- */
+
+.scoll {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+.scoll a {
+  position: relative;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.scoll a:hover {
+  opacity: 0.5;
+}
+
+.scoll a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  border-left: 2px solid #222222;
+  border-bottom: 2px solid #222222;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+.scoll a span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.scoll a span:nth-of-type(2) {
+  top: 20px;
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+.scoll a span:nth-of-type(3) {
+  top: 40px;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+@-webkit-keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.nav-b  svg{
+    display: none;
+  }
+  .nav-b  span{
+    display: block;
+  }

@@ -1,0 +1,223 @@
+.contact {
+  margin: 4% 0% 0% 0%;
+}
+.contact .row-cont {
+  padding: 40px 0px;
+}
+
+.info-contact {
+  padding: 20px;
+}
+.form-contact form {
+  background-color: rgb(218, 212, 207);
+  margin: 0px 20px;
+  padding: 30px 40px;
+  border-radius: 16px;
+}
+
+.contact form.contFrm {
+  margin: auto;
+}
+
+.contact .inptFld {
+  width: 100%;
+  height: 60px;
+  border: 0;
+  margin: 0 0 10px;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #535353;
+}
+
+.contact .inptFld:focus {
+  outline-offset: -4px;
+  outline: 1px solid #f93;
+}
+
+.contact .contFrm textarea {
+  height: 75px;
+  padding-top: 5px;
+}
+.contact .inptBtn {
+  height: 50px;
+  border: 0;
+  background: var(--pcolor);
+  font-size: 14px;
+  color: #fff;
+  margin: auto;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+}
+.contact .submet-botton {
+  font-family: "PP_Gosha_b";
+  text-align: right;
+}
+.contact h3 {
+  font-size: 1.2rem;
+  font-family: "PP_Gosha_b";
+  margin: 20px 0px;
+  text-transform: capitalize;
+}
+.contact .info-item {
+  display: flex;
+  margin: 10px;
+}
+.contact .info-item a {
+  text-decoration: none;
+  color: #000;
+  margin-left: 10px;
+}
+.contact .social_media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact .social_media .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  margin: 20px 0px;
+  padding: 15px 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.social:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  width: 80%;
+  margin: auto;
+}
+.social:hover,
+.social:focus,
+.social:active {
+  color: white;
+}
+.social:hover:before,
+.social:focus:before,
+.social:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+.contact .social_media .social:after {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 1px;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.contact .social_media .social p {
+  font-size: 1.2rem;
+  margin: 0px 10px;
+  text-transform: capitalize;
+}
+.contact .social_media .social p {
+  font-size: 1.2rem;
+  margin: 0px 10px;
+  text-transform: capitalize;
+  z-index: 9;
+}
+.contact .social_media .social .image {
+  width: 15%;
+  position: relative;
+  min-width: 30px;
+}
+.contact .social_media .social .image img {
+  width: 100%;
+  transition: 0.9s ease all;
+}
+.contact .social_media .linkedIn:before {
+  background-color: #0077b5;
+}
+.contact .social_media .linkedIn:after {
+  background-color: #0077b5;
+}
+.contact .social_media .Instagram:before {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+}
+.contact .social_media .Instagram:after {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+}
+.contact .social_media .GitHub::before {
+  background-color: #24292e;
+}
+.contact .social_media .GitHub:after {
+  background-color: #24292e;
+}
+.contact .social_media .GitHub:hover .image img {
+  filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(7470%)
+    hue-rotate(320deg) brightness(111%) contrast(109%);
+}
+.contact .social_media .Behance:after {
+  background-color: #053eff;
+}
+.contact .social_media .Behance:before {
+  background-color: #053eff;
+}
+
+.contact .social_media .X:hover .image img {
+  filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(7470%)
+    hue-rotate(320deg) brightness(111%) contrast(109%);
+}
+.contact .social_media .Whatsapp:after {
+  background-color: #25d366;
+}
+.contact .social_media .Whatsapp::before {
+  background-color: #25d366;
+}
+
+
+.copyright {
+  margin-top: 20px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1199px) {
+}
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+}
+@media screen and (max-width: 575px) {
+  .contact {
+    margin: 8% 2%;
+  }
+  .contact .row-cont {
+    padding: 0px 0px 40px 0px;
+  }
+}

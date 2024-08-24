@@ -1,0 +1,123 @@
+.Projects {
+  padding: 4% 0%;
+}
+.Projects .cards-projects {
+  margin: 0%;
+}
+.Projects .cards-projects .row > * {
+  padding: 2%;
+}
+.Projects .card-project {
+  position: relative;
+  border-radius: 16px !important;
+
+  outline: none !important;
+  overflow: hidden !important;
+  border: 1px solid var(--pcolor);
+}
+.Projects .image-card {
+  object-fit: cover;
+}
+.Projects .card-body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(243, 117, 0, 0.377);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  text-align: center;
+  padding: 20% 0%;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.Projects .card-project:hover .card-body {
+  opacity: 1;
+}
+.Projects .card-title {
+  font-size: 2rem;
+  font-family: "PP_Gosha_b";
+}
+.Projects .btn-primary {
+  margin-top: 30px;
+  background-color: var(--pcolor);
+  font-family: "PP_Gosha_b";
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+.Projects .btn-primary:hover {
+  font-size: 1.2rem;
+  background-color: var(--pcolor);
+  border: none;
+  outline: none;
+}
+.modal-dialog {
+  max-width: 90% !important;
+  width: 90% !important;
+}
+.project h3 {
+  font-family: "PP_Gosha_b";
+  font-size: 1.3rem;
+  margin: 15px 0px 10px 0px;
+}
+.project ul {
+  list-style-type: square;
+}
+
+.Technologies_used .imgs img {
+  width: 70px;
+  margin: 10px;
+}
+.project p,
+.project li {
+  font-size: 0.9.5rem;
+}
+.project .btn-go {
+  background-color: var(--pcolor);
+  color: #ffffff;
+
+  padding: 15px 20px;
+}
+.project .buttons {
+  display: flex;
+  margin: 30px 0px;
+  justify-content: space-between;
+}
+.project .row {
+  align-items: center;
+  padding: 0px 20px;
+}
+.modal-content {
+  border-radius: 16px;
+  border: 2px solid var(--pcolor) !important;
+}
+.img_p img {
+  width: 100%;
+}
+@media only screen and (max-width: 1199px) {
+}
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+}
+@media screen and (max-width: 575px) {
+  .Projects .cards-projects .row > * {
+    padding: 2% 4%;
+  }
+  .modal-dialog {
+    max-width: 98% !important;
+    width: 98% !important;
+    margin-bottom: 40px;
+  }
+  .project .btn-go {
+    padding: 10px;
+    font-size: 0.8rem;
+    margin: 0px 5px;
+  }
+  .project .row {
+    flex-direction: column-reverse;
+  }
+}

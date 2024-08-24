@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'PP Gosha Sans';
+    src: url('PPGoshaSans-Regular.eot');
+    src: url('PPGoshaSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('PPGoshaSans-Regular.woff2') format('woff2'),
+        url('PPGoshaSans-Regular.woff') format('woff'),
+        url('PPGoshaSans-Regular.ttf') format('truetype'),
+        url('PPGoshaSans-Regular.svg#PPGoshaSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

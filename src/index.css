@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "PP_Gosha_b";
+  src: url("");
+  src: url("assets/fonts/f_b/PPGoshaSans-Bold.eot");
+  src: url("assets/fonts/f_b/PPGoshaSans-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/f_b/PPGoshaSans-Bold.woff2") format("woff2"),
+    url("assets/fonts/f_b/PPGoshaSans-Bold.woff") format("woff"),
+    url("assets/fonts/f_b/PPGoshaSans-Bold.ttf") format("truetype"),
+    url("assets/fonts/f_b/PPGoshaSans-Bold.svg#PPGoshaSans-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP_Gosha_r";
+  src: url("assets/fonts/f-r/PPGoshaSans-Regular.eot");
+  src: url("assets/fonts/f-r/PPGoshaSans-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/f-r/PPGoshaSans-Regular.woff2") format("woff2"),
+    url("assets/fonts/f-r/PPGoshaSans-Regular.woff") format("woff"),
+    url("assets/fonts/f-r/PPGoshaSans-Regular.ttf") format("truetype"),
+    url("assets/fonts/f-r/PPGoshaSans-Regular.svg#PPGoshaSans-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "consolas";
+  src: url("assets/fonts/consolas/Consolas-Bold.eot");
+  src: url("assets/fonts/consolas/Consolas-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/consolas/Consolas-Bold.woff2") format("woff2"),
+    url("assets/fonts/consolas/Consolas-Bold.woff") format("woff"),
+    url("assets/fonts/consolas/Consolas-Bold.ttf") format("truetype"),
+    url("assets/fonts/consolas/Consolas-Bold.svg#PPGoshaSans-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --pcolor: #f37500;
+  --scolor: #3f1e0052;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+body {
+  font-family: "PP_Gosha_r";
+  font-size: 16px;
+  overflow-x: hidden;
+  cursor: none;
+}
+p {
+  margin: 0px;
+}
+.fixed-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Adjust z-index as needed */
+}
+/* .container{
+  overflow-y: hidden;
+} */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px !important;
+  }
+}
+body {
+  overflow-y: hidden; 
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+ body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.smooth-wrapper {
+  overflow: hidden;
+}
+

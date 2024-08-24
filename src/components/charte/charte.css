@@ -1,0 +1,281 @@
+.charte {
+  padding: 4% 0%;
+}
+.title-part {
+  text-align: center;
+  line-height: 1.618;
+}
+
+.title-part .soustitle {
+  font-size: 1.5rem;
+  color: #5a5a5a;
+  padding-bottom: 8px;
+  width: 70%;
+  margin: auto;
+}
+
+.title-part h2 {
+  font-size: 3rem;
+  font-family: "PP_Gosha_b";
+  text-transform: uppercase;
+}
+
+.timeline {
+  padding: 20px 0px;
+  margin: 4%;
+   min-height: 100vh;
+  width: 100%;
+   height: 100vh;
+  left: 0;
+  width: fit-content;
+  background-color: aquamarine;
+}
+.time-line-container {
+  height: 100vh;
+  overflow-x: visible;
+  overflow-y: visible !important;
+  overflow-x: scroll;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.line-prancipal {
+  position: relative;
+}
+.years-line {
+  left: 50%;
+  padding-right: 50%;
+  height: 10px;
+  position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+}
+.month {
+  width: 100px;
+  height: 100%;
+  display: inline-block;
+  flex: 1;
+  flex-grow: 1;
+  background-color: var(--pcolor);
+  position: relative;
+}
+.year-number {
+  position: absolute;
+  top: -40px;
+  left: -5px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+.month::after {
+  content: " ";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: var(--pcolor);
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.month.nosircle::after {
+  height: 0px;
+}
+.month.year::after {
+  height: 30px;
+  width: 30px;
+}
+.lastmonth {
+  width: 10px;
+  height: 260px;
+  position: absolute;
+  top: 8px;
+  border-top-right-radius: 6px;
+}
+.event {
+  position: absolute;
+  display: block;
+  width: 400px;
+  padding-top: 10px;
+  padding-left: 30px;
+  white-space: wrap;
+}
+.event.top {
+  top: -250px;
+  height: 250px;
+}
+.event.bottom {
+  top: 0px;
+  height: 250px;
+}
+.right-line {
+  width: 1px;
+  background-color: var(--pcolor);
+  position: absolute;
+  left: 10px;
+}
+.event.top .right-line {
+  height: 80%;
+  bottom: 0px;
+}
+.event.bottom .right-line {
+  height: 50%;
+  top: 0px;
+}
+.sircle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--pcolor);
+  border-radius: 50%;
+  transform: translate(-50%, 0%);
+}
+.event.bottom .sircle {
+  bottom: 0px;
+  position: absolute;
+}
+.box-event {
+  -webkit-box-shadow: 6px 6px 16px 3px #eee6e1;
+  -moz-box-shadow: 6px 6px 16px 3px #eee6e1;
+  box-shadow: 6px 6px 16px 3px #eee6e1;
+  background: rgba(224, 224, 224, 0.45);
+  padding: 10px;
+  border-radius: 8px;
+}
+.event.bottom .box-event {
+  position: relative;
+  top: 20px;
+}
+.date-event {
+  color: var(--pcolor);
+  font-size: 0.9rem;
+}
+.box-event h6 {
+  font-family: "PP_Gosha_b";
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.box-event .description {
+  line-height: 1.618;
+}
+@media only screen and (max-width: 1199px) {
+}
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+}
+@media screen and (max-width: 575px) {
+  .title-part .soustitle {
+    font-size: 1rem;
+  }
+  .title-part h2 {
+    font-size: 1.6rem;
+  }
+  .event.top {
+    top: -320px;
+    height: 320px;
+  }
+  .event.bottom {
+    height: 460px;
+  }
+  .event.bottom .box-event {
+    top: 100px;
+  }
+  .title-part .soustitle {
+    width: 90%;
+  }
+}
+
+:root {
+  --text-color: #111;
+  --bg-color: #b9b3a9;
+}
+
+body {
+  font-family: termina, sans-serif;
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition: 0.3s ease-out;
+  overflow-x: scroll;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+}
+
+.charte_horisantel section:not(#sectionPin) {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 50px 10vw;
+  margin: auto;
+  place-items: center;
+}
+
+.charte_horisantel img {
+  height: 80vh;
+  width: auto;
+  object-fit: cover;
+}
+
+.charte_horisantel h1 {
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: 10vw;
+  left: 10vw;
+  z-index: 4;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.charte_horisantel h2 {
+  font-size: 2rem;
+  max-width: 400px;
+}
+
+.charte_horisantel .credit {
+  font-family: Termina, sans-serif;
+}
+
+.charte_horisantel * {
+  box-sizing: border-box;
+} 
+ .pin-spacer {
+  padding: 0px 0px !important;
+  overflow: scroll;
+   width: fit-content !important;
+} 
+
+.charte_horisantel #sectionPin {
+  height: 100vh;
+  display: flex;
+  left: 0;
+  width: fit-content !important;
+  max-width: 100% !important;
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.charte_horisantel .pin-wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 10vw;
+
+  & > * {
+    min-width: 60vw;
+    padding: 0 5vw;
+  }
+}
+
+.charte_horisantel p {
+  position: absolute;
+  bottom: 10vw;
+  right: 10vw;
+  width: 200px;
+  line-height: 1.5;
+}

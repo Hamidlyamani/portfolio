@@ -1,0 +1,108 @@
+.services .services-boxs {
+  padding: 20px 0px;
+}
+.services {
+position: relative;
+width: 100%;
+
+}
+.services .service {
+  margin-right: 30px;
+  padding: 46px 30px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(225, 217, 207, 1) 100%
+  );
+  border: none;
+  outline: none;
+  border-radius: 16px !important;
+  -webkit-box-shadow: 6px 6px 15px 1px rgba(217, 208, 195, 0.6);
+  -moz-box-shadow: 6px 6px 15px 1px rgba(217, 208, 195, 0.6);
+  box-shadow: 6px 6px 15px 1px rgba(217, 208, 195, 0.6);
+  position: relative;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.services .service:hover {
+  background: var(--pcolor);
+}
+.services .service:last-child {
+  margin-right: 0px;
+}
+.services .img-service {
+  width: 64px;
+}
+.services .service:hover .img-service {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+    hue-rotate(108deg) brightness(105%) contrast(103%);
+}
+.services .service:hover .serial-number,
+.services .service:hover .card-text {
+  color: #fff;
+}
+.services .card-body {
+  padding: 30px 0px 0px 0px;
+}
+.services .card-title {
+  font-size: 1.6rem;
+  font-family: "PP_Gosha_b";
+  padding-bottom: 0.5rem;
+}
+.services .serial-number {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+.sircleScale {
+  width: 120vw;
+  height:auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position:relative;
+  background-color: rgb(38, 0, 255);
+  z-index: -9;
+ 
+  scale:0.3;
+}
+
+.container-sircle{
+  position:absolute;
+  width:100vw;
+  height: 100vh;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%,0%);
+  z-index: -9;
+  overflow-y: visible;
+  max-width: 100%;
+}
+@media only screen and (max-width: 1199px) {
+}
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+}
+@media screen and (max-width: 575px) {
+  .services .service:last-child {
+    margin-right: 0px;
+    margin: 30px 10px;
+  }
+  .services .service {
+    margin-right: 30px;
+    margin: 30px 10px;
+  }
+  .services .card-title {
+    font-size: 1.3rem;
+  }
+}
