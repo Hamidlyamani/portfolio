@@ -5,16 +5,13 @@
   position: relative;
   margin-top: 100px;
   left: 50%;
-
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   justify-content: center;
   z-index: 999999;
 }
 .nav_bar.fixed {
-  position: fixed;
-  top: 20px;
-      margin-top: 0px;
+  width: 100%;
 }
 .nav-b {
 background: rgba(243, 117, 0, 0.3);
@@ -69,26 +66,22 @@ padding: 10px 20px;
   .cta {
     font-size: 0.8rem;
   }
-  .container_text_img {
-    margin: 7rem auto;
-  }
+ 
   .nav-b svg {
     display: block;
   }
   .nav-b span {
     display: none;
   }
-  .nav_bar {
+   .nav_bar {
     width: 100%;
-    bottom: 0px;
     border-radius: 0px;
-    position: fixed;
     background: rgba(255, 238, 222, 0.815);
   }
   .nav_bar.fixed {
     position: fixed;
  bottom: 0px;
-  }
+  } 
   .nav-b {
     justify-content: space-between;
     border-radius: 0px;

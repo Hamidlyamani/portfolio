@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./parts.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,27 +9,40 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = () => {
+const Nav = ({ scrollInstance }) => {
   const [isFixed, setIsFixed] = useState(false);
+  const stickyRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300 && !isFixed) {
-        setIsFixed(true);
-      } else if (window.scrollY <= 300 && isFixed) {
-        setIsFixed(false);
+    if (!scrollInstance) return; // Ensure scrollInstance is available
+
+    // Throttle the handleScroll function to limit how often it can be called
+    const handleScroll = (event) => {
+      const stickyElement = stickyRef.current;
+      const viewportHeight = window.innerHeight;
+      const scrollY = event.scroll.y;
+      const stickyTopOffset = stickyElement.offsetTop;
+
+      // Calculate if the element should be fixed
+      const shouldBeFixed = scrollY + viewportHeight * 0.1 >= stickyTopOffset;
+
+      // Only update the state if it needs to change
+      if (shouldBeFixed !== isFixed) {
+        setIsFixed(shouldBeFixed);
       }
-    };
-    //  compare the window.scrollY with  the position of nav_bar
-    window.addEventListener("scroll", handleScroll);
+    }; // Adjust the throttle delay as needed
+
+    scrollInstance.on("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      scrollInstance.off("scroll", handleScroll); // Clean up to avoid multiple listeners
+      // Cancel the throttle function on cleanup
     };
-  }, [isFixed]);
+  }, [scrollInstance, isFixed]);
 
   return (
     <>
-      <div className={`nav_bar ${isFixed ? " fixed " : ""}`}>
+      <div ref={stickyRef} className="nav_bar">
         <div className="nav-b">
           <a href="#" className="item">
             <FontAwesomeIcon icon={faUser} /> <span>ABOUT</span>

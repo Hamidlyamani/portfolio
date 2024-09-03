@@ -50,7 +50,7 @@
 }
 .content {
   position: absolute;
-  width: 100%;
+  width: 95%;
   height: 100%;
   top: 70%;
 }
@@ -109,6 +109,12 @@
   }
 }
 @media only screen and (max-width: 991px) {
+  .container_text_img {
+    margin: 8rem auto;
+  }
+  .content {
+    top: 104%;
+  }
 }
 @media only screen and (max-width: 767px) {
   .logo-Name p {
@@ -121,19 +127,26 @@
 }
 @media only screen and (max-width: 576px) {
   .image-hero-src {
-    top: -100%;
+    bottom: -140%;
   }
+ 
   .content {
-    top: 105%;
+    top: 122%;
   }
   .image-hero-src img {
     width: 50%;
   }
+   .container_text_img {
+    margin-top: 1rem ;
+    margin-bottom: 15rem ;
+  }
+  
 }
+
 
 /*       ------------------------------- Scroll Down -------------------- */
 
-.scoll {
+/* .scoll {
   position: relative;
   width: 100%;
   height: 50px;
@@ -207,9 +220,9 @@
     opacity: 0;
   }
 }
-.nav-b  svg{
-    display: none;
-  }
-  .nav-b  span{
-    display: block;
-  }
+.nav-b svg {
+  display: none;
+}
+.nav-b span {
+  display: block;
+} */

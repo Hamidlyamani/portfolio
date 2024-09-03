@@ -46,9 +46,10 @@ export default function Charte() {
       tl.from(".right-line", { height: 0, duration: 1 })
         .from(".sircle", { opacity: 0, duration: 0.5 })
         .from(".box-event", { opacity: 0, duration: 0.5 });
+      // Animation for chart_h
       gsap.to(charte.current, {
         x: () => {
-          return -(charte.current.offsetWidth - 1.5*window.innerWidth);
+          return -(charte.current.offsetWidth);
         },
         scrollTrigger: {
           trigger: charte.current,
@@ -58,9 +59,11 @@ export default function Charte() {
           scroller: ".smooth-wrapper",
           end: () => charte.current.clientWidth,
           pinSpacing: true,
+          markers: true,
         },
       });
     });
+    console.log(-charte.current.offsetWidth);
     return () => ctx.revert();
   }, [el, charte, charte_container]);
 
@@ -72,9 +75,32 @@ export default function Charte() {
         </div>
         <h2>My Educational and Professional Story</h2>
       </div>
-      <div className="charte_horisantel section2">
-        <div className="line-prancipal" id="sectionPin" ref={charte}>
-          <div className="time-line-container pin-wrap">
+      {/* <div className="charte_horisantel section 1">
+        <div id="sectionPin" ref={charte}>
+          <div className="pin-wrap">
+            <h2>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </h2>
+            <img
+              src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+              alt=""
+            />
+            <img
+              src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+              alt=""
+            />
+            <img
+              src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+              alt=""
+            />
+          </div>
+        </div>
+      </div> */}
+
+      <div className="charte_horisantel">
+        <div className="line-prancipal">
+          <div className="time-line-container">
             <div className="years-line">
               <div className="month year">
                 <div className="year-number">2020</div>
@@ -267,7 +293,7 @@ export default function Charte() {
                 <div className="event top">
                   <div className="box-event">
                     <p className="date-event">02/2024</p>
-                    <h6>Frontend Developer Role at Hay2 Agency</h6>
+                    <h6>Frontend Developer Role at Hay 2 Agency</h6>
                     <p className="description">
                       Began working at Hay 2 Agency as a frontend developer,
                       embracing fresh challenges and responsibilities within the
@@ -286,15 +312,10 @@ export default function Charte() {
               <div className="month"></div>
               <div className="month"></div>
               <div className="month"></div>
-              <div className="month"></div>
-              <div className="month"></div>
-              <div className="month"></div>
-              <div className="month  year">
-                <div className="year-number">2025</div>
-              </div>
               <div className="month nosircle"></div>
               <div className="month nosircle"></div>
               <div className="month nosircle"></div>
+              <div className="month nosircle lastmonth"></div>
             </div>
           </div>
         </div>

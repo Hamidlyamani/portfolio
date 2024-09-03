@@ -1,11 +1,4 @@
-import React, {
-  StrictMode,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
-import { gsap } from "gsap";
+import React, { StrictMode, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -23,6 +16,9 @@ export default function App() {
   const fixedElementRef = useRef(null);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+const [locoScroll, setLocoScroll] = useState(null);
+
+
 
   const handleMouseMovement = (e) => {
     setX(e.clientX);
@@ -45,6 +41,7 @@ export default function App() {
       smartphone: { smooth: true },
       tablet: { smooth: true },
     });
+      setLocoScroll(locoScroll);
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -75,21 +72,6 @@ export default function App() {
     // --- SETUP END ---
   }, []);
 
-  // useLayoutEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     gsap.from(fixedElementRef.current, {
-  //       scrollTrigger: {
-  //         trigger: fixedElementRef.current,
-  //         start: "top top", // when the top of the trigger hits the top of the viewport
-  //         end: "100%",
-  //         scroller: ".smooth-wrapper",
-  //         pin: true, // pin the element
-  //         pinSpacing: false, // removes extra space that might be added
-  //       },
-  //     });
-  //   });
-  //   return () => ctx.revert();
-  // }, [fixedElementRef]);
   return (
     <StrictMode>
       <div
@@ -98,7 +80,7 @@ export default function App() {
         data-scroll-container
         ref={scrollContainerRef}
       >
-        <Hero />
+        {locoScroll && <Hero scrollInstance={locoScroll} />}
         <About />
         <Services />
         <Projects />

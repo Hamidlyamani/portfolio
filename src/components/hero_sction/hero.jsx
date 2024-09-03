@@ -5,7 +5,7 @@ import pc from "../../assets/imgs/Layer1.png";
 import mobile from "../../assets/imgs/mobile.png";
 import Nav from "../parts/nav";
 
-const Hero = () => {
+const Hero = ({ scrollInstance }) => {
   const scaleHeader = () => {
     const scalable = document.querySelectorAll(".scale--js");
     const margin = 10;
@@ -52,19 +52,19 @@ const Hero = () => {
 
   const [currentImage, setCurrentImage] = useState(null);
 
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      const newImage = width <= 576 ? mobile : pc;
-      setCurrentImage(newImage);
-    };
+  // useLayoutEffect(() => {
+  //   const handleResize = () => {
+  //     const width = window.innerWidth;
+  //     const newImage = width <= 576 ? mobile : pc;
+  //     setCurrentImage(newImage);
+  //   };
 
-    handleResize();
+  //   handleResize();
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize); // Cleanup
-  }, []);
+  //   return () => window.removeEventListener("resize", handleResize); // Cleanup
+  // }, []);
 
   return (
     <>
@@ -87,11 +87,7 @@ const Hero = () => {
           </div>
           <div className="content">
             <div className="image-hero-src">
-              <img
-                src={currentImage}
-                sizes="(max-width: 600px) 100%, 25%"
-                alt=""
-              />
+              <img src={pc} sizes="(max-width: 600px) 100%, 25%" alt="" />
             </div>
             <div className="developer">
               <div className="developer-text scale--js">
@@ -101,14 +97,14 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="scoll">
+        {/* <div className="scoll">
           <a href="#about">
             <span></span>
             <span></span>
             <span></span>
           </a>
-        </div>
-        <Nav />
+        </div> */}
+        <Nav scrollInstance={scrollInstance} />
       </header>
     </>
   );

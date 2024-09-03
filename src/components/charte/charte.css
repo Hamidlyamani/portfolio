@@ -20,33 +20,21 @@
   text-transform: uppercase;
 }
 
-.timeline {
-  padding: 20px 0px;
-  margin: 4%;
-   min-height: 100vh;
-  width: 100%;
-   height: 100vh;
-  left: 0;
-  width: fit-content;
-  background-color: aquamarine;
-}
 .time-line-container {
-  height: 100vh;
-  overflow-x: visible;
-  overflow-y: visible !important;
-  overflow-x: scroll;
-  position: relative;
-  display: flex;
-  align-items: center;
+   height: 100vh;
+    overflow-y: visible !important;
+    overflow-x: visible; /* Use only overflow-x: scroll to allow horizontal scrolling */
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 .line-prancipal {
   position: relative;
 }
 .years-line {
-  left: 50%;
-  padding-right: 50%;
+  padding:0px 50vw;
   height: 10px;
-  position: absolute;
+  position: relative;
   display: inline-block;
   white-space: nowrap;
 }
@@ -156,6 +144,25 @@
 .box-event .description {
   line-height: 1.618;
 }
+:root {
+  --text-color: #111;
+  --bg-color: #b9b3a9;
+}
+
+ .pin-spacer {
+  padding: 0px 0px !important;
+  overflow: scroll;
+} 
+
+.charte_horisantel #sectionPin {
+  height: 100vh;
+  display: flex;
+  width: fit-content !important;
+}
+
+.charte_horisantel .pin-wrap {
+  height: 100vh;
+}
 @media only screen and (max-width: 1199px) {
 }
 @media only screen and (max-width: 991px) {
@@ -184,98 +191,6 @@
   }
 }
 
-:root {
-  --text-color: #111;
-  --bg-color: #b9b3a9;
-}
 
-body {
-  font-family: termina, sans-serif;
-  color: var(--text-color);
-  background: var(--bg-color);
-  transition: 0.3s ease-out;
-  overflow-x: scroll;
-  max-width: 100%;
-  width: 100%;
-  overscroll-behavior: none;
-}
 
-.charte_horisantel section:not(#sectionPin) {
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
-  padding: 50px 10vw;
-  margin: auto;
-  place-items: center;
-}
 
-.charte_horisantel img {
-  height: 80vh;
-  width: auto;
-  object-fit: cover;
-}
-
-.charte_horisantel h1 {
-  font-size: 5rem;
-  line-height: 1;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  position: absolute;
-  top: 10vw;
-  left: 10vw;
-  z-index: 4;
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
-
-.charte_horisantel h2 {
-  font-size: 2rem;
-  max-width: 400px;
-}
-
-.charte_horisantel .credit {
-  font-family: Termina, sans-serif;
-}
-
-.charte_horisantel * {
-  box-sizing: border-box;
-} 
- .pin-spacer {
-  padding: 0px 0px !important;
-  overflow: scroll;
-   width: fit-content !important;
-} 
-
-.charte_horisantel #sectionPin {
-  height: 100vh;
-  display: flex;
-  left: 0;
-  width: fit-content !important;
-  max-width: 100% !important;
-  background: var(--text-color);
-  color: var(--bg-color);
-}
-
-.charte_horisantel .pin-wrap {
-  height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 50px 10vw;
-
-  & > * {
-    min-width: 60vw;
-    padding: 0 5vw;
-  }
-}
-
-.charte_horisantel p {
-  position: absolute;
-  bottom: 10vw;
-  right: 10vw;
-  width: 200px;
-  line-height: 1.5;
-}
