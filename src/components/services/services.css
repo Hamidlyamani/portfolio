@@ -1,6 +1,7 @@
 .services .services-boxs {
   padding: 20px 0px;
 }
+
 .services {
 position: relative;
 width: 100%;
@@ -28,7 +29,9 @@ width: 100%;
   transition-property: color, background-color;
 }
 .services .service:hover {
-  background: var(--pcolor);
+background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #f12711, #f5af19);
 }
 .services .service:last-child {
   margin-right: 0px;
@@ -46,6 +49,7 @@ width: 100%;
 }
 .services .card-body {
   padding: 30px 0px 0px 0px;
+  font-family: 'Helvetica';
 }
 .services .card-title {
   font-size: 1.6rem;
@@ -64,34 +68,23 @@ width: 100%;
   align-items: center;
   max-width: 100%;
 }
-.sircleScale {
-  width: 120vw;
-  height:auto;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  position:relative;
-  background-color: rgb(38, 0, 255);
-  z-index: -9;
- 
-  scale:0.3;
-}
 
-.container-sircle{
-  position:absolute;
-  width:100vw;
-  height: 100vh;
-  top: 0px;
-  left: 50%;
-  transform: translate(-50%,0%);
-  z-index: -9;
-  overflow-y: visible;
-  max-width: 100%;
-}
+
 @media only screen and (max-width: 1199px) {
 }
 @media only screen and (max-width: 991px) {
+  .services .service {
+    margin: 30px;
+  }
+  .services .service:last-child {
+  margin-right: 30px;
+}
+.services .services-boxs .card-group{
+ flex-direction: column;
+}
 }
 @media only screen and (max-width: 767px) {
+ 
 }
 @media screen and (max-width: 575px) {
   .services .service:last-child {

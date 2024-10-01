@@ -4,13 +4,13 @@
 .title-part {
   text-align: center;
   line-height: 1.618;
+   margin: auto;
 }
 
 .title-part .soustitle {
   font-size: 1.5rem;
   color: #5a5a5a;
   padding-bottom: 8px;
-  width: 70%;
   margin: auto;
 }
 
@@ -143,6 +143,7 @@
 }
 .box-event .description {
   line-height: 1.618;
+  font-family: 'Helvetica-light';
 }
 :root {
   --text-color: #111;
@@ -164,17 +165,44 @@
   height: 100vh;
 }
 @media only screen and (max-width: 1199px) {
+  .title-part h2 {
+    font-size: 2.5rem;
+  }
+
 }
 @media only screen and (max-width: 991px) {
+      .title-part h2 {
+        font-size: 2rem;
+    }
 }
 @media only screen and (max-width: 767px) {
+      .title-part h2 {
+        font-size: 1.8rem;
+    }
+    .event {
+    width: 330px;
+    }
+    .time-line-container {
+    padding-bottom: 50px;
+    }
+    .years-line {
+    height: 5px;
+    }
+    .month::after {
+    height: 10px;
+    width: 10px;
+    }
+    .month.year::after {
+    height: 20px;
+    width: 20px;
+}
 }
 @media screen and (max-width: 575px) {
   .title-part .soustitle {
     font-size: 1rem;
   }
   .title-part h2 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
   .event.top {
     top: -320px;
@@ -186,11 +214,34 @@
   .event.bottom .box-event {
     top: 100px;
   }
-  .title-part .soustitle {
+  .title-part {
     width: 90%;
   }
 }
 
 
+@media (max-height: 499px) {
+    /* Styles for very short viewports */
+}
+
+/* Small devices (landscape phones, 500px to 699px in height) */
+@media (min-height: 500px) and (max-height: 699px) {
+    /* Styles for small height devices */
+}
+
+/* Medium devices (tablets, 700px to 899px in height) */
+@media (min-height: 700px) and (max-height: 899px) {
+    /* Styles for medium height devices */
+}
+
+/* Large devices (laptops and desktops, 900px to 1199px in height) */
+@media (min-height: 900px) and (max-height: 1199px) {
+    /* Styles for large height devices */
+}
+
+/* Extra large devices (larger desktops, 1200px and up in height) */
+@media (min-height: 1200px) {
+    /* Styles for extra-large height devices */
+}
 
 

@@ -48,13 +48,14 @@ export default function Charte() {
         .from(".box-event", { opacity: 0, duration: 0.5 });
       gsap.to(charte.current, {
         x: () => {
-          return -(charte.current.offsetWidth - 1.5*window.innerWidth);
+          return -(charte.current.offsetWidth - 1.5 * window.innerWidth);
         },
         scrollTrigger: {
           trigger: charte.current,
           pin: true,
           scrub: true,
           start: "top top",
+          ease: "none",
           scroller: ".smooth-wrapper",
           end: () => charte.current.clientWidth,
           pinSpacing: true,

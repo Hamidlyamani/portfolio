@@ -76,7 +76,7 @@ export default function Technologies() {
     return () => ctx.revert();
   }, [title, sliderRef2, sliderRef3]);
   return (
-    <section className="Technologies">
+    <section className="Technologies" id="skills">
       <div className="container">
         <div className="title-part" ref={title}>
           <div className="soustitle">
@@ -88,13 +88,13 @@ export default function Technologies() {
       </div>
       <div className="slider-container">
         <div className="slider" ref={sliderRef2}>
-          <div className="box-tech">
+          <div className="box-tech" style={{ border: "#f06529 2px solid" }}>
             <div className="img-tech">
               <img src={html} alt="" />
             </div>
             <div className="name-tech">HTML 5</div>
           </div>
-          <div className="box-tech">
+          <div className="box-tech" style={{ border: "#f06529 2px solid" }}>
             <div className="img-tech">
               <img src={css} alt="" />
             </div>

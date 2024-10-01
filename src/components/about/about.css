@@ -1,4 +1,6 @@
-.about-text {
+.about{
+  position: relative;
+}.about-text {
   padding: 20% 0%;
 }
 .left h3 {
@@ -13,26 +15,52 @@
   font-size: 1.25rem;
   padding-top: 5px;
   margin-left: 10px;
-  line-height: 1.618;
+  font-family: 'Helvetica';
 }
+ .blob3 {
+            width: 400px;
+            height: 400px;
+            opacity: 0.2;
+           background: #f16311; /* fallback for old browsers */
+  background: -webkit-linear-gradient(circle, #f16311, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(circle, #f16311, #f5af19);
+            top: 400px;
+            left: -100px;
+            
+        }
 @media only screen and (max-width: 1199px) {
 }
 @media only screen and (max-width: 991px) {
+  .left h3 {
+    text-align: right;
+    font-size: 2rem;
+  }
+  .right p {
+    font-size: 1rem;
+  }
 }
 @media only screen and (max-width: 767px) {
+      .left h3 {
+        font-size: 1.5rem;
+    }
+    .right p {
+    font-size: 0.9rem;
+    padding-top: 5px;
+     margin-left: 0px; 
+}
 }
 @media screen and (max-width: 575px) {
   .left h3 {
     text-align: left;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .right p {
     font-size: 1rem;
      padding-top: 5px; 
      margin-left: 0px;
   }
+
   .about-text {
-    
-  padding: 20% 0px 5% 0px ;
+  padding: 20% 15px 5% 15px ;
 }
 }

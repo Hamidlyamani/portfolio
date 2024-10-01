@@ -154,7 +154,7 @@ export default function Progects() {
     setShow(true);
   };
   return (
-    <section className="Projects">
+    <section className="Projects" id="portfolio">
       <div className="container">
         <div className="title-part" ref={title}>
           <div className="soustitle">
@@ -177,8 +177,10 @@ export default function Progects() {
                     src={card.image_p}
                   />
                   <Card.Body>
-                    <Card.Title> {card.title}</Card.Title>
-                    <Card.Text>{card.type}</Card.Text>
+                    <div className="container-card">
+                      <Card.Title> {card.title}</Card.Title>
+                      <Card.Text>{card.type}</Card.Text>
+                    </div>
                     <Button onClick={() => handleClick(card)}>
                       Discover more
                     </Button>

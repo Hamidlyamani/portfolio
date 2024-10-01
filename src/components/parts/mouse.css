@@ -1,5 +1,7 @@
 .mouse{
-    background-color:  rgb(0, 110, 255);
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #f12711, #f5af19);
     position:fixed;
     border-radius: 100%;
     mix-blend-mode: difference;
@@ -11,7 +13,7 @@
     pointer-events: none;
 }
 .mouse::after{
-    border:  rgb(0, 110, 255) 3px solid;
+    border:  var(--pcolor) 3px solid;
     position:fixed;
     content: "";
     border-radius: 100%;
@@ -24,4 +26,12 @@
     top: 50%;
     transform: translate(-50%,-50%);
     pointer-events: none;
+}
+@media only screen and (max-width: 768px) {
+.mouse{
+display: none;
+}
+.mouse::after{
+  display: none;
+}
 }

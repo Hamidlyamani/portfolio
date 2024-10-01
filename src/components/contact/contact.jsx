@@ -9,9 +9,7 @@ import linkdin from "../../assets/imgs/social/linkedin.png";
 import insta from "../../assets/imgs/social/instagram.png";
 import behance from "../../assets/imgs/social/behance.png";
 import github from "../../assets/imgs/social/github.png";
-import twitter from "../../assets/imgs/social/twitter.png";
 import whatsapp from "../../assets/imgs/social/whatsapp.png";
-import threads from "../../assets/imgs/social/threads.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -68,7 +66,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="contact">
+      <section className="contact" id="contact">
         <div className="container">
           <div className="title-part" ref={title}>
             <div className="soustitle">
@@ -85,16 +83,18 @@ export default function Contact() {
                   icon={faEnvelope}
                   style={{ color: "#f37500" }}
                 />
-                <a href="">alymnyhmyd763@gmail.com</a>
+                <a href="mailto:alymnyhmyd763@gmail.com">
+                  alymnyhmyd763@gmail.com
+                </a>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faPhone} style={{ color: "#f37500" }} />
-                <a href="">+212 628142424</a>
+                <a href="tel:+212628142424">+212 628142424</a>
               </div>
               <h3>Location</h3>
               <div className="info-item">
                 <FontAwesomeIcon icon={faHouse} style={{ color: "#f37500" }} />
-                <a href="">Marrakech - Morocco </a>
+                <span>Marrakech - Morocco</span>
               </div>
             </div>
             <div className="col-xl-8 form-contact" ref={right}>
@@ -164,37 +164,57 @@ export default function Contact() {
           </div>
           <div className="social_media_copyright">
             <div className="social_media">
-              <div className="social linkedIn hvr-sweep-to-top">
+              <a
+                href="https://www.linkedin.com/in/hamid-elyamani-765177229/"
+                className="social linkedIn hvr-sweep-to-top"
+                target="_blank"
+              >
                 <div className="image">
                   <img src={linkdin} alt="" />
                 </div>
                 <p className="name">linkedIn</p>
-              </div>
+              </a>
 
-              <div className="social GitHub">
+              <a
+                href="https://github.com/Hamidlyamani"
+                className="social GitHub"
+                target="_blank"
+              >
                 <div className="image">
                   <img src={github} alt="" />
                 </div>
                 <p className="name">GitHub</p>
-              </div>
-              <div className="social Behance">
+              </a>
+              <a
+                href="https://www.behance.net/mnhxhx"
+                className="social Behance"
+                target="_blank"
+              >
                 <div className="image">
                   <img src={behance} alt="" />
                 </div>
                 <p className="name">Behance</p>
-              </div>
-              <div className="social Instagram">
+              </a>
+              <a
+                href="https://www.instagram.com/alyamani__hd/"
+                className="social Instagram"
+                target="_blank"
+              >
                 <div className="image">
                   <img src={insta} alt="" />
                 </div>
                 <p className="name">Instagram</p>
-              </div>
-              <div className="social Whatsapp">
+              </a>
+              <a
+                href="https://wa.me/+212628142424?text=Hey Hamid!!"
+                className="social Whatsapp"
+                target="_blank"
+              >
                 <div className="image">
                   <img src={whatsapp} alt="" />
                 </div>
                 <p className="name">Whatsapp</p>
-              </div>
+              </a>
             </div>
             <div className="copyright">
               <p>No copyrights here—grab what you want ;)</p>
@@ -205,6 +225,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        <div class="blob4"></div>
       </section>
     </>
   );

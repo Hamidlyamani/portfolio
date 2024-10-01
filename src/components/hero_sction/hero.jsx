@@ -1,23 +1,42 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./hero.css";
 import logo from "../../assets/imgs/logo.png";
 import pc from "../../assets/imgs/Layer1.png";
 import mobile from "../../assets/imgs/mobile.png";
 import Nav from "../parts/nav";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-const Hero = ({ scrollInstance }) => {
+const Hero = ({ locoScroll }) => {
+  const handleClick = useCallback(
+    (e) => {
+      e.preventDefault();
+      const targetScroll = e.currentTarget.getAttribute("data-scroll");
+      if (locoScroll.current && targetScroll) {
+        locoScroll.current.update();
+        locoScroll.current.scrollTo(targetScroll);
+        console.log(locoScroll.current);
+      }
+    },
+    [locoScroll]
+  );
   const scaleHeader = () => {
     const scalable = document.querySelectorAll(".scale--js");
-    const margin = 10;
+    const margin = 0;
     scalable.forEach((item) => {
       const scalableContainer = item.parentNode;
       item.style.transform = "scale(1)";
+
       const scalableContainerWidth = scalableContainer.offsetWidth - margin;
       const scalableWidth = item.offsetWidth;
+
+      // Scale the item based on container width
       item.style.transform =
         "scale(" + scalableContainerWidth / scalableWidth + ")";
-      scalableContainer.style.height =
-        item.getBoundingClientRect().height + "px";
+
+      // Update the container width based on the scaled width of the item
+      scalableContainer.style.width = item.getBoundingClientRect().width + "px";
     });
   };
 
@@ -50,25 +69,13 @@ const Hero = ({ scrollInstance }) => {
     };
   }, []);
 
-  const [currentImage, setCurrentImage] = useState(null);
-
-  // useLayoutEffect(() => {
-  //   const handleResize = () => {
-  //     const width = window.innerWidth;
-  //     const newImage = width <= 576 ? mobile : pc;
-  //     setCurrentImage(newImage);
-  //   };
-
-  //   handleResize();
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => window.removeEventListener("resize", handleResize); // Cleanup
-  // }, []);
+  
 
   return (
     <>
       <header>
+        <div class="blob1"></div>
+        <div class="blob2"></div>
         <div className="top-nav container">
           <div className="logo-Name">
             <div className="logo">
@@ -79,32 +86,21 @@ const Hero = ({ scrollInstance }) => {
               hamid
             </p>
           </div>
-          <div className="cta">Let's talk</div>
+          <div className="cta" data-scroll="#contact" onClick={handleClick}>
+            Let's talk
+          </div>
         </div>
         <div className="container_text_img container">
-          <div className="background">
-            <div className="web scale--js">web</div>
-          </div>
           <div className="content">
-            <div className="image-hero-src">
-              <img src={pc} sizes="(max-width: 600px) 100%, 25%" alt="" />
+            <div className="web scale--js">web</div>
+            <div className="web scale--js outline">web</div>
+            <div className="developer-text scale--js">
+              <span className="de">DE</span>
+              VELOPER
             </div>
-            <div className="developer">
-              <div className="developer-text scale--js">
-                <span className="de">DE</span>
-                VELOPER
-              </div>
-            </div>
+            <div className="image-hero-src"></div>
           </div>
         </div>
-        {/* <div className="scoll">
-          <a href="#about">
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
-        </div> */}
-        <Nav scrollInstance={scrollInstance} />
       </header>
     </>
   );

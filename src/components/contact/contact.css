@@ -1,5 +1,6 @@
 .contact {
   margin: 4% 0% 0% 0%;
+  position: relative;
 }
 .contact .row-cont {
   padding: 40px 0px;
@@ -24,7 +25,7 @@
   height: 60px;
   border: 0;
   margin: 0 0 10px;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 0 20px;
   font-size: 16px;
   color: #535353;
@@ -42,7 +43,9 @@
 .contact .inptBtn {
   height: 50px;
   border: 0;
-  background: var(--pcolor);
+background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #f12711, #f5af19);
   font-size: 14px;
   color: #fff;
   margin: auto;
@@ -50,7 +53,7 @@
   cursor: pointer;
   width: 100%;
   max-width: 200px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 .contact .submet-botton {
   font-family: "PP_Gosha_b";
@@ -70,6 +73,7 @@
   text-decoration: none;
   color: #000;
   margin-left: 10px;
+
 }
 .contact .social_media {
   display: flex;
@@ -86,6 +90,8 @@
   border-radius: 4px;
   overflow: hidden;
   position: relative;
+  color: #24292e;
+  text-decoration: none;
   cursor: pointer;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -118,9 +124,9 @@
   width: 80%;
   margin: auto;
 }
-.social:hover,
-.social:focus,
-.social:active {
+.contact .social_media .social:hover,
+.contact .social_media .social:focus,
+.contact .social_media .social:active {
   color: white;
 }
 .social:hover:before,
@@ -206,12 +212,33 @@
   display: flex;
   justify-content: space-between;
 }
-
+ .blob4 {
+            width: 800px;
+            height: 800px;
+            opacity: 0.2;
+           background: #f16311; /* fallback for old browsers */
+  background: -webkit-linear-gradient(circle, #f16311, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(circle, #f16311, #f5af19);
+            bottom:-600px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 @media only screen and (max-width: 1199px) {
 }
 @media only screen and (max-width: 991px) {
+  .contact .social_media .social:after{
+    width: 100%;
+  }
+  .contact .social_media .social p{
+    font-size: 1rem;
+    margin: 0px;
+    margin-left: 5px;
+  }
 }
 @media only screen and (max-width: 767px) {
+  .contact .social_media .social p{
+   display: none;
+  }
 }
 @media screen and (max-width: 575px) {
   .contact {
@@ -220,4 +247,15 @@
   .contact .row-cont {
     padding: 0px 0px 40px 0px;
   }
+  
+.contact .social_media .social{
+  padding: 10px;
+  margin: 10px 0px;
+}
+.copyright{
+  flex-direction: column;
+  padding: 0px;
+  align-items: center;
+ margin-bottom: 50px;
+}
 }

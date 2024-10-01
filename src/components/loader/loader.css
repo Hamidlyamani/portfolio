@@ -1,0 +1,123 @@
+.loader
+{
+    position: relative;
+}
+.loadercontainer{
+    width: 100vw;
+    height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+    background-color: rgb(255, 248, 239);
+border-bottom: 2px solid #31291f;
+  transition: transform 1s ease-in ;
+}
+.loaded .loadercontainer{ 
+     transform: translateY(-100%); /* Moves the loader to the top */
+
+}
+.nomber_container{
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+display: flex;
+align-items: center;
+padding: 0px 20px;
+}
+.nomber_container .nomber{
+  font-size: 7rem;
+  line-height: 1;
+  width: fit-content;
+   font-family: "PP_Gosha_b";
+  display: inline-flex; 
+   justify-content: start;
+   align-items: end;
+   margin-right: 20px;
+   color: #31291f;
+}
+.nomber_container .nomber .text-number{
+width: 2.6ch; /* Ensures consistent width for the counter */
+  text-align: left;
+}
+.nomber_container .nomber-line{
+height: 20px;
+background-color: #31291f;
+position: relative;
+width: 100%;
+margin-top: 30px;
+animation: grow 5s forwards; 
+}
+
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+   width:100%;
+  }
+}
+@keyframes gotop {
+  from {
+    top: 0;
+  }
+  to {
+   top:-100vh;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+.nomber_container .nomber{
+  font-size: 6rem;
+}
+.nomber_container .nomber-line{
+height: 20px;
+margin-top: 25px; 
+animation: grow 10s forwards; 
+}
+
+}
+
+@media only screen and (max-width: 992px) {
+.nomber_container .nomber{
+  font-size: 4rem;
+   margin-right: 10px;
+}
+.nomber_container .nomber .text-number{
+width: 2.8ch;
+}
+.nomber_container .nomber-line{
+height: 10px;
+margin-top: 12px; 
+animation: grow 7s forwards; 
+}
+}
+@media only screen and (max-width: 768px) {
+.nomber_container .nomber{
+  font-size: 3rem;
+}
+.nomber_container .nomber .text-number{
+width: 2.8ch;
+}
+.nomber_container .nomber-line{
+height: 9px;
+margin-top: 10px; 
+}
+}
+@media only screen and (max-width: 576px) {
+  .nomber_container{
+padding: 0px 10px;
+}
+.nomber_container .nomber{
+   margin-right: 5px;
+}
+.nomber_container .nomber{
+  font-size:2.5rem;
+}
+.nomber_container .nomber-line{
+height: 8px;
+margin-top: 6px; 
+animation: grow 9s forwards; 
+}
+}

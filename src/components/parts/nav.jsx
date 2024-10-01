@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {  useCallback } from "react";
 import "./parts.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,60 +8,47 @@ import {
   faPhone,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-const Nav = ({ scrollInstance }) => {
-  const [isFixed, setIsFixed] = useState(false);
-  const stickyRef = useRef(null);
+gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    if (!scrollInstance) return; // Ensure scrollInstance is available
-
-    // Throttle the handleScroll function to limit how often it can be called
-    const handleScroll = (event) => {
-      const stickyElement = stickyRef.current;
-      const viewportHeight = window.innerHeight;
-      const scrollY = event.scroll.y;
-      const stickyTopOffset = stickyElement.offsetTop;
-
-      // Calculate if the element should be fixed
-      const shouldBeFixed = scrollY + viewportHeight * 0.1 >= stickyTopOffset;
-
-      // Only update the state if it needs to change
-      if (shouldBeFixed !== isFixed) {
-        setIsFixed(shouldBeFixed);
+const Nav = ({ locoScroll }) => {
+  const handleClick = useCallback(
+    (e) => {
+      e.preventDefault();
+      const targetScroll = e.currentTarget.getAttribute("data-scroll");
+      if (locoScroll.current && targetScroll) {
+       locoScroll.current.update();
+        locoScroll.current.scrollTo(targetScroll);
+        console.log(locoScroll.current);
       }
-    }; // Adjust the throttle delay as needed
-
-    scrollInstance.on("scroll", handleScroll);
-
-    return () => {
-      scrollInstance.off("scroll", handleScroll); // Clean up to avoid multiple listeners
-      // Cancel the throttle function on cleanup
-    };
-  }, [scrollInstance, isFixed]);
+    },
+    [locoScroll]
+  );
 
   return (
     <>
-      <div ref={stickyRef} className="nav_bar">
+      <div className="nav_bar">
         <div className="nav-b">
-          <a href="#" className="item">
+          <div data-scroll="#about" onClick={handleClick} className="item">
             <FontAwesomeIcon icon={faUser} /> <span>ABOUT</span>
-          </a>
-          <a href="#" className="item">
+          </div>
+          <div data-scroll="#service" onClick={handleClick} className="item">
             <FontAwesomeIcon icon={faList} /> <span> Services</span>
-          </a>
-          <a href="#" className="item">
+          </div>
+          <div data-scroll="#portfolio" onClick={handleClick} className="item">
             <FontAwesomeIcon icon={faBriefcase} /> <span> PORTFOLIO</span>
-          </a>
-          <a href="#" className="item">
+          </div>
+          <div data-scroll="#skills" onClick={handleClick} className="item">
             {" "}
             <FontAwesomeIcon icon={faGears} />
             <span> SKILLS</span>
-          </a>
-          <a href="#" className="item">
+          </div>
+          <div data-scroll="#contact" onClick={handleClick} className="item">
             <FontAwesomeIcon icon={faPhone} />
             <span> Contact </span>
-          </a>
+          </div>
         </div>
       </div>
     </>

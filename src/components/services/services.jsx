@@ -50,7 +50,7 @@ export default function Services() {
   }, [service, title]);
 
   return (
-    <section className="services" ref={service}>
+    <section className="services" id="service" ref={service}>
       {/* <div className="container-sircle">
         <div className="sircleScale" ref={sircle}></div>
       </div> */}

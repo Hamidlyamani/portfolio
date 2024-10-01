@@ -41,11 +41,38 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+    font-family: 'Helvetica-light';
+    src: url('assets/fonts/helvetica/Helvetica-Light.eot');
+    src: url('assets/fonts/helvetica/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/helvetica/Helvetica-Light.woff2') format('woff2'),
+        url('assets/fonts/helvetica/Helvetica-Light.woff') format('woff'),
+        url('assets/fonts/helvetica/Helvetica-Light.ttf') format('truetype'),
+        url('assets/fonts/helvetica/Helvetica-Light.svg#Helvetica-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('assets/fonts/helvetica/Helvetica.eot');
+    src: url('assets/fonts/helvetica/Helvetica.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/helvetica/Helvetica.woff2') format('woff2'),
+        url('assets/fonts/helvetica/Helvetica.woff') format('woff'),
+        url('assets/fonts/helvetica/Helvetica.ttf') format('truetype'),
+        url('assets/fonts/helvetica/Helvetica.svg#Helvetica') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 :root {
   --pcolor: #f37500;
   --scolor: #3f1e0052;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -67,8 +94,37 @@ p {
   position: absolute;
   top: 0;
   left: 0;
+  height: 0px;
   width: 100%;
   z-index: 1000; /* Adjust z-index as needed */
+}
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.smooth-wrapper {
+  overflow: hidden;
+}
+
+.c-scrollbar {
+background: #ffc68554;
+}
+.c-scrollbar:nth-of-type(2) {
+ display: none;
+}
+.c-scrollbar_thumb{
+   background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(150deg, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(150deg, #f12711, #f5af19);
+    pointer-events: none;
 }
 /* .container{
   overflow-y: hidden;
@@ -78,19 +134,8 @@ p {
     max-width: 1300px !important;
   }
 }
-body {
-  overflow-y: hidden; 
-  overflow-x: hidden;
-}
-body::-webkit-scrollbar {
+@media (max-width: 768px) {
+ .has-scroll-scrolling .c-scrollbar{
   display: none;
+ }
 }
- body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.smooth-wrapper {
-  overflow: hidden;
-}
-

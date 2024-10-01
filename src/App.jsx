@@ -10,15 +10,32 @@ import Projects from "./components/projects/progects";
 import Technologies from "./components/Technologies/Technologies";
 import Contact from "./components/contact/contact";
 import Mouse from "./components/parts/mouse";
+import Nav from "./components/parts/nav";
+import Loader from "./components/loader/loader";
 
 export default function App() {
   const scrollContainerRef = useRef(null);
   const fixedElementRef = useRef(null);
+  const locoScrollRef = useRef(null);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
-const [locoScroll, setLocoScroll] = useState(null);
+ const [isLoaded, setIsLoaded] = useState(false);
 
+ useEffect(() => {
+   const handlePageLoad = () => {
+     // Wait for an additional 2 seconds before setting isLoaded to true
+     setTimeout(() => {
+       setIsLoaded(true);
+     }, 2000); // 2000 milliseconds = 2 seconds
+   };
 
+   // When the page has fully loaded
+   window.addEventListener("load", handlePageLoad);
+
+   return () => {
+     window.removeEventListener("load", handlePageLoad);
+   };
+ }, []);
 
   const handleMouseMovement = (e) => {
     setX(e.clientX);
@@ -35,23 +52,25 @@ const [locoScroll, setLocoScroll] = useState(null);
   useEffect(() => {
     // --- SETUP START ---
     // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-    const locoScroll = new LocomotiveScroll({
+    locoScrollRef.current = new LocomotiveScroll({
       el: scrollContainerRef.current,
       smooth: true,
       smartphone: { smooth: true },
       tablet: { smooth: true },
     });
-      setLocoScroll(locoScroll);
-    // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-    locoScroll.on("scroll", ScrollTrigger.update);
 
-    // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+    locoScrollRef.current.on("scroll", ScrollTrigger.update);
+
+    // Set ScrollTrigger to use LocomotiveScroll’s scrolling position
     ScrollTrigger.scrollerProxy(scrollContainerRef.current, {
       scrollTop(value) {
         return arguments.length
-          ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
-          : locoScroll.scroll.instance.scroll.y;
-      }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+          ? locoScrollRef.current.scrollTo(value, {
+              duration: 0,
+              disableLerp: true,
+            })
+          : locoScrollRef.current.scroll.instance.scroll.y;
+      },
       getBoundingClientRect() {
         return {
           top: 0,
@@ -60,27 +79,31 @@ const [locoScroll, setLocoScroll] = useState(null);
           height: window.innerHeight,
         };
       },
-      // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+      // Define the type of pinning ScrollTrigger should use (transform or fixed)
       pinType: scrollContainerRef.current.style.transform
         ? "transform"
         : "fixed",
     });
 
-    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    // Refresh ScrollTrigger and sync with LocomotiveScroll
+    ScrollTrigger.addEventListener("refresh", () =>
+      locoScrollRef.current.update()
+    );
     ScrollTrigger.defaults({ scroller: scrollContainerRef.current });
-    // --- SETUP END ---
-  }, []);
 
+    // Trigger an initial refresh to sync everything
+    ScrollTrigger.refresh();
+  }, [scrollContainerRef]);
   return (
-    <StrictMode>
+    <div className={`app-container ${isLoaded ? "loaded" : ""}`}>
+      <Loader />
       <div
         className="smooth-wrapper"
         id="scroll-container"
         data-scroll-container
         ref={scrollContainerRef}
       >
-        {locoScroll && <Hero scrollInstance={locoScroll} />}
+        <Hero locoScroll={locoScrollRef} />
         <About />
         <Services />
         <Projects />
@@ -89,7 +112,8 @@ const [locoScroll, setLocoScroll] = useState(null);
       </div>
       <div className="fixed-element" ref={fixedElementRef}>
         <Mouse x={x} y={y} />
+        <Nav locoScroll={locoScrollRef} />
       </div>
-    </StrictMode>
+    </div>
   );
 }

@@ -20,12 +20,13 @@ const About = () => {
           skewX: 0,
           duration: 1.5,
           scrollTrigger: {
-            scroller:'.smooth-wrapper',
+            scroller: ".smooth-wrapper",
             trigger: el.current,
             start: "0% 90%",
             end: "0% 50%",
             toggleActions: "play play pause reverse",
-            scrub: false,
+            // scrub: false,
+            lazy: false,
             // markers: true, // Remove in production
           },
         }
@@ -44,6 +45,7 @@ const About = () => {
             trigger: el2.current,
             start: "0% 90%",
             end: "0% 50%",
+            // lazy: false,
             toggleActions: "play play pause reverse",
             scrub: false,
             // markers: true, // Remove in production
@@ -51,52 +53,19 @@ const About = () => {
         }
       );
     });
-
     return () => ctx.revert();
   }, [el, el2]);
 
-  // useGSAP(() => {
-  //   const el = LeftRef.current;
-  //   gsap.from(el, {
-  //     x: -1000,
-  //     opacity: 0,
-  //     skewX: 65,
-  //     duration: 1.5,
-  //     scrollTrigger: {
-  //       trigger: el,
-  //       start: "0% 90%",
-  //       end: "0% 50%",
-  //       scroller: "#scroll-container",
-  //       toggleActions: "play play pause reverse",
-  //       scrub: false,
-  //       markers: true,
-  //     },
-  //   });
-  //   const el2 = descRef.current;
-  //   gsap.from(el2, {
-  //     x: 1000,
-  //     opacity: 0,
-  //     skewX: -65,
-  //     duration: 1.5,
-  //     scrollTrigger: {
-  //       trigger: el2,
-  //       start: "0% 90%",
-  //       end: "0% 50%",
-  //       // scroller: "#scroll-container",
-  //       scrub: false,
-  //       markers: true,
-  //       toggleActions: "play play pause reverse",
-  //     },
-  //   });
-  // });
+  
   return (
     <>
       <section className="about" id="about">
+        <div class="blob3"></div>
         <div className="container">
           <div className="row about-text">
             <div className="col left" ref={el}>
               <h3>
-                Hi. I’m Hmaid, nice to meet you. Please take a look around!
+                Hi. I’m Hamid, nice to meet you. Please take a look around!
               </h3>
             </div>
             <div className="col right" ref={el2}>
