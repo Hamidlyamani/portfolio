@@ -15,21 +15,16 @@ export default function Services() {
   const service = useRef(null);
   const title = useRef(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-     
-
+useGSAP(
+    () => {
       gsap.from(title.current, {
-        scale: 0.3,
+    scale:1.1,
         opacity: 0,
-        duration: 1.5,
+        duration: 0.7,
         scrollTrigger: {
           trigger: title.current,
-          scroller:'.smooth-wrapper',
-          start: "center 100%",
-          end: "center 60%",
+          start: "0% 100%",
           toggleActions: "play play pause reverse",
-          scrub: false,
         },
       });
 
@@ -38,16 +33,12 @@ export default function Services() {
         stagger: 0.3,
         scrollTrigger: {
           trigger: ".service",
-          start: "top 90%",
-          scroller:'.smooth-wrapper',
-          end: "top 50%",
-          scrub: false,
+          start: "0% 100%",
           toggleActions: "play play pause reverse",
         },
       });
     });
-    return () => ctx.revert();
-  }, [service, title]);
+
 
   return (
     <section className="services" id="service" ref={service}>

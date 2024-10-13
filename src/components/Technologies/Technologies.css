@@ -16,15 +16,25 @@
   display: flex;
   border-radius: 16px;
   color: black;
-  margin: 0px 10px;
   width: 220px;
   min-width: 220px;
-  padding: 15px;
+  padding: 15px; height: 75px;
   justify-content: space-between;
   align-items: center;
-  -webkit-box-shadow: 4px 4px 15px 1px rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 4px 4px 15px 1px rgba(255, 255, 255, 0.5);
-  box-shadow: 4px 4px 15px 1px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.slider-1 .box-tech{
+  left: max(calc(220px * 8), 100%);
+  animation-name: scrollLeft;
+}
+
+.slider-2 .box-tech{
+  right: max(calc(220px * 8), calc(100% + 0px));
+  animation-name: scrollRight;
 }
 .slider-container {
   padding: 3% 0px;
@@ -33,18 +43,70 @@
   display: flex;
   flex-wrap: nowrap;
   margin: 20px 0px;
+    mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  position: relative; 
+  overflow: hidden;
+  height: 75px;
+}
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+@keyframes scrollRight {
+  to {
+    right: -200px;
+  }
+}
+.item1 {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
 }
 .img-tech {
   width: 20%;
+   aspect-ratio: 1/1;
+   display:flex ;
+   align-items: center;
 }
 img {
   max-width: 100%;
+ 
 }
 .name-tech {
   font-family: "PP_Gosha_b";
   width: 70%;
   text-transform: uppercase;
   font-size: 1.1rem;
+  line-height: 1;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -60,10 +122,22 @@ img {
     width: 120px;
     min-width: 120px;
     padding: 5px 10px;
+    height: 50px;
   }
+  .slider-1 .box-tech {
+    left: max(calc(110px* 8), 100%);
+  }
+  .slider-2 .box-tech{
+  right: max(calc(110px * 8), calc(100% + 0px));
+
+}
+.slider {
+  height: 50px;
+      margin: 10px 0px;
+}
   .name-tech {
     font-family: "PP_Gosha_r";
-    font-size: 0.9rem;
+          font-size: 0.8rem;
   }
   .img-tech {
     width: 25%;

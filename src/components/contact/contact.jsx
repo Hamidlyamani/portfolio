@@ -12,57 +12,47 @@ import github from "../../assets/imgs/social/github.png";
 import whatsapp from "../../assets/imgs/social/whatsapp.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const title = useRef(null);
   const left = useRef(null);
   const right = useRef(null);
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+useGSAP(
+    () => {
       gsap.from(title.current, {
-        scale: 0.3,
-        opacity: 0.3,
-        duration: 1.5,
+        opacity: 0,
+        scale: 1.1,
+        duration: 0.7,
         scrollTrigger: {
-          scroller: ".smooth-wrapper",
           trigger: title.current, // Use title.current as the trigger
-          start: "center 100%",
-          end: "center 60%",
+          start: "0% 100%",
           toggleActions: "play play pause reverse",
-          scrub: false,
         },
       });
       gsap.from(left.current, {
-        x: "-600px",
-        duration: 1.5,
+        x: "-40vw",
+        duration: 0.9,
         scrollTrigger: {
-          scroller: ".smooth-wrapper",
           trigger: left.current,
-          start: "center 100%",
-          end: "center 60%",
+          start: "0% 100%",
           toggleActions: "play play pause reverse",
-          scrub: false,
         },
       });
+     
       gsap.from(right.current, {
-        scale: 0.4,
-        opacity: 0.3,
-        duration: 1.5,
+        opacity:0,
+        duration: 0.9,
         scrollTrigger: {
-          scroller: ".smooth-wrapper",
           trigger: right.current,
-          start: "center 100%",
-          end: "center 60%",
+          start: "0% 100%",
           toggleActions: "play play pause reverse",
-          scrub: false,
         },
       });
+     
     });
 
-    return () => ctx.revert();
-  }, []);
 
   return (
     <>
@@ -225,7 +215,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div class="blob4"></div>
+        <div className="blob4"></div>
       </section>
     </>
   );

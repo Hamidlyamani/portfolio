@@ -10,16 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = ({ locoScroll }) => {
   const handleClick = useCallback(
-    (e) => {
-      e.preventDefault();
-      const targetScroll = e.currentTarget.getAttribute("data-scroll");
-      if (locoScroll.current && targetScroll) {
-        locoScroll.current.update();
-        locoScroll.current.scrollTo(targetScroll);
-        console.log(locoScroll.current);
-      }
-    },
-    [locoScroll]
+    // (e) => {
+    //   e.preventDefault();
+    //   const targetScroll = e.currentTarget.getAttribute("data-scroll");
+    //   if (locoScroll.current && targetScroll) {
+    //     locoScroll.current.update();
+    //     locoScroll.current.scrollTo(targetScroll);
+    //     console.log(locoScroll.current);
+    //   }
+    // },
+    // [locoScroll]
   );
   const scaleHeader = () => {
     const scalable = document.querySelectorAll(".scale--js");
@@ -74,8 +74,8 @@ const Hero = ({ locoScroll }) => {
   return (
     <>
       <header>
-        <div class="blob1"></div>
-        <div class="blob2"></div>
+        <div className="blob1"></div>
+        <div className="blob2"></div>
         <div className="top-nav container">
           <div className="logo-Name">
             <div className="logo">
@@ -87,18 +87,20 @@ const Hero = ({ locoScroll }) => {
             </p>
           </div>
           <div className="cta" data-scroll="#contact" onClick={handleClick}>
-            Let's talk
+            View Resume
           </div>
         </div>
         <div className="container_text_img container">
           <div className="content">
-            <div className="web scale--js">web</div>
-            <div className="web scale--js outline">web</div>
-            <div className="developer-text scale--js">
+            <div className="image-hero-src">
+              <img src={pc} alt="" />
+            </div>
+            <div className="web ">web</div>
+            <div className="web  outline">web</div>
+            <div className="developer-text ">
               <span className="de">DE</span>
               VELOPER
             </div>
-            <div className="image-hero-src"></div>
           </div>
         </div>
       </header>

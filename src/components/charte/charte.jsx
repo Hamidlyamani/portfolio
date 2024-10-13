@@ -1,70 +1,76 @@
 import React, { useLayoutEffect, useRef } from "react";
 import "./charte.css";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TimelineLite } from "gsap/gsap-core";
+import { useGSAP } from "@gsap/react";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Charte() {
   const el = useRef(null);
-  const charte_container = useRef(null);
   const charte = useRef(null);
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Animation for chartRef.current
-      gsap.fromTo(
-        el.current,
-        { scale: 0.3, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 1.5,
-          scrollTrigger: {
-            scroller: ".smooth-wrapper",
-            trigger: el.current,
-            start: "center 100%",
-            end: "center 60%",
-            scrub: false,
-            toggleActions: "play play pause reverse",
-          },
-        }
-      );
-
-      // Timeline for right-line, circle, and box-event
-      const tl = new TimelineLite({
+  useGSAP(() => {
+    gsap.fromTo(
+      el.current,
+      { y: "30px", opacity: 0, scale: 1.1 },
+      {
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 0.7,
         scrollTrigger: {
-          scroller: ".smooth-wrapper",
-          trigger: ".right-line",
-          start: "center 100%",
-          end: "center 60%",
-          markers: false, // Remove markers in production
+          trigger: el.current,
+          start: "0% 100%",
+          toggleActions: "play play pause reverse",
         },
-      });
-
-      tl.from(".right-line", { height: 0, duration: 1 })
-        .from(".sircle", { opacity: 0, duration: 0.5 })
-        .from(".box-event", { opacity: 0, duration: 0.5 });
-      gsap.to(charte.current, {
-        x: () => {
-          return -(charte.current.offsetWidth - 1.5 * window.innerWidth);
-        },
-        scrollTrigger: {
-          trigger: charte.current,
-          pin: true,
-          scrub: true,
-          start: "top top",
-          ease: "none",
-          scroller: ".smooth-wrapper",
-          end: () => charte.current.clientWidth,
-          pinSpacing: true,
-        },
-      });
+      }
+    );
+    let container_animation = gsap.to(charte.current, {
+      x: () => {
+        return -(charte.current.offsetWidth - 1.5 * window.innerWidth);
+      },
+      ease: "none",
+      scrollTrigger: {
+        trigger: charte.current,
+        pin: true,
+        scrub: true,
+        start: "top top",
+        end: () => charte.current.clientWidth,
+        pinSpacing: true,
+      },
     });
-    return () => ctx.revert();
-  }, [el, charte, charte_container]);
+    ScrollTrigger.matchMedia({
+      // Desktop animations
+      "(min-width: 768px)": () => {
+        gsap.utils.toArray(".event").forEach((box) => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: box, // Trigger each element individually
+              containerAnimation: container_animation, // Use the same container animation
+              start: "center right",
+              toggleActions: "play play pause reverse",
+            },
+          });
+          tl.from(box.querySelector(".right-line"), {
+            height: 0,
+            duration: 0.2,
+          });
 
+          // Animate the second element inside the box
+          tl.from(box.querySelector(".sircle"), {
+            opacity: 0, // Example animation, move it horizontally
+            duration: 0.2,
+          });
+
+          // Animate the third element inside the box
+          tl.from(box.querySelector(".box-event"), {
+            opacity: 0, // Example animation, fade in
+            duration: 0.4,
+          });
+        });
+      },
+    });
+  });
   return (
     <div className="charte">
       <div className="title-part" ref={el}>
@@ -112,7 +118,6 @@ export default function Charte() {
                       in my academic journey.
                     </p>
                   </div>
-
                   <div className="right-line">
                     <div className="sircle"></div>
                   </div>
@@ -293,9 +298,8 @@ export default function Charte() {
               <div className="month  year">
                 <div className="year-number">2025</div>
               </div>
-              <div className="month nosircle"></div>
-              <div className="month nosircle"></div>
-              <div className="month nosircle"></div>
+
+              <div className="month nosircle lastmonth "></div>
             </div>
           </div>
         </div>

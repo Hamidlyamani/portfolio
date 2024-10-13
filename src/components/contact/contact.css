@@ -1,6 +1,7 @@
 .contact {
   margin: 4% 0% 0% 0%;
   position: relative;
+  overflow: hidden;
 }
 .contact .row-cont {
   padding: 40px 0px;
@@ -68,12 +69,15 @@ background: #f12711; /* fallback for old browsers */
 .contact .info-item {
   display: flex;
   margin: 10px;
+  align-items: center;
 }
 .contact .info-item a {
   text-decoration: none;
   color: #000;
-  margin-left: 10px;
 
+}
+.contact .info-item svg {
+  margin-right: 10px;
 }
 .contact .social_media {
   display: flex;

@@ -9,58 +9,71 @@ gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const el = useRef(null);
   const el2 = useRef(null);
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.fromTo(
-        el.current,
-        { x: -1000, opacity: 0, skewX: 65 },
-        {
-          x: 0,
-          opacity: 1,
-          skewX: 0,
-          duration: 1.5,
-          scrollTrigger: {
-            scroller: ".smooth-wrapper",
-            trigger: el.current,
-            start: "0% 90%",
-            end: "0% 50%",
-            toggleActions: "play play pause reverse",
-            // scrub: false,
-            lazy: false,
-            // markers: true, // Remove in production
-          },
-        }
-      );
+  useGSAP(() => {
+    gsap.fromTo(
+      el.current,
+      { x: "-50vw", opacity: 0, skewX: 65 },
+      {
+        x: 0,
+        opacity: 1,
+        skewX: 0,
+        duration: 0.9,
+        scrollTrigger: {
+          trigger: el.current,
+          start: "0% 100%",
+          toggleActions: "play play pause reverse",
+        },
+      }
+    );
 
-      gsap.fromTo(
-        el2.current,
-        { x: 1000, opacity: 0, skewX: -65 },
-        {
-          x: 0,
-          opacity: 1,
-          skewX: 0,
-          duration: 1.5,
-          scrollTrigger: {
-            scroller: ".smooth-wrapper",
-            trigger: el2.current,
-            start: "0% 90%",
-            end: "0% 50%",
-            // lazy: false,
-            toggleActions: "play play pause reverse",
-            scrub: false,
-            // markers: true, // Remove in production
-          },
-        }
-      );
+    ScrollTrigger.matchMedia({
+      // Desktop animations
+      "(min-width: 768px)": () => {
+        gsap.fromTo(
+          el2.current,
+          { x: "50vw", opacity: 0, skewX: -65 },
+          {
+            x: 0,
+            opacity: 1,
+            skewX: 0,
+            duration: 0.9,
+            scrollTrigger: {
+              trigger: el.current,
+              start: "0% 100%",
+              toggleActions: "play play pause reverse",
+            },
+          }
+        );
+      },
+
+      // Mobile animations
+      "(max-width: 767px)": () => {
+        gsap.fromTo(
+          el2.current,
+          { x: "-50vw", opacity: 0, skewX: 65 },
+          {
+            x: 0,
+            opacity: 1,
+            skewX: 0,
+            duration: 1,
+            data: 0.5,
+            scrollTrigger: {
+              trigger: el.current,
+              start: "0% 100%",
+              toggleActions: "play play pause reverse",
+              lazy: false,
+              // markers: true, // Remove in production
+            },
+          }
+        );
+      },
     });
-    return () => ctx.revert();
-  }, [el, el2]);
+  });
 
-  
   return (
     <>
       <section className="about" id="about">
-        <div class="blob3"></div>
+        <div className="blob3"></div>
         <div className="container">
           <div className="row about-text">
             <div className="col left" ref={el}>

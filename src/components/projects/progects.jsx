@@ -7,6 +7,8 @@ import project_1 from "../../assets/imgs/img-1.png";
 import project_2 from "../../assets/imgs/img-2.png";
 import project_3 from "../../assets/imgs/img-3.png";
 import project_4 from "../../assets/imgs/img-4.png";
+import project_5 from "../../assets/imgs/img-5.png";
+import project_6 from "../../assets/imgs/img-6.png";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Project from "./project-1";
@@ -14,6 +16,7 @@ import html from "../../assets/imgs/tech/html.png";
 import css from "../../assets/imgs/tech/css3.png";
 import js from "../../assets/imgs/tech/js.png";
 import react from "../../assets/imgs/tech/react.png";
+import GSAP from "../../assets/imgs/tech/gsap.png";
 import php from "../../assets/imgs/tech/php.png";
 import mysql from "../../assets/imgs/tech/mysql.png";
 import axios from "../../assets/imgs/tech/axios.png";
@@ -21,13 +24,18 @@ import laravel from "../../assets/imgs/tech/laravel.png";
 import bootstrap from "../../assets/imgs/tech/bootstrap.png";
 import ga from "../../assets/imgs/tech/g-a.png";
 import wordpress from "../../assets/imgs/tech/wordpress.png";
+import acf from "../../assets/imgs/tech/acf.png";
+import woo from "../../assets/imgs/tech/woo.png";
 import project_details_1 from "../../assets/imgs/project_details_1.png";
 import project_details_2 from "../../assets/imgs/project_details_2.png";
 import project_details_3 from "../../assets/imgs/project_details_3.png";
 import project_details_4 from "../../assets/imgs/project_details_4.png";
+import project_details_5 from "../../assets/imgs/project_details_5.png";
+import project_details_6 from "../../assets/imgs/project_details_6.png";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Progects() {
@@ -70,8 +78,40 @@ export default function Progects() {
     },
     {
       id: 3,
+      title: "CBM menuiserie",
+      image_p: project_5,
+      type: "Web Development ",
+      Overview:
+        "I created this demo to practice my skills in WordPress by integrating custom HTML, building themes, and using ACF for flexible content management. The project showcases CBM Menuiserie, a fictional company specializing in standard and custom wooden joinery. This allowed me to refine my abilities in theme development and WordPress customization.",
+      items: [
+        "Custom Dashboard with WooCommerce Integration: Manage products (add, update, remove) from the WordPress admin panel.",
+        "Project Quote Request Form: Allows users to request quotes for custom joinery projects.",
+        "Contact Form: Simple way for visitors to send inquiries directly from the site.",
+        "ACF Custom Fields: Streamlines content management for standard and custom projects.",
+      ],
+      imageName: [wordpress, acf, woo, html, css, js],
+      project_details: project_details_5,
+    },
+    {
+      id: 4,
+      title: "My Personal Portfolio",
+      image_p: project_6,
+      type: "Web Development & Design",
+      Overview:
+        "I built this portfolio to enhance my React and front-end development skills while showcasing my projects to potential clients and hiring managers. It features smooth GSAP animations and leverages React with Vite for efficient development and performance. This project demonstrates my ability to create dynamic, user-friendly web interfaces.",
+      items: [
+        "Project Showcase: Highlights key projects with descriptions and links to code repositories.",
+        "Contact Form: Enables easy communication for inquiries and freelance opportunities.",
+        "Smooth Animations: Interactive animations created using GSAP for a dynamic experience.",
+        "Project Code Links: Direct access to code repositories for all featured projects.",
+      ],
+      imageName: [react, GSAP, html, css, js],
+      project_details: project_details_6,
+    },
+    {
+      id: 5,
       title: "OLAM COPANY",
-      type: "Web Development with SEO Integration",
+      type: "Web Development with SEO ",
       image_p: project_3,
       Overview:
         "OLAM COMPANY specializes in crafting dream villas and pools in Marrakech, offering turnkey construction services. Developed during my tenure at ONCLICK Agency, our expertise ensures excellence in every project.",
@@ -85,9 +125,9 @@ export default function Progects() {
       project_details: project_details_3,
     },
     {
-      id: 4,
+      id: 6,
       title: "OUI TRAVEL",
-      type: "Web Development with SEO Integration",
+      type: "Web Development with SEO",
       image_p: project_4,
       Overview:
         "Oui Travel Morocco crafts personalized journeys to uncover Morocco's hidden treasures, blending wanderlust with bespoke experiences. Developed during my tenure at ONCLICK Agency, our platform invites you to explore the vibrant souks of Marrakech and the tranquil rhythms of the Sahara, transcending the ordinary to create unforgettable memories.",
@@ -102,19 +142,16 @@ export default function Progects() {
     },
   ];
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+  useGSAP(
+    () => {
       gsap.from(title.current, {
-        scale: 0.3,
-        opacity: 0.3,
-        duration: 1.5,
+        scale: 1.1,
+        opacity: 0,
+        duration: 0.7,
         scrollTrigger: {
           trigger: title.current,
-          scroller: ".smooth-wrapper",
-          start: "top 100%",
-          end: "top 40%",
+          start: "0% 100%",
           toggleActions: "play play pause reverse",
-          scrub: false,
         },
       });
       cardContents.forEach((card, index) => {
@@ -126,7 +163,7 @@ export default function Progects() {
             opacity: 0.3,
             stagger: { amount: 0.4 },
             scrollTrigger: {
-              scroller: ".smooth-wrapper",
+              
               trigger: projectRef, // Or choose a different trigger element
               start: "top 100%",
               end: "top 50%",
@@ -138,8 +175,7 @@ export default function Progects() {
         }
       });
     });
-    return () => ctx.revert();
-  }, [title, projectRefs]);
+ 
 
   const [show, setShow] = useState(false);
   const [selectedContent, setSelectedContent] = useState(null);

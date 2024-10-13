@@ -12,7 +12,7 @@
   border-radius: 16px !important;
 
   outline: none !important;
-  /* overflow: hidden !important; */
+   overflow: hidden; 
   border: 1px solid var(--pcolor);
 }
 .Projects .image-card {
@@ -51,9 +51,8 @@ background: #f12711; /* fallback for old browsers */
   transition: all 0.3s ease-in-out;
 }
 .Projects .btn-primary:hover {
-  font-size: 1.2rem;
-  border: none;
-  outline: none;
+
+ box-shadow: 0 4px 10px rgb(236, 67, 0);
 }
 .modal-dialog {
   max-width: 90% !important;
@@ -80,7 +79,10 @@ background: #f12711; /* fallback for old browsers */
   background-color: var(--pcolor);
   color: #ffffff;
 
-  padding: 15px 20px;
+  padding: 10px 20px;
+}
+.project .buttons .btn-go:hover{
+border: #f12711 1px solid;
 }
 .project .buttons {
   display: flex;
@@ -128,6 +130,7 @@ text-align: left;
 }
 }
 @media screen and (max-width: 575px) {
+
   .Projects .cards-projects .row > * {
     padding: 2% 4%;
   }
@@ -143,5 +146,13 @@ text-align: left;
   }
   .project .row {
     flex-direction: column-reverse;
+  }
+ .Projects .card-project .card-body{
+align-items: self-start;
+  }
+ .Projects .btn-primary{
+font-size: 0.8rem;
+width: 40%;
+padding: 10px 5px;
   }
 }

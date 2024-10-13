@@ -42,37 +42,41 @@
   font-display: swap;
 }
 @font-face {
-    font-family: 'Helvetica-light';
-    src: url('assets/fonts/helvetica/Helvetica-Light.eot');
-    src: url('assets/fonts/helvetica/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
-        url('assets/fonts/helvetica/Helvetica-Light.woff2') format('woff2'),
-        url('assets/fonts/helvetica/Helvetica-Light.woff') format('woff'),
-        url('assets/fonts/helvetica/Helvetica-Light.ttf') format('truetype'),
-        url('assets/fonts/helvetica/Helvetica-Light.svg#Helvetica-Light') format('svg');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Helvetica-light";
+  src: url("assets/fonts/helvetica/Helvetica-Light.eot");
+  src: url("assets/fonts/helvetica/Helvetica-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/helvetica/Helvetica-Light.woff2") format("woff2"),
+    url("assets/fonts/helvetica/Helvetica-Light.woff") format("woff"),
+    url("assets/fonts/helvetica/Helvetica-Light.ttf") format("truetype"),
+    url("assets/fonts/helvetica/Helvetica-Light.svg#Helvetica-Light")
+      format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Helvetica';
-    src: url('assets/fonts/helvetica/Helvetica.eot');
-    src: url('assets/fonts/helvetica/Helvetica.eot?#iefix') format('embedded-opentype'),
-        url('assets/fonts/helvetica/Helvetica.woff2') format('woff2'),
-        url('assets/fonts/helvetica/Helvetica.woff') format('woff'),
-        url('assets/fonts/helvetica/Helvetica.ttf') format('truetype'),
-        url('assets/fonts/helvetica/Helvetica.svg#Helvetica') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Helvetica";
+  src: url("assets/fonts/helvetica/Helvetica.eot");
+  src: url("assets/fonts/helvetica/Helvetica.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/helvetica/Helvetica.woff2") format("woff2"),
+    url("assets/fonts/helvetica/Helvetica.woff") format("woff"),
+    url("assets/fonts/helvetica/Helvetica.ttf") format("truetype"),
+    url("assets/fonts/helvetica/Helvetica.svg#Helvetica") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-
 
 :root {
   --pcolor: #f37500;
   --scolor: #3f1e0052;
 }
-
+html {
+  scroll-behavior: smooth !important;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -90,52 +94,39 @@ body {
 p {
   margin: 0px;
 }
-.fixed-element {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 0px;
-  width: 100%;
-  z-index: 1000; /* Adjust z-index as needed */
-}
-body {
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
 }
 
-.smooth-wrapper {
-  overflow: hidden;
+::-webkit-scrollbar-track {
+  background: #ffedbd; /* Background of the scrollbar track */
+  border-radius: 10px; /* Optional: for rounded corners */
 }
 
-.c-scrollbar {
-background: #ffc68554;
+::-webkit-scrollbar-thumb {
+  background-color: #ff9532; /* Scrollbar color */
+  border-radius: 10px; /* Optional: for rounded corners */
+  border: 3px solid #1100ff; /* Optional: gives spacing around the thumb */
 }
-.c-scrollbar:nth-of-type(2) {
- display: none;
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9532; /* Change color on hover */
 }
-.c-scrollbar_thumb{
-   background: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(150deg, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(150deg, #f12711, #f5af19);
-    pointer-events: none;
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: #ff9532 #ffefd0; /* Thumb and track colors */
 }
-/* .container{
-  overflow-y: hidden;
-} */
+
+/* Optional: Add to any specific element */
+.custom-scrollbar {
+  overflow-y: auto; /* Enables scrollbar for vertical scrolling */
+  max-height: 400px; /* Example to limit height of the element */
+}
 @media (min-width: 1200px) {
   .container {
-    max-width: 1300px !important;
+    max-width: 1200px !important;
   }
-}
-@media (max-width: 768px) {
- .has-scroll-scrolling .c-scrollbar{
-  display: none;
- }
 }
