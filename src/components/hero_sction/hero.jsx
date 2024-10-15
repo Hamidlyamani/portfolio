@@ -87,7 +87,7 @@ const Hero = ({ locoScroll }) => {
             </p>
           </div>
           <div className="cta" data-scroll="#contact" onClick={handleClick}>
-            View Resume
+            My Resume
           </div>
         </div>
         <div className="container_text_img container">
