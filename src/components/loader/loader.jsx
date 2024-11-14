@@ -4,15 +4,15 @@ import "./loader.css";
 export default function Loader() {
   const [count, setCount] = useState(0);
 
-  // useEffect(() => {
-  //   if (count < 100) {
-  //     const timer = setInterval(() => {
-  //       setCount((prevCount) => prevCount + 1);
-  //     }, 10); // Adjust the interval time (in ms) as needed
+  useEffect(() => {
+    if (count < 100) {
+      const timer = setInterval(() => {
+        setCount((prevCount) => prevCount + 1);
+      }, 10); // Adjust the interval time (in ms) as needed
 
-  //     return () => clearInterval(timer);
-  //   }
-  // }, [count]);
+      return () => clearInterval(timer);
+    }
+  }, [count]);
   const formattedCount = String(count).padStart(3, "0");
   return (
     <div className="loader">

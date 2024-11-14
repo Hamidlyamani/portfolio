@@ -1,6 +1,7 @@
 .charte {
   padding: 4% 0%;
 }
+
 .title-part {
   text-align: center;
   margin: auto;
@@ -23,14 +24,17 @@
 .time-line-container {
   height: 100vh;
   overflow-y: visible !important;
-  overflow-x: visible; /* Use only overflow-x: scroll to allow horizontal scrolling */
+  overflow-x: visible;
+  /* Use only overflow-x: scroll to allow horizontal scrolling */
   position: relative;
   display: flex;
   align-items: center;
 }
+
 .line-prancipal {
   position: relative;
 }
+
 .years-line {
   padding: 0px 50vw;
   height: 10px;
@@ -38,6 +42,7 @@
   display: inline-block;
   white-space: nowrap;
 }
+
 .month {
   width: 100px;
   height: 100%;
@@ -47,6 +52,7 @@
   background-color: var(--pcolor);
   position: relative;
 }
+
 .year-number {
   position: absolute;
   top: -40px;
@@ -55,6 +61,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
 }
+
 .month::after {
   content: " ";
   position: absolute;
@@ -65,28 +72,33 @@
   top: 50%;
   transform: translate(0%, -50%);
 }
+
 .month.nosircle::after {
   height: 0px;
 }
+
 .month.year::after {
   height: 30px;
   width: 30px;
 }
+
 .lastmonth {
-  margin-right:200px ;
+  margin-right: 200px;
 }
+
 .lastmonth::before {
-    content: " ";
-    border-right: 8px solid var(--pcolor);
-    border-top: 8px solid var(--pcolor);
-right: 10px;
-position: absolute;
-    width: 35px;
-    height: 35px;
-    transform: rotate(45deg) translateY(-50%);
-    cursor: pointer;
-    display: block;
+  content: " ";
+  border-right: 8px solid var(--pcolor);
+  border-top: 8px solid var(--pcolor);
+  right: 10px;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  transform: rotate(45deg) translateY(-50%);
+  cursor: pointer;
+  display: block;
 }
+
 .event {
   position: absolute;
   display: block;
@@ -95,28 +107,34 @@ position: absolute;
   padding-left: 30px;
   white-space: wrap;
 }
+
 .event.top {
   top: -250px;
   height: 250px;
 }
+
 .event.bottom {
   top: 0px;
   height: 250px;
 }
+
 .right-line {
   width: 1px;
   background-color: var(--pcolor);
   position: absolute;
   left: 10px;
 }
+
 .event.top .right-line {
   height: 80%;
   bottom: 0px;
 }
+
 .event.bottom .right-line {
   height: 50%;
   top: 0px;
 }
+
 .sircle {
   width: 10px;
   height: 10px;
@@ -124,10 +142,12 @@ position: absolute;
   border-radius: 50%;
   transform: translate(-50%, 0%);
 }
+
 .event.bottom .sircle {
   bottom: 0px;
   position: absolute;
 }
+
 .box-event {
   -webkit-box-shadow: 6px 6px 16px 3px #eee6e1;
   -moz-box-shadow: 6px 6px 16px 3px #eee6e1;
@@ -136,21 +156,25 @@ position: absolute;
   padding: 10px;
   border-radius: 8px;
 }
+
 .event.bottom .box-event {
   position: relative;
   top: 20px;
 }
+
 .date-event {
   color: var(--pcolor);
   font-size: 0.9rem;
 }
+
 .box-event h6 {
   font-family: "PP_Gosha_b";
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
+
 .box-event .description {
-  font-family: "Helvetica-light";
+  font-family: "Helvetica";
 }
 
 
@@ -164,72 +188,91 @@ position: absolute;
 .charte_horisantel .pin-wrap {
   height: 100vh;
 }
+
 @media only screen and (max-width: 1199px) {
   .title-part h2 {
     font-size: 2.5rem;
   }
 }
+
 @media only screen and (max-width: 991px) {
   .title-part h2 {
     font-size: 2rem;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .title-part h2 {
     font-size: 1.8rem;
   }
+
   .event {
     width: 330px;
   }
+
   .time-line-container {
     padding-bottom: 50px;
   }
+
   .years-line {
     height: 5px;
   }
+
   .month::after {
     height: 10px;
     width: 10px;
   }
+
   .month.year::after {
     height: 20px;
     width: 20px;
   }
+
   .box-event h6 {
     font-size: 1.2rem;
     margin-bottom: 0;
   }
 }
+
 @media screen and (max-width: 575px) {
   .title-part .soustitle {
     font-size: 1rem;
   }
+
   .title-part h2 {
     font-size: 1.2rem;
   }
+
   .event.top {
     top: -320px;
     height: 320px;
   }
+
   .event.bottom {
     height: 460px;
   }
+
   .event.bottom .box-event {
     top: 100px;
   }
+
   .event.bottom .right-line {
     height: 36%;
-}
+  }
+
   .title-part {
     width: 90%;
   }
+
   .box-event .description {
     font-family: "Helvetica-light";
     font-size: 0.9rem;
   }
+
   .event {
     width: 290px;
   }
+
   .month {
     width: 75px;
   }
@@ -241,28 +284,32 @@ position: absolute;
     top: -300px;
     height: 300px;
   }
+
   .event.bottom {
     height: 300px;
   }
+
   .event.bottom .box-event {
     top: 85px;
   }
 
 }
-@media (max-width: 575px) and (max-height: 720px) {
-     .event.bottom .box-event {
-        top: 30px;
-    }
-    .event.bottom .right-line {
-        height: 20%;
-    }
-         .event.top {
-        top: -240px;
-        height: 240px;
-    }
-    
-.title-part .soustitle {
-  width: 100%;
-}
-}
 
+@media (max-width: 575px) and (max-height: 720px) {
+  .event.bottom .box-event {
+    top: 30px;
+  }
+
+  .event.bottom .right-line {
+    height: 20%;
+  }
+
+  .event.top {
+    top: -240px;
+    height: 240px;
+  }
+
+  .title-part .soustitle {
+    width: 100%;
+  }
+}

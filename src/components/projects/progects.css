@@ -1,23 +1,28 @@
 .Projects {
   padding: 4% 0%;
 }
+
 .Projects .cards-projects {
   margin: 0%;
 }
-.Projects .cards-projects .row > * {
+
+.Projects .cards-projects .row>* {
   padding: 2%;
 }
+
 .Projects .card-project {
   position: relative;
   border-radius: 16px !important;
 
   outline: none !important;
-   overflow: hidden; 
+  overflow: hidden;
   border: 1px solid var(--pcolor);
 }
+
 .Projects .image-card {
   object-fit: cover;
 }
+
 .Projects .card-body {
   position: absolute;
   height: 100%;
@@ -28,41 +33,50 @@
   backdrop-filter: blur(4.7px);
   -webkit-backdrop-filter: blur(4.7px);
   text-align: center;
-  padding : 20% 0%;
+  padding: 20% 0%;
   color: #ffffff;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
+
 .Projects .card-project:hover .card-body {
   opacity: 1;
 }
+
 .Projects .card-title {
   font-size: 2rem;
   font-family: "PP_Gosha_b";
 }
+
 .Projects .btn-primary {
   margin-top: 30px;
-background: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(45deg, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+  background: #f12711;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #f12711, #f5af19);
+  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(45deg, #f12711, #f5af19);
   font-family: "PP_Gosha_b";
   border: none;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
+
 .Projects .btn-primary:hover {
 
- box-shadow: 0 4px 10px rgb(236, 67, 0);
+  box-shadow: 0 4px 10px rgb(236, 67, 0);
 }
+
 .modal-dialog {
   max-width: 90% !important;
   width: 90% !important;
 }
+
 .project h3 {
   font-family: "PP_Gosha_b";
   font-size: 1.3rem;
   margin: 15px 0px 10px 0px;
 }
+
 .project ul {
   list-style-type: square;
 }
@@ -71,88 +85,114 @@ background: #f12711; /* fallback for old browsers */
   width: 70px;
   margin: 10px;
 }
+
 .project p,
 .project li {
   font-size: 0.9.5rem;
 }
+
 .project .btn-go {
   background-color: var(--pcolor);
   color: #ffffff;
 
   padding: 10px 20px;
 }
-.project .buttons .btn-go:hover{
-border: #f12711 1px solid;
+
+.project .buttons .btn-go:hover {
+  border: #f12711 1px solid;
 }
+
 .project .buttons {
   display: flex;
-  margin: 30px 0px;
-  justify-content: space-between;
+  margin: 30px ;
+  justify-content: flex-end;
 }
+
 .project .row {
   align-items: center;
   padding: 0px 20px;
 }
+
 .modal-content {
   border-radius: 16px;
   border: 2px solid var(--pcolor) !important;
 }
+
 .img_p img {
   width: 100%;
 }
-@media only screen and (max-width: 1199px) {
+
+@media only screen and (min-width: 1440px) {
+  .modal-dialog {
+    max-width: 70% !important;
+    width: 70% !important;
+    margin: 100px auto;
+  }
 }
-@media only screen and (max-width: 991px) {
-}
+
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (max-width: 991px) {}
+
 @media only screen and (max-width: 767px) {
-    .Projects .card-project .card-body {
+  .Projects .card-project .card-body {
     opacity: 1;
     display: flex;
     justify-content: space-around;
     padding: 40px 10px 10px 10px;
     margin: 0% 0% 0% 0%;
-   background: -webkit-linear-gradient(90deg, #f18911dc, #ffffff00); /* Chrome 10-25, Safari 5.1-6 */
-  /* background: linear-gradient(180deg, #f12711, #ffb3004f); */
+    background: -webkit-linear-gradient(90deg, #f18911dc, #ffffff00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(180deg, #f12711, #ffb3004f); */
     backdrop-filter: unset;
     border-radius: 0px;
     height: auto;
     bottom: 0px;
-}
-.Projects .card-title {
+  }
+
+  .Projects .card-title {
     font-size: 1.4rem;
     margin-bottom: 0px;
-}
-.Projects .btn-primary {
+  }
+
+  .Projects .btn-primary {
     margin-top: 10px;
+  }
+
+  .Projects .container-card {
+    text-align: left;
+  }
 }
-.Projects .container-card {
-text-align: left;
-}
-}
+
 @media screen and (max-width: 575px) {
 
-  .Projects .cards-projects .row > * {
+  .Projects .cards-projects .row>* {
     padding: 2% 4%;
   }
+
   .modal-dialog {
     max-width: 98% !important;
     width: 98% !important;
     margin-bottom: 40px;
   }
+
   .project .btn-go {
     padding: 10px;
     font-size: 0.8rem;
     margin: 0px 5px;
   }
+
   .project .row {
     flex-direction: column-reverse;
   }
- .Projects .card-project .card-body{
-align-items: self-start;
+
+  .Projects .card-project .card-body {
+    align-items: self-start;
   }
- .Projects .btn-primary{
-font-size: 0.8rem;
-width: 40%;
-padding: 10px 5px;
+
+  .Projects .btn-primary {
+    font-size: 0.8rem;
+    width: 40%;
+    padding: 10px 5px;
   }
 }

@@ -26,7 +26,7 @@ export default function Technologies() {
   const sliderRef2 = useRef(null);
   const sliderRef3 = useRef(null);
 
-useGSAP(
+  useGSAP(
     () => {
       gsap.from(title.current, {
         opacity: 0,
@@ -39,7 +39,7 @@ useGSAP(
         },
       });
 
-     
+
     });
 
   return (
@@ -56,18 +56,14 @@ useGSAP(
       <div className="slider-container">
         <div className="slider  slider-1">
           <div
-            className="box-tech item1"
-            style={{ border: "#f06529 2px solid" }}
-          >
+            className="box-tech item1">
             <div className="img-tech">
               <img src={html} alt="" />
             </div>
             <div className="name-tech">HTML 5</div>
           </div>
           <div
-            className="box-tech item2"
-            style={{ border: "#f06529 2px solid" }}
-          >
+            className="box-tech item2">
             <div className="img-tech">
               <img src={css} alt="" />
             </div>

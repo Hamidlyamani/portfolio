@@ -59,6 +59,7 @@ export default function Progects() {
       ],
       imageName: [html, css, js, react, axios, php, mysql],
       project_details: project_details_1,
+      code_source: "https://github.com/Hamidlyamani/Tamaioz"
     },
     {
       id: 2,
@@ -75,6 +76,7 @@ export default function Progects() {
       ],
       imageName: [laravel, html, css, js],
       project_details: project_details_2,
+      code_source: "https://github.com/Hamidlyamani/olino"
     },
     {
       id: 3,
@@ -91,6 +93,7 @@ export default function Progects() {
       ],
       imageName: [wordpress, acf, woo, html, css, js],
       project_details: project_details_5,
+      link: "https://cbm.serveurprod.com/"
     },
     {
       id: 4,
@@ -107,6 +110,25 @@ export default function Progects() {
       ],
       imageName: [react, GSAP, html, css, js],
       project_details: project_details_6,
+      code_source: "https://github.com/Hamidlyamani/portfolio"
+    },
+
+    {
+      id: 6,
+      title: "OUI TRAVEL",
+      type: "Web Development with SEO",
+      image_p: project_4,
+      Overview:
+        "Oui Travel Morocco crafts personalized journeys to uncover Morocco's hidden treasures, blending wanderlust with bespoke experiences. Developed during my tenure at ONCLICK Agency, our platform invites you to explore the vibrant souks of Marrakech and the tranquil rhythms of the Sahara, transcending the ordinary to create unforgettable memories.",
+      items: [
+        "Excursion and tour reservations",
+        "Curated lists of excursions and tours",
+        "Gallery showcasing travel experiences",
+        "Contact page for inquiries and bookings",
+      ],
+      imageName: [wordpress, css, ga],
+      project_details: project_details_4,
+      link: "https://ouitravelmorocco.com"
     },
     {
       id: 5,
@@ -123,22 +145,7 @@ export default function Progects() {
       ],
       imageName: [html, css, js, bootstrap, ga],
       project_details: project_details_3,
-    },
-    {
-      id: 6,
-      title: "OUI TRAVEL",
-      type: "Web Development with SEO",
-      image_p: project_4,
-      Overview:
-        "Oui Travel Morocco crafts personalized journeys to uncover Morocco's hidden treasures, blending wanderlust with bespoke experiences. Developed during my tenure at ONCLICK Agency, our platform invites you to explore the vibrant souks of Marrakech and the tranquil rhythms of the Sahara, transcending the ordinary to create unforgettable memories.",
-      items: [
-        "Excursion and tour reservations",
-        "Curated lists of excursions and tours",
-        "Gallery showcasing travel experiences",
-        "Contact page for inquiries and bookings",
-      ],
-      imageName: [wordpress, css, ga],
-      project_details: project_details_4,
+      link: "https://www.olamcompany.com/"
     },
   ];
 
@@ -163,7 +170,7 @@ export default function Progects() {
             opacity: 0.3,
             stagger: { amount: 0.4 },
             scrollTrigger: {
-              
+
               trigger: projectRef, // Or choose a different trigger element
               start: "top 100%",
               end: "top 50%",
@@ -175,7 +182,7 @@ export default function Progects() {
         }
       });
     });
- 
+
 
   const [show, setShow] = useState(false);
   const [selectedContent, setSelectedContent] = useState(null);
