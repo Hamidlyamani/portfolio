@@ -28,7 +28,7 @@
   <h2 style="color: #2980B9;">Getting Started</h2>
   <ol style="padding-left: 20px;">
     <li><strong>Clone the Repository</strong><br>
-      <code style="background-color: #F4F4F4; padding: 2px 5px; border-radius: 3px;">git clone https://github.com/your-username/portfolio.git</code>
+      <code style="background-color: #F4F4F4; padding: 2px 5px; border-radius: 3px;">git clone https://github.com/Hamidlyamani/portfolio.git</code>
     </li>
     <li><strong>Install Dependencies</strong><br>
       <code style="background-color: #F4F4F4; padding: 2px 5px; border-radius: 3px;">npm install</code>
@@ -39,8 +39,6 @@
   </ol>
   <p>View the live preview at <code style="background-color: #F4F4F4; padding: 2px 5px; border-radius: 3px;">http://localhost:5173</code>.</p>
 
-  <h2 style="color: #2980B9;">License</h2>
-  <p>This project is licensed under <strong>[Your License]</strong>. Refer to the LICENSE file for more details.</p>
-
+ 
   <p style="text-align: center; color: #888;">Thank you for visiting my portfolio. Let’s build something amazing together! 🌟</p>
 </body>
