@@ -43,7 +43,7 @@ export default function Project({ content }) {
             <img src={content.project_details} alt="" />
           </div>
           <div className="buttons">
-            {content.code_source && (<a href="" className="btn btn-go">
+            {content.code_source && (<a href={content.code_source} className="btn btn-go">
               VIEW SOURCE CODE
             </a>)}
             {content.link && (

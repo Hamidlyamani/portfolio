@@ -15,7 +15,6 @@ border-bottom: 2px solid #31291f;
 }
 .loaded .loadercontainer{ 
      transform: translateY(-100%); /* Moves the loader to the top */
-
 }
 .nomber_container{
     position: absolute;

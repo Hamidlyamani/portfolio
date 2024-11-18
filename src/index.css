@@ -2,8 +2,7 @@
   font-family: "PP_Gosha_b";
   src: url("");
   src: url("assets/fonts/f_b/PPGoshaSans-Bold.eot");
-  src: url("assets/fonts/f_b/PPGoshaSans-Bold.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("assets/fonts/f_b/PPGoshaSans-Bold.eot?#iefix") format("embedded-opentype"),
     url("assets/fonts/f_b/PPGoshaSans-Bold.woff2") format("woff2"),
     url("assets/fonts/f_b/PPGoshaSans-Bold.woff") format("woff"),
     url("assets/fonts/f_b/PPGoshaSans-Bold.ttf") format("truetype"),
@@ -16,41 +15,37 @@
 @font-face {
   font-family: "PP_Gosha_r";
   src: url("assets/fonts/f-r/PPGoshaSans-Regular.eot");
-  src: url("assets/fonts/f-r/PPGoshaSans-Regular.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("assets/fonts/f-r/PPGoshaSans-Regular.eot?#iefix") format("embedded-opentype"),
     url("assets/fonts/f-r/PPGoshaSans-Regular.woff2") format("woff2"),
     url("assets/fonts/f-r/PPGoshaSans-Regular.woff") format("woff"),
     url("assets/fonts/f-r/PPGoshaSans-Regular.ttf") format("truetype"),
-    url("assets/fonts/f-r/PPGoshaSans-Regular.svg#PPGoshaSans-Regular")
-      format("svg");
+    url("assets/fonts/f-r/PPGoshaSans-Regular.svg#PPGoshaSans-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "consolas";
   src: url("assets/fonts/consolas/Consolas-Bold.eot");
-  src: url("assets/fonts/consolas/Consolas-Bold.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("assets/fonts/consolas/Consolas-Bold.eot?#iefix") format("embedded-opentype"),
     url("assets/fonts/consolas/Consolas-Bold.woff2") format("woff2"),
     url("assets/fonts/consolas/Consolas-Bold.woff") format("woff"),
     url("assets/fonts/consolas/Consolas-Bold.ttf") format("truetype"),
-    url("assets/fonts/consolas/Consolas-Bold.svg#PPGoshaSans-Regular")
-      format("svg");
+    url("assets/fonts/consolas/Consolas-Bold.svg#PPGoshaSans-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Helvetica-light";
   src: url("assets/fonts/helvetica/Helvetica-Light.eot");
-  src: url("assets/fonts/helvetica/Helvetica-Light.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("assets/fonts/helvetica/Helvetica-Light.eot?#iefix") format("embedded-opentype"),
     url("assets/fonts/helvetica/Helvetica-Light.woff2") format("woff2"),
     url("assets/fonts/helvetica/Helvetica-Light.woff") format("woff"),
     url("assets/fonts/helvetica/Helvetica-Light.ttf") format("truetype"),
-    url("assets/fonts/helvetica/Helvetica-Light.svg#Helvetica-Light")
-      format("svg");
+    url("assets/fonts/helvetica/Helvetica-Light.svg#Helvetica-Light") format("svg");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -59,8 +54,7 @@
 @font-face {
   font-family: "Helvetica";
   src: url("assets/fonts/helvetica/Helvetica.eot");
-  src: url("assets/fonts/helvetica/Helvetica.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("assets/fonts/helvetica/Helvetica.eot?#iefix") format("embedded-opentype"),
     url("assets/fonts/helvetica/Helvetica.woff2") format("woff2"),
     url("assets/fonts/helvetica/Helvetica.woff") format("woff"),
     url("assets/fonts/helvetica/Helvetica.ttf") format("truetype"),
@@ -74,57 +68,80 @@
   --pcolor: #f37500;
   --scolor: #3f1e0052;
 }
+
 html {
   scroll-behavior: smooth !important;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 img {
   max-width: 100%;
 }
+
 body {
   font-family: "PP_Gosha_r";
   font-size: 16px;
   overflow-x: hidden;
   cursor: none;
 }
+
 p {
   margin: 0px;
 }
+
 /* For WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+  width: 12px;
+  /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffedbd; /* Background of the scrollbar track */
-  border-radius: 10px; /* Optional: for rounded corners */
+  background: #ffedbd;
+  /* Background of the scrollbar track */
+  border-radius: 10px;
+  /* Optional: for rounded corners */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff9532; /* Scrollbar color */
-  border-radius: 10px; /* Optional: for rounded corners */
-  border: 3px solid #1100ff; /* Optional: gives spacing around the thumb */
+  background-color: #ff9532;
+  /* Scrollbar color */
+  border-radius: 10px;
+  /* Optional: for rounded corners */
+  border: 3px solid #1100ff;
+  /* Optional: gives spacing around the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ff9532; /* Change color on hover */
+  background-color: #ff9532;
+  /* Change color on hover */
 }
 
 /* For Firefox */
 * {
-  scrollbar-width: thin; /* Makes the scrollbar thinner */
-  scrollbar-color: #ff9532 #ffefd0; /* Thumb and track colors */
+  scrollbar-width: thin;
+  /* Makes the scrollbar thinner */
+  scrollbar-color: #ff9532 #ffefd0;
+  /* Thumb and track colors */
 }
 
 /* Optional: Add to any specific element */
 .custom-scrollbar {
-  overflow-y: auto; /* Enables scrollbar for vertical scrolling */
-  max-height: 400px; /* Example to limit height of the element */
+  overflow-y: auto;
+  /* Enables scrollbar for vertical scrolling */
+  max-height: 400px;
+  /* Example to limit height of the element */
 }
+
+.app-container {
+  width: 100%;
+  overflow: hidden;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px !important;
