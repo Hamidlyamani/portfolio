@@ -60,6 +60,7 @@ useGSAP(
                 className="img-service"
                 variant="left"
                 src={service_1}
+                alt="WEB DEVELOPMENT"
               />
               <Card.Body>
                 <Card.Title>WEB DEVELOPMENT</Card.Title>
@@ -73,7 +74,7 @@ useGSAP(
               </Card.Body>
             </Card>
             <Card className="service">
-              <Card.Img className="img-service" variant="top" src={service_2} />
+              <Card.Img className="img-service" variant="top" src={service_2} alt="WEB DESIGN" />
               <Card.Body>
                 <Card.Title>WEB DESIGN</Card.Title>
                 <Card.Text>
@@ -86,7 +87,7 @@ useGSAP(
               </Card.Body>
             </Card>
             <Card className="service">
-              <Card.Img className="img-service" variant="top" src={service_3} />
+              <Card.Img className="img-service" variant="top" alt="SEO" src={service_3} />
               <Card.Body>
                 <Card.Title>SEO</Card.Title>
                 <Card.Text>

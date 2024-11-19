@@ -45,7 +45,7 @@ background-color: #31291f;
 position: relative;
 width: 100%;
 margin-top: 30px;
-animation: grow 5s forwards; 
+animation: grow 4s forwards; 
 }
 
 
@@ -73,7 +73,7 @@ animation: grow 5s forwards;
 .nomber_container .nomber-line{
 height: 20px;
 margin-top: 25px; 
-animation: grow 10s forwards; 
+animation: grow 4s forwards; 
 }
 
 }
@@ -89,7 +89,7 @@ width: 2.8ch;
 .nomber_container .nomber-line{
 height: 10px;
 margin-top: 12px; 
-animation: grow 7s forwards; 
+animation: grow 4s forwards; 
 }
 }
 @media only screen and (max-width: 768px) {
@@ -117,6 +117,6 @@ padding: 0px 10px;
 .nomber_container .nomber-line{
 height: 8px;
 margin-top: 6px; 
-animation: grow 9s forwards; 
+animation: grow 4s forwards; 
 }
 }

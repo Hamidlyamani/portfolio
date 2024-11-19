@@ -19,9 +19,6 @@ export default function App() {
   const [y, setY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
-
-
-  console.log("isLoaded updated to false2");
   useEffect(() => {
     const handlePageLoad = () => {
       setTimeout(() => {

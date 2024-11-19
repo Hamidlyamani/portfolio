@@ -42,6 +42,7 @@
 @media only screen and (max-width: 767px) {
       .left h3 {
         font-size: 1.5rem;
+        line-height: unset;
     }
     .right p {
     font-size: 0.9rem;

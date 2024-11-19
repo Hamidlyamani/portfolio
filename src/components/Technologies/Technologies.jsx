@@ -58,51 +58,51 @@ export default function Technologies() {
           <div
             className="box-tech item1">
             <div className="img-tech">
-              <img src={html} alt="" />
+              <img src={html} alt="html" />
             </div>
             <div className="name-tech">HTML 5</div>
           </div>
           <div
             className="box-tech item2">
             <div className="img-tech">
-              <img src={css} alt="" />
+              <img src={css} alt="css" />
             </div>
             <div className="name-tech">CSS 3</div>
           </div>
           <div className="box-tech item3">
             <div className="img-tech">
-              <img src={bootstrap} alt="" />
+              <img src={bootstrap} alt="bootstrap" />
             </div>
             <div className="name-tech">bootstrap</div>
           </div>
           <div className="box-tech item4">
             <div className="img-tech">
-              <img src={js} alt="" />
+              <img src={js} alt="js" />
             </div>
             <div className="name-tech">Javasript</div>
           </div>
 
           <div className="box-tech item5">
             <div className="img-tech">
-              <img src={php} alt="" />
+              <img src={php} alt="php" />
             </div>
             <div className="name-tech">php</div>
           </div>
           <div className="box-tech item6">
             <div className="img-tech">
-              <img src={laravel} alt="" />
+              <img src={laravel} alt="laravel" />
             </div>
             <div className="name-tech">laravel</div>
           </div>
           <div className="box-tech item7">
             <div className="img-tech">
-              <img src={react} alt="" />
+              <img src={react} alt="react" />
             </div>
             <div className="name-tech">REACT</div>
           </div>
           <div className="box-tech item8">
             <div className="img-tech">
-              <img src={axios} alt="" />
+              <img src={axios} alt="axios" />
             </div>
             <div className="name-tech">Axios</div>
           </div>
@@ -110,50 +110,50 @@ export default function Technologies() {
         <div className="slider slider-2">
           <div className="box-tech item1">
             <div className="img-tech">
-              <img src={wordpress} alt="" />
+              <img src={wordpress} alt="wordpress" />
             </div>
             <div className="name-tech">Wordpress</div>
           </div>
           <div className="box-tech  item2">
             <div className="img-tech">
-              <img src={jquery} alt="" />
+              <img src={jquery} alt="jquery" />
             </div>
             <div className="name-tech">jquery</div>
           </div>
 
           <div className="box-tech  item3">
             <div className="img-tech">
-              <img src={mysql} alt="" />
+              <img src={mysql} alt="mysql" />
             </div>
             <div className="name-tech">mysql</div>
           </div>
           <div className="box-tech  item4">
             <div className="img-tech">
-              <img src={git} alt="" />
+              <img src={git} alt="git" />
             </div>
             <div className="name-tech">git/github</div>
           </div>
           <div className="box-tech  item5">
             <div className="img-tech">
-              <img src={npm} alt="" />
+              <img src={npm} alt="npm" />
             </div>
             <div className="name-tech">npm</div>
           </div>
           <div className="box-tech  item6">
             <div className="img-tech">
-              <img src={figma} alt="" />
+              <img src={figma} alt="figma" />
             </div>
             <div className="name-tech">figma</div>
           </div>
           <div className="box-tech  item7">
             <div className="img-tech">
-              <img src={xd} alt="" />
+              <img src={xd} alt="xd" />
             </div>
             <div className="name-tech">Adobe xd</div>
           </div>
           <div className="box-tech  item8">
             <div className="img-tech">
-              <img src={ga} alt="" />
+              <img src={ga} alt="ga" />
             </div>
             <div className="name-tech">Google Analytics</div>
           </div>

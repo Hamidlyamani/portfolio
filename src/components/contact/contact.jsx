@@ -94,7 +94,7 @@ useGSAP(
                     <input
                       type="text"
                       name="name"
-                      placeholder="What's your name?"
+                      placeholder="What's your name ?"
                       className="inptFld"
                       required
                     />
@@ -104,17 +104,7 @@ useGSAP(
                     <input
                       type="email"
                       name="email"
-                      placeholder="What's your email?"
-                      className="inptFld"
-                      required
-                    />
-                  </div>
-
-                  <div className="col-sm-12">
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="What's your Phone Number"
+                      placeholder="What's your email ?"
                       className="inptFld"
                       required
                     />
@@ -124,7 +114,7 @@ useGSAP(
                     <input
                       type="text"
                       name="sub"
-                      placeholder="What service are you looking for?"
+                      placeholder="What service are you looking for ?"
                       className="inptFld"
                       required
                     />
@@ -160,7 +150,7 @@ useGSAP(
                 target="_blank"
               >
                 <div className="image">
-                  <img src={linkdin} alt="" />
+                  <img src={linkdin} alt="linkdIn" />
                 </div>
                 <p className="name">linkedIn</p>
               </a>
@@ -171,7 +161,7 @@ useGSAP(
                 target="_blank"
               >
                 <div className="image">
-                  <img src={github} alt="" />
+                  <img src={github} alt="github" />
                 </div>
                 <p className="name">GitHub</p>
               </a>
@@ -181,7 +171,7 @@ useGSAP(
                 target="_blank"
               >
                 <div className="image">
-                  <img src={behance} alt="" />
+                  <img src={behance} alt="Behance" />
                 </div>
                 <p className="name">Behance</p>
               </a>
@@ -191,7 +181,7 @@ useGSAP(
                 target="_blank"
               >
                 <div className="image">
-                  <img src={insta} alt="" />
+                  <img src={insta} alt="Instagram" />
                 </div>
                 <p className="name">Instagram</p>
               </a>
@@ -201,7 +191,7 @@ useGSAP(
                 target="_blank"
               >
                 <div className="image">
-                  <img src={whatsapp} alt="" />
+                  <img src={whatsapp} alt="Whatsapp" />
                 </div>
                 <p className="name">Whatsapp</p>
               </a>

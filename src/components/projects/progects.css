@@ -104,7 +104,7 @@
 
 .project .buttons {
   display: flex;
-  margin: 30px ;
+  margin: 30px;
   justify-content: flex-end;
 }
 
@@ -162,6 +162,18 @@
   .Projects .container-card {
     text-align: left;
   }
+
+  .project .row {
+    padding: 0px;
+  }
+    .project .buttons {
+      display: flex;
+      margin: 20px auto;
+    }
+    .project .buttons a {
+      margin: 0px auto;
+      padding: 10px 20px;
+    }
 }
 
 @media screen and (max-width: 575px) {

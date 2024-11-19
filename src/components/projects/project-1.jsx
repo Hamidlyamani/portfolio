@@ -40,7 +40,7 @@ export default function Project({ content }) {
         </div>
         <div className="col-lg-5 image">
           <div className="img_p">
-            <img src={content.project_details} alt="" />
+            <img src={content.project_details} alt={content.title} />
           </div>
           <div className="buttons">
             {content.code_source && (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./hero.css";
 import logo from "../../assets/imgs/logo.png";
-import pc2 from "../../assets/imgs/g1.png";
+import pc2 from "../../assets/imgs/g1.webp";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -65,12 +65,12 @@ const Hero = ({ locoScroll }) => {
         <div className="top-nav container">
           <div className="logo-Name">
             <div className="logo">
-              <img src={logo} alt="E" />
+              <img src={logo} alt="Elyamani hamid logo" />
             </div>
-            <p className="name">
+            <h1 className="name">
               ELYAMANI <br />
               hamid
-            </p>
+            </h1>
           </div>
           <div className="cta" data-scroll="#contact">
             My Resume
@@ -79,7 +79,7 @@ const Hero = ({ locoScroll }) => {
         <div className="container_text_img container">
           <div className="content">
             <div className="image-hero-src">
-              <img src={pc2} alt="" />
+              <img src={pc2} alt="ELYAMANI HAMID IMAGE" />
             </div>
             <div className="web ">web</div>
             <div className="web  outline">web</div>

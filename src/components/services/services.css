@@ -98,4 +98,7 @@ background: #f12711; /* fallback for old browsers */
   .services .card-title {
     font-size: 1.3rem;
   }
+    .services .serial-number {
+      top: 25px;
+    }
 }

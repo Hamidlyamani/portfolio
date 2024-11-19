@@ -15,20 +15,22 @@ header {
   display: flex;
   align-items: center;
 }
-.logo-Name p {
+
+.logo-Name h1 {
   margin: 0px;
   padding-left: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
   font-family: "PP_Gosha_b";
 }
+
 .cta {
-  background: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    45deg,
-    #f12711,
-    #f5af19
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: #f12711;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg,
+      #f12711,
+      #f5af19);
+  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(45deg, #f12711, #f5af19);
   padding: 15px 30px;
   border-radius: 8px;
@@ -37,14 +39,17 @@ header {
   cursor: pointer;
   transition: all 0.6s ease;
 }
+
 .container_text_img {
   position: relative;
 }
+
 .content {
   position: relative;
   height: calc(100vh - 100px);
   margin: auto;
 }
+
 .web {
   text-align: center;
   font-family: "consolas";
@@ -65,11 +70,12 @@ header {
   -webkit-text-stroke: 5px rgba(224, 218, 212, 0.596);
   color: transparent;
 }
+
 .image-hero-src {
   height: 100%;
   width: 100%;
   left: 0px;
-  background-image: url("../../assets/imgs/g1.png");
+  background-image: url("../../assets/imgs/g1.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
@@ -89,10 +95,12 @@ header {
   line-height: 0.8;
   z-index: 4;
 }
+
 .de {
   position: relative;
   display: inline-block;
 }
+
 .de::before {
   content: "junior";
   position: absolute;
@@ -118,6 +126,7 @@ header {
   font-family: "PP_Gosha_r";
   font-size: 2rem;
 }
+
 .blob1,
 .blob2,
 .blob3,
@@ -132,12 +141,12 @@ header {
   width: 400px;
   height: 400px;
   opacity: 0.2;
-  background: #f18e0c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    circle,
-    #f17b0c,
-    #19f5d89d
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: #f18e0c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(circle,
+      #f17b0c,
+      #19f5d89d);
+  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(circle, #f17b0c, #19f5d89d);
   top: -100px;
   left: -100px;
@@ -147,33 +156,37 @@ header {
   width: 500px;
   height: 500px;
   opacity: 0.3;
-  background: radial-gradient(
-    circle,
-    rgb(235, 223, 54) 0%,
-    rgb(255, 207, 102) 100%
-  );
+  background: radial-gradient(circle,
+      rgb(235, 223, 54) 0%,
+      rgb(255, 207, 102) 100%);
   bottom: -150px;
   right: -200px;
 }
+
 .container_text_img img {
   display: none;
 }
+
 @media only screen and (max-width: 1199px) {
   .web {
     font-size: 37rem;
   }
+
   .developer-text {
     font-size: 10.4rem;
   }
+
   .de::before {
     top: -30px;
     font-size: 3.5rem;
   }
 }
+
 @media only screen and (max-width: 991px) {
   .container_text_img {
     margin: auto;
   }
+
   .container_text_img img {
     margin: auto;
   }
@@ -181,14 +194,17 @@ header {
   .web {
     font-size: 27rem;
   }
+
   .developer-text {
     font-size: 7.78rem;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .logo-Name p {
     padding-left: 10px;
   }
+
   .cta {
     background: var(--pcolor);
     padding: 10px 20px;
@@ -197,6 +213,7 @@ header {
   .content {
     height: auto;
   }
+
   .image-hero-src {
     top: 0px;
     height: unset;
@@ -204,47 +221,59 @@ header {
     bottom: unset;
     position: relative;
   }
+
   .de::before {
     left: 0px;
   }
+
   .container_text_img {
     height: auto;
   }
+
   .container_text_img img {
     display: block;
   }
+
   .web {
     font-size: 20rem;
     bottom: 0%;
     position: relative;
   }
+
   .developer-text {
     font-size: 5.78rem;
     bottom: 0%;
     position: relative;
+    line-height: unset;
   }
+
   .de::before {
     top: -32px;
     font-size: 2.5rem;
   }
+
   .web.outline {
     display: none;
   }
+
   .blob1 {
-  width: 100px;
-  height: 100px;
+    width: 100px;
+    height: 100px;
     top: 0px;
-  left: 0px;
+    left: 0px;
   }
+
   .blob2 {
-display: none;
+    display: none;
   }
 }
+
 @media only screen and (max-width: 576px) {
   .image-hero-src {
     top: 0;
     bottom: unset;
   }
+
   .web {
     font-size: 14.3rem;
     bottom: 0%;
@@ -260,28 +289,34 @@ display: none;
     width: 375px;
   }
 }
+
 @media only screen and (max-width: 400px) {
   .web {
     font-size: 11.5rem;
   }
+
   .developer-text {
     font-size: 3.3rem;
   }
+
   .de::before {
     top: -20px;
     font-size: 1.6rem;
   }
 }
+
 @media (min-width: 768px) and (min-height: 992px) {
   .image-hero-src {
     height: 60%;
   }
 }
+
 @media (min-width: 768px) and (min-height: 750px) {
   .image-hero-src {
     height: 80%;
   }
 }
+
 @media (min-width: 768px) and (max-height: 750px) {
   .image-hero-src {
     height: 100%;
