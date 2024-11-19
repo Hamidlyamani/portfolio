@@ -1,24 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./hero.css";
 import logo from "../../assets/imgs/logo.png";
-import pc from "../../assets/imgs/g1.png";
+import pc2 from "../../assets/imgs/g1.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = ({ locoScroll }) => {
-  const handleClick = useCallback(
-    // (e) => {
-    //   e.preventDefault();
-    //   const targetScroll = e.currentTarget.getAttribute("data-scroll");
-    //   if (locoScroll.current && targetScroll) {
-    //     locoScroll.current.update();
-    //     locoScroll.current.scrollTo(targetScroll);
-    //     console.log(locoScroll.current);
-    //   }
-    // },
-    // [locoScroll]
-  );
   const scaleHeader = () => {
     const scalable = document.querySelectorAll(".scale--js");
     const margin = 0;
@@ -84,14 +72,14 @@ const Hero = ({ locoScroll }) => {
               hamid
             </p>
           </div>
-          <div className="cta" data-scroll="#contact" onClick={handleClick}>
+          <div className="cta" data-scroll="#contact">
             My Resume
           </div>
         </div>
         <div className="container_text_img container">
           <div className="content">
             <div className="image-hero-src">
-              <img src={pc} alt="" />
+              <img src={pc2} alt="" />
             </div>
             <div className="web ">web</div>
             <div className="web  outline">web</div>

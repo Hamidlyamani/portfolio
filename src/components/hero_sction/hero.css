@@ -69,7 +69,7 @@ header {
   height: 100%;
   width: 100%;
   left: 0px;
-  background-image: url("../../assets/imgs/Layer1.png");
+  background-image: url("../../assets/imgs/g1.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
@@ -229,6 +229,15 @@ header {
   }
   .web.outline {
     display: none;
+  }
+  .blob1 {
+  width: 100px;
+  height: 100px;
+    top: 0px;
+  left: 0px;
+  }
+  .blob2 {
+display: none;
   }
 }
 @media only screen and (max-width: 576px) {

@@ -48,6 +48,12 @@
     padding-top: 5px;
      margin-left: 0px; 
 }
+ .blob3 {
+            width: 200px;
+            height: 200px;
+             left: unset;
+             right: -30%;
+ }
 }
 @media screen and (max-width: 575px) {
   .left h3 {
