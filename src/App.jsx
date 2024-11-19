@@ -15,27 +15,33 @@ import Loader from "./components/loader/loader";
 
 export default function App() {
   const scrollContainerRef = useRef(null);
-  const fixedElementRef = useRef(null);
-  const locoScrollRef = useRef(null);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
+
+
+  console.log("isLoaded updated to false2");
   useEffect(() => {
     const handlePageLoad = () => {
-      // Wait for an additional 2 seconds before setting isLoaded to true
       setTimeout(() => {
         setIsLoaded(true);
-      }, 2000); // 2000 milliseconds = 2 seconds
+      }, 2000);
     };
 
-    // When the page has fully loaded
-    window.addEventListener("load", handlePageLoad);
+    if (document.readyState === "complete") {
+      // If the page is already loaded
+      handlePageLoad();
+    } else {
+      // Add event listener for load event
+      window.addEventListener("load", handlePageLoad);
+    }
 
     return () => {
       window.removeEventListener("load", handlePageLoad);
     };
   }, []);
+
 
   const handleMouseMovement = (e) => {
     setX(e.clientX);
@@ -50,21 +56,14 @@ export default function App() {
   }, []);
 
   return (
-    <div className={`app-container ${isLoaded ? "loaded" : ""}`}>
+    <div className={`app-container ${isLoaded ? "loaded" : "not_loaded"}`}>
       <Loader />
-      <div
-        className="smooth-wrapper"
-        id="scroll-container"
-        ref={scrollContainerRef}
-      >
-        <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <Technologies />
-        <Contact />
-      </div>
-
+      <Hero />
+      <About />
+      <Services />
+      <Projects />
+      <Technologies />
+      <Contact />
       <Mouse x={x} y={y} />
       <Nav />
     </div>
