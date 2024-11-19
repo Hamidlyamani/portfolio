@@ -32,8 +32,8 @@ export default function Project({ content }) {
             <div className="imgs">
               {content.imageName
                 ? content.imageName.map((image, index) => (
-                  <img key={index} src={image} alt={`tech-${index}`} />
-                ))
+                    <img key={index} src={image} alt={`tech-${index}`} />
+                  ))
                 : ""}
             </div>
           </div>
@@ -43,11 +43,17 @@ export default function Project({ content }) {
             <img src={content.project_details} alt="" />
           </div>
           <div className="buttons">
-            {content.code_source && (<a href="" className="btn btn-go">
-              VIEW SOURCE CODE
-            </a>)}
+            {content.code_source && (
+              <a
+                href={content.code_source}
+                target="_blank"
+                className="btn btn-go"
+              >
+                VIEW SOURCE CODE
+              </a>
+            )}
             {content.link && (
-              <a href={content.link} className="btn btn-go">
+              <a href={content.link} target="_blank" className="btn btn-go">
                 VISIT SITE
               </a>
             )}

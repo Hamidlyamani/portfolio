@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./hero.css";
 import logo from "../../assets/imgs/logo.png";
-import pc from "../../assets/imgs/Layer1.png";
+import pc from "../../assets/imgs/g1.png";
 import mobile from "../../assets/imgs/mobile.png";
 import Nav from "../parts/nav";
 import gsap from "gsap";
