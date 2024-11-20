@@ -38,6 +38,7 @@ header {
   color: #fff;
   cursor: pointer;
   transition: all 0.6s ease;
+  text-decoration: none;
 }
 
 .container_text_img {
@@ -288,6 +289,9 @@ header {
   .image-hero-src img {
     width: 375px;
   }
+        .de::before {
+          font-size: 2rem;
+        }
 }
 
 @media only screen and (max-width: 400px) {

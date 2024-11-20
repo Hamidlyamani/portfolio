@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -13,13 +13,18 @@ import whatsapp from "../../assets/imgs/social/whatsapp.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const title = useRef(null);
   const left = useRef(null);
   const right = useRef(null);
-useGSAP(
+  useGSAP(
     () => {
       gsap.from(title.current, {
         opacity: 0,
@@ -40,9 +45,9 @@ useGSAP(
           toggleActions: "play play pause reverse",
         },
       });
-     
+
       gsap.from(right.current, {
-        opacity:0,
+        opacity: 0,
         duration: 0.9,
         scrollTrigger: {
           trigger: right.current,
@@ -50,8 +55,69 @@ useGSAP(
           toggleActions: "play play pause reverse",
         },
       });
-     
+
     });
+
+
+
+
+
+
+
+
+
+
+
+  const [formData, setFormData] = useState({ name: '', email: '', sub: '', message: '' });
+  const [responseMessage, setResponseMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const domain = window.location.origin;
+
+      const response = await fetch(`${domain}/contact.php`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          sub: formData.sub,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json(); // Parse JSON response
+      console.log(result)
+      setResponseMessage(result.message);
+      Swal.fire({
+        title: "Message Received",
+        text: "We will respond in approximately 24 Heures",
+        icon: 'success'
+      });
+    } catch (error) {
+      setResponseMessage('An error occurred. Please try again.');
+      Swal.fire({
+        title: "An error occurred.",
+        text: "Please try again.",
+        icon: 'warning'
+      });
+    }
+  };
+
+
+
+
+
+
 
 
   return (
@@ -88,13 +154,13 @@ useGSAP(
               </div>
             </div>
             <div className="col-xl-8 form-contact" ref={right}>
-              <form action="#" className="contFrm" method="POST">
+              <form onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-sm-6">
                     <input
                       type="text"
-                      name="name"
-                      placeholder="What's your name ?"
+                      name="name" value={formData.name} onChange={handleChange}
+                      placeholder="What's your name ?*"
                       className="inptFld"
                       required
                     />
@@ -103,8 +169,8 @@ useGSAP(
                   <div className="col-sm-6">
                     <input
                       type="email"
-                      name="email"
-                      placeholder="What's your email ?"
+                      name="email" value={formData.email} onChange={handleChange}
+                      placeholder="What's your email ?*"
                       className="inptFld"
                       required
                     />
@@ -113,10 +179,9 @@ useGSAP(
                   <div className="col-sm-12">
                     <input
                       type="text"
-                      name="sub"
+                      name="sub" value={formData.sub} onChange={handleChange}
                       placeholder="What service are you looking for ?"
                       className="inptFld"
-                      required
                     />
                   </div>
 
@@ -124,22 +189,24 @@ useGSAP(
                     <textarea
                       className="inptFld"
                       rows=""
-                      cols=""
-                      placeholder="Your Message..."
+                      cols="" value={formData.message} onChange={handleChange}
+                      name="message"
+                      placeholder="Your Message...*"
                       required
                     ></textarea>
                   </div>
 
-                  <div className="col-12 submet-botton">
-                    <input
+                  <div className="col-12 submet-botton ">
+                    <button
                       type="submit"
                       name="submit"
-                      value="SEND YOUR MESSAGE"
-                      className="inptBtn"
-                    />
+                      className="inptBtn btn-border">
+                      SEND YOUR MESSAGE
+</button>
                   </div>
                 </div>
               </form>
+
             </div>
           </div>
           <div className="social_media_copyright">

@@ -152,7 +152,7 @@
   -webkit-box-shadow: 6px 6px 16px 3px #eee6e1;
   -moz-box-shadow: 6px 6px 16px 3px #eee6e1;
   box-shadow: 6px 6px 16px 3px #eee6e1;
-  background: rgba(224, 224, 224, 0.45);
+  background: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 8px;
 }

@@ -55,7 +55,7 @@ const Hero = ({ locoScroll }) => {
     };
   }, []);
 
-  
+
 
   return (
     <>
@@ -72,9 +72,9 @@ const Hero = ({ locoScroll }) => {
               hamid
             </h1>
           </div>
-          <div className="cta" data-scroll="#contact">
+          <a href="elyamani_hamid.pdf" className="cta btn-border" data-scroll="#contact">
             My Resume
-          </div>
+          </a>
         </div>
         <div className="container_text_img container">
           <div className="content">

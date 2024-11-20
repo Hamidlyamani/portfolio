@@ -143,6 +143,56 @@ p {
   overflow: hidden;
 }
 
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+  background-color: #ff912e !important;
+}
+
+/* 13. hover-border-3 */
+.btn-border {
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-border::before,
+.btn-border::after {
+  position: absolute;
+  content: "";
+}
+
+.btn-border::before,
+.btn-border::after {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+      border-radius: 10px;
+  transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
+}
+
+.btn-border::before {
+    top: -4px;
+      right: -4px;
+  border-top: 1px solid var( --pcolor);
+  border-left: 1px solid var( --pcolor);
+}
+
+.btn-border::after {
+  bottom: -4px;
+  left: -4px;
+  border-bottom: 1px solid var( --pcolor);
+  border-right: 1px solid var( --pcolor);
+}
+
+.btn-border:hover::before,
+.btn-border:hover::after {
+  width:calc(100% + 8px) ;
+  height: calc(100% + 8px);
+  opacity: 1;
+  transition: width 0.2s linear, height 0.15s 0.2s linear, opacity 0s;
+}
+
+
+
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px !important;
