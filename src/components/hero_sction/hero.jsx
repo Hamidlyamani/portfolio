@@ -3,57 +3,48 @@ import "./hero.css";
 import logo from "../../assets/imgs/logo.png";
 import pc2 from "../../assets/imgs/g1.webp";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = ({ locoScroll }) => {
-  const scaleHeader = () => {
-    const scalable = document.querySelectorAll(".scale--js");
-    const margin = 0;
-    scalable.forEach((item) => {
-      const scalableContainer = item.parentNode;
-      item.style.transform = "scale(1)";
-
-      const scalableContainerWidth = scalableContainer.offsetWidth - margin;
-      const scalableWidth = item.offsetWidth;
-
-      // Scale the item based on container width
-      item.style.transform =
-        "scale(" + scalableContainerWidth / scalableWidth + ")";
-
-      // Update the container width based on the scaled width of the item
-      scalableContainer.style.width = item.getBoundingClientRect().width + "px";
-    });
-  };
-
-  const debounce = (func, wait, immediate) => {
-    let timeout;
-    return (...args) => {
-      const context = this;
-
-      const later = () => {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      const callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
-
-  useEffect(() => {
-    const myScaleFunction = debounce(() => {
-      scaleHeader();
-    }, 250);
-    myScaleFunction();
-
-    window.addEventListener("resize", myScaleFunction);
-
-    return () => {
-      window.removeEventListener("resize", myScaleFunction);
-    };
-  }, []);
+const Hero = () => {
+  
+useGSAP(() => {
+  gsap.from(".image-hero-src", {
+    bottom: "-100px",
+    opacity:0,
+    duration: 1.4,
+    delay: 0.3,
+    scrollTrigger: {
+      trigger: ".image-hero-src",
+      start: "0% 100%",
+      toggleActions: "play play pause reverse",
+    },
+  });
+  gsap.from(".web", {
+    bottom: "-100px",
+    duration: 1.2,
+    opacity:0,
+    delay:0.3,
+    scrollTrigger: {
+      trigger: ".web",
+      start: "0% 100%",
+      toggleActions: "play play pause reverse",
+    },
+  });
+  gsap.from(".developer-text", {
+    bottom: "-100px",
+    duration: 1.2,
+    opacity:0,
+    delay:0.6,
+    scrollTrigger: {
+      trigger: ".developer-text",
+      start: "0% 100%",
+      toggleActions: "play play pause reverse",
+    },
+  });
+});
+ 
 
 
 

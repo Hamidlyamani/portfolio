@@ -8,7 +8,7 @@ export default function Loader() {
     if (count < 100) {
       const timer = setInterval(() => {
         setCount((prevCount) => prevCount + 1);
-      }, 10); // Adjust the interval time (in ms) as needed
+      }, 8); // Adjust the interval time (in ms) as needed
 
       return () => clearInterval(timer);
     }

@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import project_1 from "../../assets/imgs/img-1.webp";
 import project_2 from "../../assets/imgs/img-2.webp";
 import project_3 from "../../assets/imgs/img-3.webp";
-import project_4 from "../../assets/imgs/img-4.webp";
+import project_4 from "../../assets/imgs/img-4.png";
 import project_5 from "../../assets/imgs/img-5.webp";
 import project_6 from "../../assets/imgs/img-6.webp";
 import Button from "react-bootstrap/Button";
@@ -26,10 +26,11 @@ import ga from "../../assets/imgs/tech/g-a.png";
 import wordpress from "../../assets/imgs/tech/wordpress.png";
 import acf from "../../assets/imgs/tech/acf.png";
 import woo from "../../assets/imgs/tech/woo.png";
+import tailwind from "../../assets/imgs/tech/tailwind.svg";
 import project_details_1 from "../../assets/imgs/project_details_1.webp";
 import project_details_2 from "../../assets/imgs/project_details_2.webp";
 import project_details_3 from "../../assets/imgs/project_details_3.webp";
-import project_details_4 from "../../assets/imgs/project_details_4.webp";
+import project_details_4 from "../../assets/imgs/project_details_4.png";
 import project_details_5 from "../../assets/imgs/project_details_5.webp";
 import project_details_6 from "../../assets/imgs/project_details_6.webp";
 import gsap from "gsap";
@@ -59,7 +60,7 @@ export default function Progects() {
       ],
       imageName: [html, css, js, react, axios, php, mysql],
       project_details: project_details_1,
-      code_source: "https://github.com/Hamidlyamani/Tamaioz"
+      code_source: "https://github.com/Hamidlyamani/Tamaioz",
     },
     {
       id: 2,
@@ -76,25 +77,27 @@ export default function Progects() {
       ],
       imageName: [laravel, html, css, js],
       project_details: project_details_2,
-      code_source: "https://github.com/Hamidlyamani/olino"
+      code_source: "https://github.com/Hamidlyamani/olino",
     },
     {
-      id: 3,
-      title: "CBM menuiserie",
-      image_p: project_5,
+      id: 6,
+      title: "One Task at a Time",
       type: "Web Development ",
+      image_p: project_4,
       Overview:
-        "I created this demo to practice my skills in WordPress by integrating custom HTML, building themes, and using ACF for flexible content management. The project showcases CBM Menuiserie, a fictional company specializing in standard and custom wooden joinery. This allowed me to refine my abilities in theme development and WordPress customization.",
+        "One Task at a Time is a beautifully crafted landing page designed to celebrate the joy of accomplishment. This project showcases an application concept that helps users track progress, stay motivated, and celebrate successes. The landing page emphasizes simplicity and productivity, making it an engaging experience for visitors. <br>This is not a real application—it was created as a practice project to explore and master Tailwind CSS while demonstrating my front-end development skills in my portfolio.",
       items: [
-        "Custom Dashboard with WooCommerce Integration: Manage products (add, update, remove) from the WordPress admin panel.",
-        "Project Quote Request Form: Allows users to request quotes for custom joinery projects.",
-        "Contact Form: Simple way for visitors to send inquiries directly from the site.",
-        "ACF Custom Fields: Streamlines content management for standard and custom projects.",
+        "Seamless experience across all devices.",
+        "Dynamic interface with fluid, iOS-inspired animations.",
+        "Clean, accessible, and visually appealing design.",
+        "Elegant, functional newsletter form for updates.",
       ],
-      imageName: [wordpress, acf, woo, html, css, js],
-      project_details: project_details_5,
-      link: "https://cbm.serveurprod.com/"
+      imageName: [tailwind, css, ga],
+      project_details: project_details_4,
+      link: "https://saas-lp.onrender.com/",
+      code_source: "https://github.com/Hamidlyamani/saas-lp",
     },
+
     {
       id: 4,
       title: "My Personal Portfolio",
@@ -110,25 +113,7 @@ export default function Progects() {
       ],
       imageName: [react, GSAP, html, css, js],
       project_details: project_details_6,
-      code_source: "https://github.com/Hamidlyamani/portfolio"
-    },
-
-    {
-      id: 6,
-      title: "OUI TRAVEL",
-      type: "Web Development with SEO",
-      image_p: project_4,
-      Overview:
-        "Oui Travel Morocco crafts personalized journeys to uncover Morocco's hidden treasures, blending wanderlust with bespoke experiences. Developed during my tenure at ONCLICK Agency, our platform invites you to explore the vibrant souks of Marrakech and the tranquil rhythms of the Sahara, transcending the ordinary to create unforgettable memories.",
-      items: [
-        "Excursion and tour reservations",
-        "Curated lists of excursions and tours",
-        "Gallery showcasing travel experiences",
-        "Contact page for inquiries and bookings",
-      ],
-      imageName: [wordpress, css, ga],
-      project_details: project_details_4,
-      link: "https://ouitravelmorocco.com"
+      code_source: "https://github.com/Hamidlyamani/portfolio",
     },
     {
       id: 5,
@@ -145,7 +130,24 @@ export default function Progects() {
       ],
       imageName: [html, css, js, bootstrap, ga],
       project_details: project_details_3,
-      link: "https://www.olamcompany.com/"
+      link: "https://www.olamcompany.com/",
+    },
+    {
+      id: 3,
+      title: "CBM menuiserie",
+      image_p: project_5,
+      type: "Web Development ",
+      Overview:
+        "I created this demo to practice my skills in WordPress by integrating custom HTML, building themes, and using ACF for flexible content management. The project showcases CBM Menuiserie, a fictional company specializing in standard and custom wooden joinery. This allowed me to refine my abilities in theme development and WordPress customization.",
+      items: [
+        "Custom Dashboard with WooCommerce Integration: Manage products (add, update, remove) from the WordPress admin panel.",
+        "Project Quote Request Form: Allows users to request quotes for custom joinery projects.",
+        "Contact Form: Simple way for visitors to send inquiries directly from the site.",
+        "ACF Custom Fields: Streamlines content management for standard and custom projects.",
+      ],
+      imageName: [wordpress, acf, woo, html, css, js],
+      project_details: project_details_5,
+      link: "https://cbm.serveurprod.com/",
     },
   ];
 

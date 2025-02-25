@@ -18,27 +18,31 @@ export default function App() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true); // Show content after 2 seconds
+    }, 1400);
+
     const handlePageLoad = () => {
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 2000);
+      setIsContentLoaded(true); // Content is fully loaded
     };
 
     if (document.readyState === "complete") {
-      // If the page is already loaded
       handlePageLoad();
     } else {
-      // Add event listener for load event
       window.addEventListener("load", handlePageLoad);
     }
 
     return () => {
+      clearTimeout(timer); // Clear timer if component unmounts
       window.removeEventListener("load", handlePageLoad);
     };
   }, []);
-
+  console.log("tryyyyyyyyyyyyyyyy" + isLoaded);
+  // Display content only if both loading animation and page load are complete
+  const shouldShowContent = isLoaded && isContentLoaded;
 
   const handleMouseMovement = (e) => {
     setX(e.clientX);
@@ -54,15 +58,19 @@ export default function App() {
 
   return (
     <div className={`app-container ${isLoaded ? "loaded" : "not_loaded"}`}>
-      <Loader />
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <Technologies />
-      <Contact />
-      <Mouse x={x} y={y} />
-      <Nav />
+    <Loader />
+      {shouldShowContent && (
+        <div>
+          <Hero />
+          <About />
+          <Services />
+          <Projects />
+          <Technologies />
+          <Contact />
+          <Mouse x={x} y={y} />
+          <Nav />
+        </div>
+      )}
     </div>
   );
 }
