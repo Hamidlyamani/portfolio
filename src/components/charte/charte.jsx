@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import "./charte.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -298,7 +298,6 @@ export default function Charte() {
               <div className="month  year">
                 <div className="year-number">2025</div>
               </div>
-
               <div className="month nosircle lastmonth "></div>
             </div>
           </div>

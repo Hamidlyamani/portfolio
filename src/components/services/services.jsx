@@ -11,7 +11,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
-  const sircle = useRef(null);
   const service = useRef(null);
   const title = useRef(null);
 
@@ -42,9 +41,7 @@ useGSAP(
 
   return (
     <section className="services" id="service" ref={service}>
-      {/* <div className="container-sircle">
-        <div className="sircleScale" ref={sircle}></div>
-      </div> */}
+
       <div className="container">
         <div className="title-part" ref={title}>
           <div className="soustitle">

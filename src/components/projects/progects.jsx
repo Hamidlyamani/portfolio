@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./progects.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";

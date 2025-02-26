@@ -1,7 +1,4 @@
 import React, { StrictMode, useEffect, useRef, useState } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./App.css";
 import Hero from "./components/hero_sction/hero";
 import About from "./components/about/about";
@@ -14,7 +11,6 @@ import Nav from "./components/parts/nav";
 import Loader from "./components/loader/loader";
 
 export default function App() {
-  const scrollContainerRef = useRef(null);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,7 +23,6 @@ export default function App() {
     };
 
     if (document.readyState === "complete") {
-      // If the page is already loaded
       handlePageLoad();
     } else {
       // Add event listener for load event

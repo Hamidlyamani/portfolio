@@ -1,5 +1,5 @@
 import "./about.css";
-import React, { useLayoutEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import Charte from "./../charte/charte";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -62,7 +62,6 @@ const About = () => {
               start: "0% 100%",
               toggleActions: "play play pause reverse",
               lazy: false,
-              // markers: true, // Remove in production
             },
           }
         );

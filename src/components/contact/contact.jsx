@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -31,7 +31,7 @@ export default function Contact() {
         scale: 1.1,
         duration: 0.7,
         scrollTrigger: {
-          trigger: title.current, // Use title.current as the trigger
+          trigger: title.current,
           start: "0% 100%",
           toggleActions: "play play pause reverse",
         },
@@ -96,7 +96,7 @@ export default function Contact() {
       });
 
       const result = await response.json(); // Parse JSON response
-      console.log(result)
+
       setResponseMessage(result.message);
       Swal.fire({
         title: "Message Received",
@@ -202,7 +202,7 @@ export default function Contact() {
                       name="submit"
                       className="inptBtn btn-border">
                       SEND YOUR MESSAGE
-</button>
+                    </button>
                   </div>
                 </div>
               </form>

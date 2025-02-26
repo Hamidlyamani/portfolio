@@ -26,11 +26,9 @@ header {
 
 .cta {
   background: #f12711;
-  /* fallback for old browsers */
   background: -webkit-linear-gradient(45deg,
       #f12711,
       #f5af19);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(45deg, #f12711, #f5af19);
   padding: 15px 30px;
   border-radius: 8px;
