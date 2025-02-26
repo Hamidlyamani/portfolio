@@ -16,6 +16,7 @@ import xd from "../../assets/imgs/tech/xd.png";
 import ga from "../../assets/imgs/tech/g-a.png";
 import wordpress from "../../assets/imgs/tech/wordpress.png";
 import axios from "../../assets/imgs/tech/axios.png";
+import tailwind from "../../assets/imgs/tech/tailwind.svg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -55,15 +56,13 @@ export default function Technologies() {
       </div>
       <div className="slider-container">
         <div className="slider  slider-1">
-          <div
-            className="box-tech item1">
+          <div className="box-tech item1">
             <div className="img-tech">
               <img src={html} alt="html" />
             </div>
             <div className="name-tech">HTML 5</div>
           </div>
-          <div
-            className="box-tech item2">
+          <div className="box-tech item2">
             <div className="img-tech">
               <img src={css} alt="css" />
             </div>
@@ -74,6 +73,12 @@ export default function Technologies() {
               <img src={bootstrap} alt="bootstrap" />
             </div>
             <div className="name-tech">bootstrap</div>
+          </div>
+          <div className="box-tech item3">
+            <div className="img-tech">
+              <img src={tailwind} alt="tailwind" />
+            </div>
+            <div className="name-tech">tailwind</div>
           </div>
           <div className="box-tech item4">
             <div className="img-tech">

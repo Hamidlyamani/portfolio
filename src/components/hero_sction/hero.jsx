@@ -1,11 +1,52 @@
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 import "./hero.css";
 import logo from "../../assets/imgs/logo.png";
 import pc2 from "../../assets/imgs/g1.webp";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
+
+  useGSAP(() => {
+    gsap.from(".image-hero-src", {
+      bottom: "-100px",
+      opacity: 0,
+      duration: 1.4,
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: ".image-hero-src",
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
+    });
+    gsap.from(".web", {
+      bottom: "-100px",
+      duration: 1.2,
+      opacity: 0,
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: ".web",
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
+    });
+    gsap.from(".developer-text", {
+      bottom: "-100px",
+      duration: 1.2,
+      opacity: 0,
+      delay: 0.6,
+      scrollTrigger: {
+        trigger: ".developer-text",
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
+    });
+  });
+
+
+
 
   return (
     <>

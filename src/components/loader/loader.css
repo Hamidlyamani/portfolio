@@ -11,7 +11,7 @@
   z-index: 999999;
     background-color: rgb(255, 248, 239);
 border-bottom: 2px solid #31291f;
-  transition: transform 1s ease-in ;
+  transition: transform 0.9s ease-out ;
 }
 .loaded .loadercontainer{ 
      transform: translateY(-100%); /* Moves the loader to the top */
@@ -45,7 +45,7 @@ background-color: #31291f;
 position: relative;
 width: 100%;
 margin-top: 30px;
-animation: grow 4s forwards; 
+animation: grow 2s ease-out; 
 }
 
 
@@ -57,14 +57,7 @@ animation: grow 4s forwards;
    width:100%;
   }
 }
-@keyframes gotop {
-  from {
-    top: 0;
-  }
-  to {
-   top:-100vh;
-  }
-}
+
 
 @media only screen and (max-width: 1199px) {
 .nomber_container .nomber{
