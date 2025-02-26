@@ -80,6 +80,23 @@ export default function Progects() {
       code_source: "https://github.com/Hamidlyamani/olino",
     },
     {
+      id: 7,
+      title: "ELYAX",
+      image_p: project_2,
+      type: "Web Development",
+      Overview:
+        "<strong>ElyaX</strong> is a modern crypto dashboard designed to provide fundamental market analysis. It enables users to track real-time price changes, explore interactive charts, and analyze over 30 cryptocurrencies. With an intuitive design and seamless user experience, ElyaX simplifies crypto tracking.<strong>Note:</strong> This is not a real application; it was created as a practice project to apply my knowledge in React and API integration using the free <a href='https://www.coingecko.com/' target='_blank' style='color: #3498db; text-decoration: none;'>CoinGecko API</a>.</p>",
+      items: [
+        "Interactive Charts: Dynamic charts displaying historical price data.",
+        "30+ Cryptocurrencies: View and analyze prices of major cryptocurrencies.",
+        "Dark Mode: Toggle between light and dark themes for better accessibility.",
+        "Beautiful Design: Clean and modern UI with smooth user experience.",
+      ],
+      imageName: [react, html, css, js],
+      project_details: project_details_2,
+      code_source: "https://elya-x.onrender.com",
+    },
+    {
       id: 6,
       title: "One Task at a Time",
       type: "Web Development ",
@@ -151,40 +168,37 @@ export default function Progects() {
     },
   ];
 
-  useGSAP(
-    () => {
-      gsap.from(title.current, {
-        scale: 1.1,
-        opacity: 0,
-        duration: 0.7,
-        scrollTrigger: {
-          trigger: title.current,
-          start: "0% 100%",
-          toggleActions: "play play pause reverse",
-        },
-      });
-      cardContents.forEach((card, index) => {
-        const projectRef = projectRefs.current[index];
-        if (projectRef) {
-          gsap.from(projectRef, {
-            bottom: "-100px",
-            scale: 0.4,
-            opacity: 0.3,
-            stagger: { amount: 0.4 },
-            scrollTrigger: {
-
-              trigger: projectRef, // Or choose a different trigger element
-              start: "top 100%",
-              end: "top 50%",
-              scrub: false,
-              markers: false, // Remove markers in production
-              toggleActions: "play play pause reverse",
-            },
-          });
-        }
-      });
+  useGSAP(() => {
+    gsap.from(title.current, {
+      scale: 1.1,
+      opacity: 0,
+      duration: 0.7,
+      scrollTrigger: {
+        trigger: title.current,
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
     });
-
+    cardContents.forEach((card, index) => {
+      const projectRef = projectRefs.current[index];
+      if (projectRef) {
+        gsap.from(projectRef, {
+          bottom: "-100px",
+          scale: 0.4,
+          opacity: 0.3,
+          stagger: { amount: 0.4 },
+          scrollTrigger: {
+            trigger: projectRef, // Or choose a different trigger element
+            start: "top 100%",
+            end: "top 50%",
+            scrub: false,
+            markers: false, // Remove markers in production
+            toggleActions: "play play pause reverse",
+          },
+        });
+      }
+    });
+  });
 
   const [show, setShow] = useState(false);
   const [selectedContent, setSelectedContent] = useState(null);
