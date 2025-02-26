@@ -9,6 +9,7 @@ import project_3 from "../../assets/imgs/img-3.webp";
 import project_4 from "../../assets/imgs/img-4.png";
 import project_5 from "../../assets/imgs/img-5.webp";
 import project_6 from "../../assets/imgs/img-6.webp";
+import project_7 from "../../assets/imgs/img-7.png";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Project from "./project-1";
@@ -23,6 +24,8 @@ import axios from "../../assets/imgs/tech/axios.png";
 import laravel from "../../assets/imgs/tech/laravel.png";
 import bootstrap from "../../assets/imgs/tech/bootstrap.png";
 import ga from "../../assets/imgs/tech/g-a.png";
+import typescript from "../../assets/imgs/tech/typescript.png";
+import shadcn from "../../assets/imgs/tech/shadcn.png";
 import wordpress from "../../assets/imgs/tech/wordpress.png";
 import acf from "../../assets/imgs/tech/acf.png";
 import woo from "../../assets/imgs/tech/woo.png";
@@ -33,6 +36,7 @@ import project_details_3 from "../../assets/imgs/project_details_3.webp";
 import project_details_4 from "../../assets/imgs/project_details_4.png";
 import project_details_5 from "../../assets/imgs/project_details_5.webp";
 import project_details_6 from "../../assets/imgs/project_details_6.webp";
+import project_details_7 from "../../assets/imgs/project_details_7.png";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -63,6 +67,24 @@ export default function Progects() {
       code_source: "https://github.com/Hamidlyamani/Tamaioz",
     },
     {
+      id: 7,
+      title: "elyaX",
+      image_p: project_7,
+      type: "Web Development",
+      Overview:
+        "ElyaX is a modern crypto dashboard designed to provide fundamental market analysis. It enables users to track real-time price changes, explore interactive charts, and analyze over 30 cryptocurrencies. With an intuitive design and seamless user experience, ElyaX simplifies crypto tracking.<strong>Note:</strong> This is not a real application; it was created as a practice project to apply my knowledge in React and API integration using the free CoinGecko API: https://www.coingecko.com ",
+      items: [
+        "Interactive Charts: Dynamic charts displaying historical price data.",
+        "30+ Cryptocurrencies: View and analyze prices of major cryptocurrencies.",
+        "Dark Mode: Toggle between light and dark themes for better accessibility.",
+        "Beautiful Design: Clean and modern UI with smooth user experience.",
+      ],
+      imageName: [react, typescript, shadcn, tailwind, html,],
+      project_details: project_details_7,
+      code_source: "https://github.com/Hamidlyamani/ElyaX_Crypto",
+      link: "https://elya-x.onrender.com"
+    },
+    {
       id: 2,
       title: "OLINO",
       image_p: project_2,
@@ -79,23 +101,7 @@ export default function Progects() {
       project_details: project_details_2,
       code_source: "https://github.com/Hamidlyamani/olino",
     },
-    {
-      id: 7,
-      title: "ELYAX",
-      image_p: project_2,
-      type: "Web Development",
-      Overview:
-        "<strong>ElyaX</strong> is a modern crypto dashboard designed to provide fundamental market analysis. It enables users to track real-time price changes, explore interactive charts, and analyze over 30 cryptocurrencies. With an intuitive design and seamless user experience, ElyaX simplifies crypto tracking.<strong>Note:</strong> This is not a real application; it was created as a practice project to apply my knowledge in React and API integration using the free <a href='https://www.coingecko.com/' target='_blank' style='color: #3498db; text-decoration: none;'>CoinGecko API</a>.</p>",
-      items: [
-        "Interactive Charts: Dynamic charts displaying historical price data.",
-        "30+ Cryptocurrencies: View and analyze prices of major cryptocurrencies.",
-        "Dark Mode: Toggle between light and dark themes for better accessibility.",
-        "Beautiful Design: Clean and modern UI with smooth user experience.",
-      ],
-      imageName: [react, html, css, js],
-      project_details: project_details_2,
-      code_source: "https://elya-x.onrender.com",
-    },
+
     {
       id: 6,
       title: "One Task at a Time",
@@ -149,23 +155,23 @@ export default function Progects() {
       project_details: project_details_3,
       link: "https://www.olamcompany.com/",
     },
-    {
-      id: 3,
-      title: "CBM menuiserie",
-      image_p: project_5,
-      type: "Web Development ",
-      Overview:
-        "I created this demo to practice my skills in WordPress by integrating custom HTML, building themes, and using ACF for flexible content management. The project showcases CBM Menuiserie, a fictional company specializing in standard and custom wooden joinery. This allowed me to refine my abilities in theme development and WordPress customization.",
-      items: [
-        "Custom Dashboard with WooCommerce Integration: Manage products (add, update, remove) from the WordPress admin panel.",
-        "Project Quote Request Form: Allows users to request quotes for custom joinery projects.",
-        "Contact Form: Simple way for visitors to send inquiries directly from the site.",
-        "ACF Custom Fields: Streamlines content management for standard and custom projects.",
-      ],
-      imageName: [wordpress, acf, woo, html, css, js],
-      project_details: project_details_5,
-      link: "https://cbm.serveurprod.com/",
-    },
+    // {
+    //   id: 3,
+    //   title: "CBM menuiserie",
+    //   image_p: project_5,
+    //   type: "Web Development ",
+    //   Overview:
+    //     "I created this demo to practice my skills in WordPress by integrating custom HTML, building themes, and using ACF for flexible content management. The project showcases CBM Menuiserie, a fictional company specializing in standard and custom wooden joinery. This allowed me to refine my abilities in theme development and WordPress customization.",
+    //   items: [
+    //     "Custom Dashboard with WooCommerce Integration: Manage products (add, update, remove) from the WordPress admin panel.",
+    //     "Project Quote Request Form: Allows users to request quotes for custom joinery projects.",
+    //     "Contact Form: Simple way for visitors to send inquiries directly from the site.",
+    //     "ACF Custom Fields: Streamlines content management for standard and custom projects.",
+    //   ],
+    //   imageName: [wordpress, acf, woo, html, css, js],
+    //   project_details: project_details_5,
+    //   link: "https://cbm.serveurprod.com/",
+    // },
   ];
 
   useGSAP(() => {

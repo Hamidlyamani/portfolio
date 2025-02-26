@@ -4,11 +4,10 @@
 
 .Projects .cards-projects {
   margin: 0%;
+  padding-top: 32px;
 }
 
-.Projects .cards-projects .row>* {
-  padding: 2%;
-}
+
 
 .Projects .card-project {
   position: relative;
@@ -94,7 +93,7 @@
 .project .btn-go {
   background-color: var(--pcolor);
   color: #ffffff;
-margin: 0px 5px;
+  margin: 0px 5px;
   padding: 10px 20px;
 }
 
@@ -166,14 +165,16 @@ margin: 0px 5px;
   .project .row {
     padding: 0px;
   }
-    .project .buttons {
-      display: flex;
-      margin: 20px auto;
-    }
-    .project .buttons a {
-      margin: 0px auto;
-      padding: 10px 20px;
-    }
+
+  .project .buttons {
+    display: flex;
+    margin: 20px auto;
+  }
+
+  .project .buttons a {
+    margin: 0px auto;
+    padding: 10px 20px;
+  }
 }
 
 @media screen and (max-width: 575px) {
