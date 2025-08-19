@@ -180,13 +180,13 @@
 
 
 .charte_horisantel #sectionPin {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   width: fit-content !important;
 }
 
 .charte_horisantel .pin-wrap {
-  height: 100vh;
+  height: 100dvh;
 }
 
 @media only screen and (max-width: 1199px) {

@@ -155,23 +155,58 @@ export default function Progects() {
       project_details: project_details_3,
       link: "https://www.olamcompany.com/",
     },
-    // {
-    //   id: 3,
-    //   title: "CBM menuiserie",
-    //   image_p: project_5,
-    //   type: "Web Development ",
-    //   Overview:
-    //     "I created this demo to practice my skills in WordPress by integrating custom HTML, building themes, and using ACF for flexible content management. The project showcases CBM Menuiserie, a fictional company specializing in standard and custom wooden joinery. This allowed me to refine my abilities in theme development and WordPress customization.",
-    //   items: [
-    //     "Custom Dashboard with WooCommerce Integration: Manage products (add, update, remove) from the WordPress admin panel.",
-    //     "Project Quote Request Form: Allows users to request quotes for custom joinery projects.",
-    //     "Contact Form: Simple way for visitors to send inquiries directly from the site.",
-    //     "ACF Custom Fields: Streamlines content management for standard and custom projects.",
-    //   ],
-    //   imageName: [wordpress, acf, woo, html, css, js],
-    //   project_details: project_details_5,
-    //   link: "https://cbm.serveurprod.com/",
-    // },
+    {
+      id: 3,
+      title: "CBM menuiserie",
+      image_p: project_5,
+      type: "Web Development ",
+      Overview:
+        "I created this demo to practice my skills in WordPress by integrating custom HTML, building themes, and using ACF for flexible content management. The project showcases CBM Menuiserie, a fictional company specializing in standard and custom wooden joinery. This allowed me to refine my abilities in theme development and WordPress customization.",
+      items: [
+        "Custom Dashboard with WooCommerce Integration: Manage products (add, update, remove) from the WordPress admin panel.",
+        "Project Quote Request Form: Allows users to request quotes for custom joinery projects.",
+        "Contact Form: Simple way for visitors to send inquiries directly from the site.",
+        "ACF Custom Fields: Streamlines content management for standard and custom projects.",
+      ],
+      imageName: [wordpress, acf, woo, html, css, js],
+      project_details: project_details_5,
+      link: "https://cbm.serveurprod.com/",
+    },
+    {
+      id: 8,
+      title: "Formly - LMS Dashboard",
+      image_p: project_5,
+      type: "Web Development ",
+      Overview:
+        "Formly is a dashboard and login page for an LMS (Learning Management System) solution designed for schools. It provides an overview of courses, interactive charts, and pages for chat, events (calendars), and login functionality. This project was created to practice and apply my skills in React and TypeScript, with a focus on modern design and responsive layouts. <br/>Note: This is a practice project and not a real LMS application.",
+      items: [
+        "Dashboard Overview: See all courses and their progress at a glance.",
+        "Interactive Charts: Visualize multiple types of data, including course tests and student progress.",
+        "Chat Page: Communicate within the platform.",
+        "Beautiful, Modern Design: Clean, responsive, and user-friendly layout.",
+      ],
+      imageName: [react, typescript, shadcn, tailwind, html],
+      project_details: project_details_5,
+      link: "https://hamidlyamani.github.io/Dashbord-e-learning/",
+      code_source: "https://github.com/Hamidlyamani/Dashbord-e-learning/",
+    },
+    {
+      id: 9,
+      title: "Ebooksy",
+      image_p: project_5,
+      type: "Web Development ",
+      Overview:
+        "<p><strong>Ebooksy</strong> is a personal web project that functions as an online library where users can discover and download e-books for free. It also features a smart AI-powered recommendation tool to suggest the next book to read. The platform integrates ads for monetization and utilizes <strong>WordPress</strong> for content management, <strong>OpenAI API</strong> for recommendations and custom book descriptions, and <strong>Google Books API</strong> to fetch book information.</p><p> <strong>Note:</strong> This project was created to practice integrating APIs and developing a functional online library with personalized recommendations.</p>",
+      items: [
+        "<strong>Discover & Download:</strong> Access and download over 400 books and e-books.",
+        "<strong>Smart Recommendations:</strong> AI-powered tool suggests the next book based on your reading preferences.",
+        "<strong>Google Books Integration:</strong> Import books with one click and generate custom descriptions.",
+        "<strong>User-Friendly Interface:</strong> Simple and intuitive design for browsing and downloading books.",
+      ],
+      imageName: [react, typescript, shadcn, tailwind, html],
+      project_details: project_details_5,
+      link: "https://ebooksy.site",
+    },
   ];
 
   useGSAP(() => {
