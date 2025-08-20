@@ -32,6 +32,7 @@ import wordpress from "../../assets/imgs/tech/wordpress.png";
 import acf from "../../assets/imgs/tech/acf.png";
 import woo from "../../assets/imgs/tech/woo.png";
 import tailwind from "../../assets/imgs/tech/tailwind.svg";
+import OpenAI from "../../assets/imgs/tech/openai.png";
 import project_details_1 from "../../assets/imgs/project_details_1.webp";
 import project_details_2 from "../../assets/imgs/project_details_2.webp";
 import project_details_3 from "../../assets/imgs/project_details_3.webp";
@@ -64,7 +65,7 @@ export default function Progects() {
         "<strong>Smart Recommendations:</strong> AI-powered tool suggests the next book based on your reading preferences.",
         "<strong>Google Books Integration:</strong> Import books with one click and generate custom descriptions.",
          ],
-      imageName: [react, typescript, shadcn, tailwind, html],
+      imageName: [wordpress, OpenAI, html, css, js],
       project_details: project_details_9,
       link: "https://ebooksy.site",
     },
@@ -82,13 +83,13 @@ export default function Progects() {
         "Dedicated virtual meeting rooms for online lessons",
         "Comprehensive admin dashboard for platform management",
       ],
-      imageName: [html, css, js, react, axios, php, mysql],
+      imageName: [react, axios, php, mysql, html, css, js ],
       project_details: project_details_1,
       code_source: "https://github.com/Hamidlyamani/Tamaioz",
     },
     {
       id: 7,
-      title: "elyaX",
+      title: "ElyaX",
       image_p: project_7,
       type: "Web Development",
       Overview:
@@ -117,7 +118,7 @@ export default function Progects() {
         "Shopping Cart: Manage items in your cart upon login or account creation.",
         "Admin Dashboard: Add, remove, and edit products; manage user accounts; and review orders.",
       ],
-      imageName: [laravel, html, css, js],
+      imageName: [laravel,mysql, html, css, js],
       project_details: project_details_2,
       code_source: "https://github.com/Hamidlyamani/olino",
     },
@@ -134,7 +135,7 @@ export default function Progects() {
         "Chat Page: Communicate within the platform.",
         "Beautiful, Modern Design: Clean, responsive, and user-friendly layout.",
       ],
-      imageName: [react, typescript, shadcn, tailwind, html],
+      imageName: [react, typescript, shadcn, tailwind, html, css],
       project_details: project_details_8,
       link: "https://hamidlyamani.github.io/Dashbord-e-learning/",
       code_source: "https://github.com/Hamidlyamani/Dashbord-e-learning/",
@@ -152,7 +153,7 @@ export default function Progects() {
         "Clean, accessible, and visually appealing design.",
         "Elegant, functional newsletter form for updates.",
       ],
-      imageName: [tailwind, css, ga],
+      imageName: [tailwind, css, css],
       project_details: project_details_4,
       link: "https://saas-lp.onrender.com/",
       code_source: "https://github.com/Hamidlyamani/saas-lp",

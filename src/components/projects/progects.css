@@ -68,6 +68,7 @@
 .modal-dialog {
   max-width: 90% !important;
   width: 90% !important;
+  margin: var(--bs-modal-margin) auto !important;
 }
 
 .project h3 {
