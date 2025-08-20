@@ -36,7 +36,6 @@ export default function App() {
       window.removeEventListener("load", handlePageLoad);
     };
   }, []);
-  console.log("tryyyyyyyyyyyyyyyy" + isLoaded);
   // Display content only if both loading animation and page load are complete
   const shouldShowContent = isLoaded && isContentLoaded;
 

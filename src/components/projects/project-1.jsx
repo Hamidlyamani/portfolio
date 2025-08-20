@@ -17,13 +17,16 @@ export default function Project({ content }) {
         <div className="col-lg-7 text">
           <div className="Overview">
             <h3>Project Overview:</h3>
-            <p> {content.Overview}</p>
+            <p dangerouslySetInnerHTML={{ __html: content.Overview }} />
           </div>
           <div className="Features">
             <h3>Features and Functionality:</h3>
             <ul>
               {content.items.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
               ))}
             </ul>
           </div>

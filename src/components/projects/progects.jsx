@@ -10,6 +10,8 @@ import project_4 from "../../assets/imgs/img-4.png";
 import project_5 from "../../assets/imgs/img-5.webp";
 import project_6 from "../../assets/imgs/img-6.webp";
 import project_7 from "../../assets/imgs/img-7.png";
+import project_8 from "../../assets/imgs/img-8.png";
+import project_9 from "../../assets/imgs/img-9.png";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Project from "./project-1";
@@ -37,6 +39,8 @@ import project_details_4 from "../../assets/imgs/project_details_4.png";
 import project_details_5 from "../../assets/imgs/project_details_5.webp";
 import project_details_6 from "../../assets/imgs/project_details_6.webp";
 import project_details_7 from "../../assets/imgs/project_details_7.png";
+import project_details_8 from "../../assets/imgs/project_details_8.png";
+import project_details_9 from "../../assets/imgs/project_details_9.png";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -48,6 +52,22 @@ export default function Progects() {
   const projectRefs = useRef([]);
 
   const cardContents = [
+    {
+      id: 9,
+      title: "Ebooksy",
+      image_p: project_9,
+      type: "Web Development ",
+      Overview:
+        "<p><strong>Ebooksy</strong> is a personal web project that functions as an online library where users can discover and download e-books for free. It also features a smart AI-powered recommendation tool to suggest the next book to read. The platform integrates ads for monetization and utilizes <strong>WordPress</strong> for content management, <strong>OpenAI API</strong> for recommendations and custom book descriptions, and <strong>Google Books API</strong> to fetch book information.</p><p> <strong>Note:</strong> This project was created to practice integrating APIs and developing a functional online library with personalized recommendations.</p>",
+      items: [
+        "<strong>Discover & Download:</strong> Access and download over 400 books and e-books.",
+        "<strong>Smart Recommendations:</strong> AI-powered tool suggests the next book based on your reading preferences.",
+        "<strong>Google Books Integration:</strong> Import books with one click and generate custom descriptions.",
+         ],
+      imageName: [react, typescript, shadcn, tailwind, html],
+      project_details: project_details_9,
+      link: "https://ebooksy.site",
+    },
     {
       id: 1,
       title: "TAMAIOZ",
@@ -79,10 +99,10 @@ export default function Progects() {
         "Dark Mode: Toggle between light and dark themes for better accessibility.",
         "Beautiful Design: Clean and modern UI with smooth user experience.",
       ],
-      imageName: [react, typescript, shadcn, tailwind, html,],
+      imageName: [react, typescript, shadcn, tailwind, html],
       project_details: project_details_7,
       code_source: "https://github.com/Hamidlyamani/ElyaX_Crypto",
-      link: "https://elya-x.onrender.com"
+      link: "https://elya-x.onrender.com",
     },
     {
       id: 2,
@@ -101,7 +121,24 @@ export default function Progects() {
       project_details: project_details_2,
       code_source: "https://github.com/Hamidlyamani/olino",
     },
-
+    {
+      id: 8,
+      title: "Formly - LMS Dashboard",
+      image_p: project_8,
+      type: "Web Development ",
+      Overview:
+        "Formly is a dashboard and login page for an LMS (Learning Management System) solution designed for schools. It provides an overview of courses, interactive charts, and pages for chat, events (calendars), and login functionality. This project was created to practice and apply my skills in React and TypeScript, with a focus on modern design and responsive layouts. <br/>Note: This is a practice project and not a real LMS application.",
+      items: [
+        "Dashboard Overview: See all courses and their progress at a glance.",
+        "Interactive Charts: Visualize multiple types of data, including course tests and student progress.",
+        "Chat Page: Communicate within the platform.",
+        "Beautiful, Modern Design: Clean, responsive, and user-friendly layout.",
+      ],
+      imageName: [react, typescript, shadcn, tailwind, html],
+      project_details: project_details_8,
+      link: "https://hamidlyamani.github.io/Dashbord-e-learning/",
+      code_source: "https://github.com/Hamidlyamani/Dashbord-e-learning/",
+    },
     {
       id: 6,
       title: "One Task at a Time",
@@ -119,41 +156,6 @@ export default function Progects() {
       project_details: project_details_4,
       link: "https://saas-lp.onrender.com/",
       code_source: "https://github.com/Hamidlyamani/saas-lp",
-    },
-
-    {
-      id: 4,
-      title: "My Personal Portfolio",
-      image_p: project_6,
-      type: "Web Development & Design",
-      Overview:
-        "I built this portfolio to enhance my React and front-end development skills while showcasing my projects to potential clients and hiring managers. It features smooth GSAP animations and leverages React with Vite for efficient development and performance. This project demonstrates my ability to create dynamic, user-friendly web interfaces.",
-      items: [
-        "Project Showcase: Highlights key projects with descriptions and links to code repositories.",
-        "Contact Form: Enables easy communication for inquiries and freelance opportunities.",
-        "Smooth Animations: Interactive animations created using GSAP for a dynamic experience.",
-        "Project Code Links: Direct access to code repositories for all featured projects.",
-      ],
-      imageName: [react, GSAP, html, css, js],
-      project_details: project_details_6,
-      code_source: "https://github.com/Hamidlyamani/portfolio",
-    },
-    {
-      id: 5,
-      title: "OLAM COPANY",
-      type: "Web Development with SEO ",
-      image_p: project_3,
-      Overview:
-        "OLAM COMPANY specializes in crafting dream villas and pools in Marrakech, offering turnkey construction services. Developed during my tenure at ONCLICK Agency, our expertise ensures excellence in every project.",
-      items: [
-        "Contact Form: Easily get in touch with us to inquire about our services, portfolio (Nos Réalisations), and blog (Articles).",
-        "Services Page: Explore the range of services we offer, including turnkey villa and pool construction.",
-        "Portfolio (Nos Réalisations): Browse through our portfolio to see our completed projects.",
-        "Blog (Articles): Stay updated with our latest articles and insights on villa and pool construction.",
-      ],
-      imageName: [html, css, js, bootstrap, ga],
-      project_details: project_details_3,
-      link: "https://www.olamcompany.com/",
     },
     {
       id: 3,
@@ -173,40 +175,39 @@ export default function Progects() {
       link: "https://cbm.serveurprod.com/",
     },
     {
-      id: 8,
-      title: "Formly - LMS Dashboard",
-      image_p: project_5,
-      type: "Web Development ",
+      id: 4,
+      title: "My Personal Portfolio",
+      image_p: project_6,
+      type: "Web Development & Design",
       Overview:
-        "Formly is a dashboard and login page for an LMS (Learning Management System) solution designed for schools. It provides an overview of courses, interactive charts, and pages for chat, events (calendars), and login functionality. This project was created to practice and apply my skills in React and TypeScript, with a focus on modern design and responsive layouts. <br/>Note: This is a practice project and not a real LMS application.",
+        "I built this portfolio to enhance my React and front-end development skills while showcasing my projects to potential clients and hiring managers. It features smooth GSAP animations and leverages React with Vite for efficient development and performance. This project demonstrates my ability to create dynamic, user-friendly web interfaces.",
       items: [
-        "Dashboard Overview: See all courses and their progress at a glance.",
-        "Interactive Charts: Visualize multiple types of data, including course tests and student progress.",
-        "Chat Page: Communicate within the platform.",
-        "Beautiful, Modern Design: Clean, responsive, and user-friendly layout.",
+        "Project Showcase: Highlights key projects with descriptions and links to code repositories.",
+        "Contact Form: Enables easy communication for inquiries and freelance opportunities.",
+        "Smooth Animations: Interactive animations created using GSAP for a dynamic experience.",
+        "Project Code Links: Direct access to code repositories for all featured projects.",
       ],
-      imageName: [react, typescript, shadcn, tailwind, html],
-      project_details: project_details_5,
-      link: "https://hamidlyamani.github.io/Dashbord-e-learning/",
-      code_source: "https://github.com/Hamidlyamani/Dashbord-e-learning/",
+      imageName: [react, GSAP, html, css, js],
+      project_details: project_details_6,
+      code_source: "https://github.com/Hamidlyamani/portfolio",
     },
-    {
-      id: 9,
-      title: "Ebooksy",
-      image_p: project_5,
-      type: "Web Development ",
-      Overview:
-        "<p><strong>Ebooksy</strong> is a personal web project that functions as an online library where users can discover and download e-books for free. It also features a smart AI-powered recommendation tool to suggest the next book to read. The platform integrates ads for monetization and utilizes <strong>WordPress</strong> for content management, <strong>OpenAI API</strong> for recommendations and custom book descriptions, and <strong>Google Books API</strong> to fetch book information.</p><p> <strong>Note:</strong> This project was created to practice integrating APIs and developing a functional online library with personalized recommendations.</p>",
-      items: [
-        "<strong>Discover & Download:</strong> Access and download over 400 books and e-books.",
-        "<strong>Smart Recommendations:</strong> AI-powered tool suggests the next book based on your reading preferences.",
-        "<strong>Google Books Integration:</strong> Import books with one click and generate custom descriptions.",
-        "<strong>User-Friendly Interface:</strong> Simple and intuitive design for browsing and downloading books.",
-      ],
-      imageName: [react, typescript, shadcn, tailwind, html],
-      project_details: project_details_5,
-      link: "https://ebooksy.site",
-    },
+    // {
+    //   id: 5,
+    //   title: "OLAM COPANY",
+    //   type: "Web Development with SEO ",
+    //   image_p: project_3,
+    //   Overview:
+    //     "OLAM COMPANY specializes in crafting dream villas and pools in Marrakech, offering turnkey construction services. Developed during my tenure at ONCLICK Agency, our expertise ensures excellence in every project.",
+    //   items: [
+    //     "Contact Form: Easily get in touch with us to inquire about our services, portfolio (Nos Réalisations), and blog (Articles).",
+    //     "Services Page: Explore the range of services we offer, including turnkey villa and pool construction.",
+    //     "Portfolio (Nos Réalisations): Browse through our portfolio to see our completed projects.",
+    //     "Blog (Articles): Stay updated with our latest articles and insights on villa and pool construction.",
+    //   ],
+    //   imageName: [html, css, js, bootstrap, ga],
+    //   project_details: project_details_3,
+    //   link: "https://www.olamcompany.com/",
+    // },
   ];
 
   useGSAP(() => {

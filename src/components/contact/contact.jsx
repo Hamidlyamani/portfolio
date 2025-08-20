@@ -159,7 +159,9 @@ export default function Contact() {
                   <div className="col-sm-6">
                     <input
                       type="text"
-                      name="name" value={formData.name} onChange={handleChange}
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="What's your name ?*"
                       className="inptFld"
                       required
@@ -169,7 +171,9 @@ export default function Contact() {
                   <div className="col-sm-6">
                     <input
                       type="email"
-                      name="email" value={formData.email} onChange={handleChange}
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="What's your email ?*"
                       className="inptFld"
                       required
@@ -179,7 +183,9 @@ export default function Contact() {
                   <div className="col-sm-12">
                     <input
                       type="text"
-                      name="sub" value={formData.sub} onChange={handleChange}
+                      name="sub"
+                      value={formData.sub}
+                      onChange={handleChange}
                       placeholder="What service are you looking for ?"
                       className="inptFld"
                     />
@@ -189,7 +195,9 @@ export default function Contact() {
                     <textarea
                       className="inptFld"
                       rows=""
-                      cols="" value={formData.message} onChange={handleChange}
+                      cols=""
+                      value={formData.message}
+                      onChange={handleChange}
                       name="message"
                       placeholder="Your Message...*"
                       required
@@ -200,19 +208,19 @@ export default function Contact() {
                     <button
                       type="submit"
                       name="submit"
-                      className="inptBtn btn-border">
+                      className="inptBtn btn-border"
+                    >
                       SEND YOUR MESSAGE
                     </button>
                   </div>
                 </div>
               </form>
-
             </div>
           </div>
           <div className="social_media_copyright">
             <div className="social_media">
               <a
-                href="https://www.linkedin.com/in/hamid-elyamani-765177229/"
+                href="https://www.linkedin.com/in/hamid-el-yamani-63bb57376"
                 className="social linkedIn hvr-sweep-to-top"
                 target="_blank"
               >
@@ -266,7 +274,7 @@ export default function Contact() {
             <div className="copyright">
               <p>No copyrights here—grab what you want ;)</p>
               <p>
-                made by love{" "}
+                Made with love{" "}
                 <FontAwesomeIcon icon={faHeart} style={{ color: "#FF0000" }} />
               </p>
             </div>
