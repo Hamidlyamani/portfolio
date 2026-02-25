@@ -96,7 +96,7 @@ export default function Contact() {
       });
 
       const result = await response.json(); // Parse JSON response
-
+console.log(result)
       setResponseMessage(result.message);
       Swal.fire({
         title: "Message Received",
@@ -139,8 +139,8 @@ export default function Contact() {
                   icon={faEnvelope}
                   style={{ color: "#f37500" }}
                 />
-                <a href="mailto:alymnyhmyd763@gmail.com">
-                  alymnyhmyd763@gmail.com
+                <a href="mailto:hamidelyamani22@gmail.com">
+                  hamidelyamani22@gmail.com
                 </a>
               </div>
               <div className="info-item">

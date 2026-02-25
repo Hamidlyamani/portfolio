@@ -22,7 +22,7 @@ export default function Project({ content }) {
           <div className="Features">
             <h3>Features and Functionality:</h3>
             <ul>
-              {content.items.map((item, index) => (
+              {content.items?.map((item, index) => (
                 <li
                   key={index}
                   dangerouslySetInnerHTML={{ __html: item }}

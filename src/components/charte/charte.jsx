@@ -1,4 +1,4 @@
-import React, {  useRef } from "react";
+import React, { useRef } from "react";
 import "./charte.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -298,6 +298,53 @@ export default function Charte() {
               <div className="month  year">
                 <div className="year-number">2025</div>
               </div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month">
+                <div className="event bottom">
+                  <div className="box-event">
+                    <p className="date-event">09/2025</p>
+                    <h6>End of Frontend Developer Role at Hay2 Agency</h6>
+                    <p className="description">
+                      Successfully concluded my role at Hay2 Agency after contributing to multiple web projects, strengthening my experience in frontend development and collaborative team environments.
+                    </p>
+                  </div>
+
+                  <div className="right-line">
+                    <div className="sircle"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="month">
+                <div className="event top">
+                  <div className="box-event">
+                    <p className="date-event">10/2025</p>
+                    <h6>Admission to Bachelor Program – ISITW</h6>
+                    <p className="description">
+                      Started the Bachelor in Information Systems Engineering and Web Technologies, deepening my expertise in modern web architectures, backend systems, and scalable application design.
+                    </p>
+                  </div>
+
+                  <div className="right-line">
+                    <div className="sircle"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month  year">
+                <div className="year-number">2026</div>
+              </div>
+              <div className="month"></div>
+              <div className="month"></div>
+              <div className="month"></div>
               <div className="month nosircle lastmonth "></div>
             </div>
           </div>

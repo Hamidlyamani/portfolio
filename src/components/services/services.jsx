@@ -53,44 +53,38 @@ useGSAP(
         <div className="services-boxs ">
           <CardGroup>
             <Card className="service">
-              <Card.Img
-                className="img-service"
-                variant="left"
-                src={service_1}
-                alt="WEB DEVELOPMENT"
-              />
+              <Card.Img className="img-service" variant="top" src={service_2} alt="Interactive Web Interfaces" />
               <Card.Body>
-                <Card.Title>WEB DEVELOPMENT</Card.Title>
+                <Card.Title>Interactive Web Interfaces</Card.Title>
                 <Card.Text>
-                  Experience expert web development for functional, responsive
-                  websites tailored to your needs. From static to dynamic
-                  platforms, ensure seamless performance across devices. Let's
-                  elevate your online presence together.
+                  Craft modern, responsive, and visually engaging interfaces designed for performance and seamless user experience. From interactive dashboards to dynamic platforms, deliver smooth and intuitive digital experiences.
                 </Card.Text>
                 <div className="serial-number">01</div>
               </Card.Body>
             </Card>
+
             <Card className="service">
-              <Card.Img className="img-service" variant="top" src={service_2} alt="WEB DESIGN" />
+              <Card.Img
+                className="img-service"
+                variant="left"
+                src={service_1}
+                alt="Scalable Backend Systems"
+              />
               <Card.Body>
-                <Card.Title>WEB DESIGN</Card.Title>
+                <Card.Title>Scalable Backend Systems</Card.Title>
                 <Card.Text>
-                  Elevate your online presence with bespoke web design.
-                  Specializing in sleek layouts and engaging interfaces tailored
-                  to your brand, I ensure seamless navigation and drive
-                  engagement. Let me bring your vision to life.
+                 Build secure, scalable, and well-structured backend systems that power reliable web applications. Design robust APIs, authentication systems, and business logic tailored for performance and growth.
                 </Card.Text>
                 <div className="serial-number">02</div>
               </Card.Body>
             </Card>
+            
             <Card className="service">
               <Card.Img className="img-service" variant="top" alt="SEO" src={service_3} />
               <Card.Body>
-                <Card.Title>SEO</Card.Title>
+                <Card.Title>Database Engineering</Card.Title>
                 <Card.Text>
-                  Maximize online visibility with comprehensive SEO strategies.
-                  Rank higher on search engines, attract qualified leads, ensure
-                  sustainable growth.
+                  Design and manage optimized relational databases to ensure data integrity, efficiency, and scalability. From schema modeling to performance tuning, create strong foundations for data-driven applications.
                 </Card.Text>
                 <div className="serial-number">03</div>
               </Card.Body>

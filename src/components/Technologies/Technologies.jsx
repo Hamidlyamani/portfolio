@@ -1,37 +1,101 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./Technologies.css";
+
+
+
 import html from "../../assets/imgs/tech/html.png";
 import css from "../../assets/imgs/tech/css3.png";
 import js from "../../assets/imgs/tech/js.png";
-import react from "../../assets/imgs/tech/react.png";
-import laravel from "../../assets/imgs/tech/laravel.png";
-import wordpress from "../../assets/imgs/tech/wordpress.png";
+import next from "../../assets/imgs/tech/nextjs.webp";
+import tailwind from "../../assets/imgs/tech/tailwind.png";
+import shadcn from "../../assets/imgs/tech/shadcn.png";
 import typescript from "../../assets/imgs/tech/typescript.png";
 import jquery from "../../assets/imgs/tech/jquery.png";
-import php from "../../assets/imgs/tech/php.png";
-import mysql from "../../assets/imgs/tech/mysql.png";
-
-
-
-import git from "../../assets/imgs/tech/git.png";
+import axios from "../../assets/imgs/tech/axios.png";
 import bootstrap from "../../assets/imgs/tech/bootstrap.png";
 import npm from "../../assets/imgs/tech/npm.png";
+
+import angular from "../../assets/imgs/tech/angular.png";
+
+
+
+
+
+
+
+
+
+import laravel from "../../assets/imgs/tech/laravel.png";
+import wordpress from "../../assets/imgs/tech/wordpress.png";
+import php from "../../assets/imgs/tech/php.png";
+import mysql from "../../assets/imgs/tech/mysql.png";
+import spring from "../../assets/imgs/tech/spring.png";
+import java from "../../assets/imgs/tech/java.png";
+import mongoDB from "../../assets/imgs/tech/mongoDB.png";
+import Oracle from "../../assets/imgs/tech/Oracle.jpg";
+import nodejs from "../../assets/imgs/tech/nodejs.png";
+
+import git from "../../assets/imgs/tech/git.png";
+import gitLab from "../../assets/imgs/tech/gitLab.jpg";
 import figma from "../../assets/imgs/tech/figma.png";
 import xd from "../../assets/imgs/tech/xd.png";
 import ga from "../../assets/imgs/tech/g-a.png";
-import axios from "../../assets/imgs/tech/axios.png";
-import tailwind from "../../assets/imgs/tech/tailwind.svg";
-import shadcn from "../../assets/imgs/tech/shadcn.png";
+import linux from "../../assets/imgs/tech/linux.jpg";
+import docker from "../../assets/imgs/tech/docker.png";
 import gsap_img from "../../assets/imgs/tech/gsap.png";
+import fastapi from "../../assets/imgs/tech/fastapi.webp";
+
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TechBox from "./tech";
 gsap.registerPlugin(ScrollTrigger);
+
+
+const backends = [
+  { name: "Node JS", path: nodejs },
+  { name: "wordpress", path: wordpress },
+  { name: "php", path: php },
+  { name: "laravel", path: laravel },
+  { name: "spring boot", path: spring },
+  { name: "java", path: java },
+  { path: Oracle },
+  { name:"mysql" , path: mysql },
+  { path: mongoDB },
+]
+const frontEnds = [
+  { name: "jquery", path: jquery },
+  { path: axios },
+  { path: next },
+  { path: angular },
+  { name: "typescript", path: typescript },
+  { name: "tailwind", path: tailwind },
+  { name: "shadcn", path: shadcn },
+  { name: "html 5", path: html },
+  { name: "css 3", path: css },
+  { name: "javascript", path: js },
+]
+const others = [
+  {  path: fastapi},
+  {path: gitLab },
+  { name: "git/GitHub", path: git },
+  { name: "linux", path: linux },
+  {  path: docker },
+  { name: "figma", path: figma },
+  { name: "Adobe xd", path: xd },
+  { name: "google analytics", path: ga },
+  { name: "gsap", path: gsap_img },
+  { name: "npm", path: npm },
+  
+  
+]
+
+
 
 export default function Technologies() {
   const title = useRef(null);
-  const sliderRef2 = useRef(null);
-  const sliderRef3 = useRef(null);
+
 
   useGSAP(
     () => {
@@ -60,152 +124,16 @@ export default function Technologies() {
           <h2>Utilized Technologies Overview.</h2>
         </div>
       </div>
+
       <div className="slider-container">
         <div className="slider  slider-1">
-          <div className="box-tech item1">
-            <div className="img-tech">
-              <img src={html} alt="html" />
-            </div>
-            <div className="name-tech">HTML 5</div>
-          </div>
-          <div className="box-tech item2">
-            <div className="img-tech">
-              <img src={css} alt="css" />
-            </div>
-            <div className="name-tech">CSS 3</div>
-          </div>
-          <div className="box-tech item3">
-            <div className="img-tech">
-              <img src={js} alt="js" />
-            </div>
-            <div className="name-tech">Javasript</div>
-          </div>
-          <div className="box-tech item4">
-            <div className="img-tech">
-              <img src={typescript} alt="js" />
-            </div>
-            <div className="name-tech">Typescript</div>
-          </div>
-          <div className="box-tech item5">
-            <div className="img-tech">
-              <img src={php} alt="php" />
-            </div>
-            <div className="name-tech">php</div>
-          </div>
-          <div className="box-tech item6">
-            <div className="img-tech">
-              <img src={laravel} alt="laravel" />
-            </div>
-            <div className="name-tech">laravel</div>
-          </div>
-          <div className="box-tech item7">
-            <div className="img-tech">
-              <img src={react} alt="react" />
-            </div>
-            <div className="name-tech">REACT</div>
-          </div>
-          <div className="box-tech item8">
-            <div className="img-tech">
-              <img src={wordpress} alt="wordpress" />
-            </div>
-            <div className="name-tech">Wordpress</div>
-          </div>
-          <div className="box-tech  item9">
-            <div className="img-tech">
-              <img src={jquery} alt="jquery" />
-            </div>
-            <div className="name-tech">jquery</div>
-          </div>
-          <div className="box-tech  item10">
-            <div className="img-tech">
-              <img src={mysql} alt="mysql" />
-            </div>
-            <div className="name-tech">sql/mysql</div>
-          </div>
-
+          {frontEnds.map((item, index) => (<TechBox key={index} imgPath={item.path} nameTech={item.name} index={index}></TechBox>))}
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div className="slider slider-2">
-
-          <div className="box-tech item1">
-            <div className="img-tech">
-              <img src={shadcn} alt="react" />
-            </div>
-            <div className="name-tech">shadcn</div>
-          </div>
-
-          <div className="box-tech item2">
-            <div className="img-tech">
-              <img src={tailwind} alt="tailwind" />
-            </div>
-            <div className="name-tech">tailwind</div>
-          </div>
-          <div className="box-tech item3">
-            <div className="img-tech">
-              <img src={axios} alt="axios" />
-            </div>
-            <div className="name-tech">Axios</div>
-          </div>
-          <div className="box-tech  item4">
-            <div className="img-tech">
-              <img src={git} alt="git" />
-            </div>
-            <div className="name-tech">git/github</div>
-          </div>
-          <div className="box-tech  item5">
-            <div className="img-tech">
-              <img src={npm} alt="npm" />
-            </div>
-            <div className="name-tech">npm</div>
-          </div>
-          <div className="box-tech  item6">
-            <div className="img-tech">
-              <img src={bootstrap} alt="jquery" />
-            </div>
-            <div className="name-tech">bootstrap</div>
-          </div>
-          <div className="box-tech  item7">
-            <div className="img-tech">
-              <img src={figma} alt="figma" />
-            </div>
-            <div className="name-tech">figma</div>
-          </div>
-          <div className="box-tech  item8">
-            <div className="img-tech">
-              <img src={xd} alt="xd" />
-            </div>
-            <div className="name-tech">Adobe xd</div>
-          </div>
-          <div className="box-tech  item9">
-            <div className="img-tech">
-              <img src={ga} alt="ga" />
-            </div>
-            <div className="name-tech">Google Analytics</div>
-          </div>
-          <div className="box-tech  item9">
-            <div className="img-tech">
-              <img src={gsap_img} alt="gsap" />
-            </div>
-            <div className="name-tech">gsap</div>
-          </div>
+          {backends.map((item, index) => (<TechBox key={index} imgPath={item.path} nameTech={item.name} index={index}></TechBox>))}
+        </div>
+        <div className="slider  slider-1">
+          {others.map((item, index) => (<TechBox key={index} imgPath={item.path} nameTech={item.name} index={index}></TechBox>))}
         </div>
       </div>
     </section>

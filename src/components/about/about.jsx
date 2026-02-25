@@ -82,14 +82,9 @@ const About = () => {
             </div>
             <div className="col right" ref={el2}>
               <p>
-                As a frontend developer and freelance web artisan, I thrive on
-                crafting visually captivating interfaces and optimizing for SEO.
-                Hailing from Marrakech, I bring a unique cultural perspective to
-                my work. Let's collaborate to bring your digital aspirations to
-                life. Whether you're an ambitious entrepreneur or a fellow
-                developer, I'm dedicated to creating solutions tailored to your
-                needs. Let's connect and explore endless possibilities together.
-              </p>
+I build modern, scalable web applications that combine clean architecture, strong performance, and beautiful user interfaces. Specialized in Next.js and Spring Boot, I design secure APIs and interactive platforms focused on seamless user experience.
+<br/>
+From elegant front-end design to robust backend systems, I turn complex ideas into fast, reliable, and maintainable digital products built to scale.             </p>
             </div>
           </div>
         </div>

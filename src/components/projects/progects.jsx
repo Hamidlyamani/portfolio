@@ -12,6 +12,8 @@ import project_6 from "../../assets/imgs/img-6.webp";
 import project_7 from "../../assets/imgs/img-7.png";
 import project_8 from "../../assets/imgs/img-8.png";
 import project_9 from "../../assets/imgs/img-9.png";
+import project_10 from "../../assets/imgs/img-10.webp";
+import project_11 from "../../assets/imgs/img-11.webp";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Project from "./project-1";
@@ -24,8 +26,6 @@ import php from "../../assets/imgs/tech/php.png";
 import mysql from "../../assets/imgs/tech/mysql.png";
 import axios from "../../assets/imgs/tech/axios.png";
 import laravel from "../../assets/imgs/tech/laravel.png";
-import bootstrap from "../../assets/imgs/tech/bootstrap.png";
-import ga from "../../assets/imgs/tech/g-a.png";
 import typescript from "../../assets/imgs/tech/typescript.png";
 import shadcn from "../../assets/imgs/tech/shadcn.png";
 import wordpress from "../../assets/imgs/tech/wordpress.png";
@@ -33,15 +33,23 @@ import acf from "../../assets/imgs/tech/acf.png";
 import woo from "../../assets/imgs/tech/woo.png";
 import tailwind from "../../assets/imgs/tech/tailwind.svg";
 import OpenAI from "../../assets/imgs/tech/openai.png";
+import seckitLearn from "../../assets/imgs/tech/seckit-learn.webp";
+import fastapi from "../../assets/imgs/tech/fastapi.webp";
+import nextjs from "../../assets/imgs/tech/nextjs.webp";
+import postgreSQL from "../../assets/imgs/tech/postgreSQL.webp";
+import jwt from "../../assets/imgs/tech/jwt.webp";
+import konva from "../../assets/imgs/tech/conva.webp";
+import socketio from "../../assets/imgs/tech/socketio.webp";
 import project_details_1 from "../../assets/imgs/project_details_1.webp";
 import project_details_2 from "../../assets/imgs/project_details_2.webp";
-import project_details_3 from "../../assets/imgs/project_details_3.webp";
 import project_details_4 from "../../assets/imgs/project_details_4.png";
 import project_details_5 from "../../assets/imgs/project_details_5.webp";
 import project_details_6 from "../../assets/imgs/project_details_6.webp";
 import project_details_7 from "../../assets/imgs/project_details_7.png";
 import project_details_8 from "../../assets/imgs/project_details_8.png";
 import project_details_9 from "../../assets/imgs/project_details_9.png";
+import project_details_10 from "../../assets/imgs/project_details_10.webp";
+import project_details_11 from "../../assets/imgs/project_details_11.png";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -54,7 +62,45 @@ export default function Progects() {
 
   const cardContents = [
     {
-      id: 9,
+  id: 1,
+  title: "Roomly",
+  image_p:  project_10,
+  type: "Full-Stack Web Development & AI Integration",
+  Overview:
+    "Roomly is an intelligent housing reservation platform that allows users to explore, book, and manage rental properties through a secure and role-based system. The platform integrates a machine learning recommendation engine built with scikit-learn to provide personalized housing suggestions based on user preferences and behavior. With dedicated dashboards for administrators and property owners, Roomly ensures efficient property management, secure authentication, and a seamless booking experience.",
+  items: [
+    "Secure authentication system using JWT with role-based access control",
+    "Personalized housing recommendation system powered by a machine learning model built with scikit-learn",
+    "Dedicated dashboards for administrators and property owners",
+    "Property management system with booking and reservation tracking",
+    "RESTful API architecture connecting Next.js frontend with FastAPI backend",
+  ],
+  imageName: [nextjs, fastapi,seckitLearn, postgreSQL, tailwind, jwt],
+  project_details: project_details_10,
+  code_source: "https://github.com/Hamidlyamani/roomly",
+},
+    {
+      id: 2,
+      title: "Pixo",
+      image_p: project_11,
+      type: "Real-Time Web Application",
+      Overview:
+        "Pixo is a real-time collaborative drawing platform that enables multiple users to create and interact simultaneously on a shared canvas. Designed with a scalable WebSocket-based architecture, the platform focuses on performance, synchronization accuracy, and smooth user experience. Pixo aims to simplify creative collaboration by allowing users to join shared rooms, manage roles, and work together seamlessly from anywhere.",
+      items: [
+  "Collaborative drawing in real time with multiple participants",
+  "Shared canvas accessible from anywhere",
+  "Instant synchronization of all actions between users",
+  "Smooth and intuitive drawing experience",
+  "Export and sharing capabilities for created artwork"
+],
+      imageName: [nextjs, socketio, tailwind, konva],
+      project_details: project_details_11,
+      code_source: "https://github.com/Hamidlyamani/pixo",
+      link:"https://pixospace.onrender.com"
+    },
+    
+    {
+      id: 3,
       title: "Ebooksy",
       image_p: project_9,
       type: "Web Development ",
@@ -64,13 +110,13 @@ export default function Progects() {
         "<strong>Discover & Download:</strong> Access and download over 400 books and e-books.",
         "<strong>Smart Recommendations:</strong> AI-powered tool suggests the next book based on your reading preferences.",
         "<strong>Google Books Integration:</strong> Import books with one click and generate custom descriptions.",
-         ],
+      ],
       imageName: [wordpress, OpenAI, html, css, js],
       project_details: project_details_9,
       link: "https://ebooksy.site",
     },
     {
-      id: 1,
+      id: 4,
       title: "TAMAIOZ",
       image_p: project_1,
       type: "Web Development & Design",
@@ -83,12 +129,12 @@ export default function Progects() {
         "Dedicated virtual meeting rooms for online lessons",
         "Comprehensive admin dashboard for platform management",
       ],
-      imageName: [react, axios, php, mysql, html, css, js ],
+      imageName: [react, axios, php, mysql, html, css, js],
       project_details: project_details_1,
       code_source: "https://github.com/Hamidlyamani/Tamaioz",
     },
     {
-      id: 7,
+      id: 5,
       title: "ElyaX",
       image_p: project_7,
       type: "Web Development",
@@ -106,7 +152,7 @@ export default function Progects() {
       link: "https://elya-x.onrender.com",
     },
     {
-      id: 2,
+      id: 6,
       title: "OLINO",
       image_p: project_2,
       type: "Web Development & Design",
@@ -118,12 +164,12 @@ export default function Progects() {
         "Shopping Cart: Manage items in your cart upon login or account creation.",
         "Admin Dashboard: Add, remove, and edit products; manage user accounts; and review orders.",
       ],
-      imageName: [laravel,mysql, html, css, js],
+      imageName: [laravel, mysql, html, css, js],
       project_details: project_details_2,
       code_source: "https://github.com/Hamidlyamani/olino",
     },
     {
-      id: 8,
+      id: 7,
       title: "Formly - LMS Dashboard",
       image_p: project_8,
       type: "Web Development ",
@@ -141,7 +187,7 @@ export default function Progects() {
       code_source: "https://github.com/Hamidlyamani/Dashbord-e-learning/",
     },
     {
-      id: 6,
+      id: 8,
       title: "One Task at a Time",
       type: "Web Development ",
       image_p: project_4,
@@ -159,7 +205,7 @@ export default function Progects() {
       code_source: "https://github.com/Hamidlyamani/saas-lp",
     },
     {
-      id: 3,
+      id: 9,
       title: "CBM menuiserie",
       image_p: project_5,
       type: "Web Development ",
@@ -176,7 +222,7 @@ export default function Progects() {
       link: "https://cbm.serveurprod.com/",
     },
     {
-      id: 4,
+      id: 10,
       title: "My Personal Portfolio",
       image_p: project_6,
       type: "Web Development & Design",
@@ -192,23 +238,7 @@ export default function Progects() {
       project_details: project_details_6,
       code_source: "https://github.com/Hamidlyamani/portfolio",
     },
-    // {
-    //   id: 5,
-    //   title: "OLAM COPANY",
-    //   type: "Web Development with SEO ",
-    //   image_p: project_3,
-    //   Overview:
-    //     "OLAM COMPANY specializes in crafting dream villas and pools in Marrakech, offering turnkey construction services. Developed during my tenure at ONCLICK Agency, our expertise ensures excellence in every project.",
-    //   items: [
-    //     "Contact Form: Easily get in touch with us to inquire about our services, portfolio (Nos Réalisations), and blog (Articles).",
-    //     "Services Page: Explore the range of services we offer, including turnkey villa and pool construction.",
-    //     "Portfolio (Nos Réalisations): Browse through our portfolio to see our completed projects.",
-    //     "Blog (Articles): Stay updated with our latest articles and insights on villa and pool construction.",
-    //   ],
-    //   imageName: [html, css, js, bootstrap, ga],
-    //   project_details: project_details_3,
-    //   link: "https://www.olamcompany.com/",
-    // },
+  
   ];
 
   useGSAP(() => {
