@@ -1,13 +1,24 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./hero.css";
 import logo from "../../assets/imgs/logo.png";
 import pc2 from "../../assets/imgs/g1.webp";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLang, t } from "../../i18n.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
+const copy = {
+  headerCta: { fr: "Devis gratuit", en: "Free quote" },
+  tagline: {
+    fr: "J'aide les entreprises à construire des plateformes web rapides, intelligentes et fiables.",
+    en: "I help businesses build fast, intelligent, reliable web platforms.",
+  },
+  taglineCta: { fr: "Discutons de votre projet →", en: "Let's talk about your project →" },
+};
+
 const Hero = () => {
+  const { lang } = useLang();
 
   useGSAP(() => {
     gsap.from(".image-hero-src", {
@@ -43,10 +54,13 @@ const Hero = () => {
         toggleActions: "play play pause reverse",
       },
     });
+    gsap.from(".hero-tagline", {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      delay: 0.9,
+    });
   });
-
-
-
 
   return (
     <>
@@ -56,29 +70,32 @@ const Hero = () => {
         <div className="top-nav container">
           <div className="logo-Name">
             <div className="logo">
-              <img src={logo} alt="Elyamani hamid logo" />
+              <img src={logo} alt="Elyamani Hamid logo" />
             </div>
             <h1 className="name">
               ELYAMANI <br />
               hamid
             </h1>
           </div>
-          <a href="elyamani_hamid.pdf" className="cta btn-border" data-scroll="#contact">
-            My Resume
+          <a href="#contact" className="cta btn-border">
+            {t(copy.headerCta, lang)}
           </a>
         </div>
         <div className="container_text_img container">
           <div className="content">
             <div className="image-hero-src">
-              <img src={pc2} alt="ELYAMANI HAMID IMAGE" />
+              <img src={pc2} alt="Elyamani Hamid — web developer" />
             </div>
             <div className="web ">web</div>
             <div className="web  outline">web</div>
-            <div className="developer-text ">
-              <span className="de">DE</span>
-              VELOPER
+            <div className="developer-text">
+              <span className="de">DEV</span>ELOPER
             </div>
+            <a href="#contact" className="cta btn-border small-cta bottom-btn">
+              {t(copy.taglineCta, lang)}
+            </a>
           </div>
+          
         </div>
       </header>
     </>

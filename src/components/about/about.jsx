@@ -1,12 +1,26 @@
 import "./about.css";
-import React, {  useRef } from "react";
-import Charte from "./../charte/charte";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLang, t } from "../../i18n.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
+const copy = {
+  title: {
+    fr: "Développeur full-stack, basé à Casablanca.",
+    en: "Full-stack developer, based in Casablanca.",
+  },
+  text: {
+    fr: "Je suis Hamid El-Yamani. Je conçois des plateformes web complètes, du front-end soigné aux architectures backend complexes, et j'intègre l'intelligence artificielle là où elle apporte une vraie valeur. Mon code est public : vous pouvez vérifier mon travail avant de me contacter. Je réponds en moins de 24h.",
+    en: "I'm Hamid El-Yamani. I build complete web platforms, from polished front-ends to complex backend architectures, and I integrate AI where it brings real value. My code is public: you can verify my work before contacting me. I reply within 24 hours.",
+  },
+  cv: { fr: " Voir mon CV →", en: "View my resume →" },
+  contact: { fr: "Me contacter", en: "Contact me" },
+};
+
 const About = () => {
+  const { lang } = useLang();
   const el = useRef(null);
   const el2 = useRef(null);
   useGSAP(() => {
@@ -27,7 +41,6 @@ const About = () => {
     );
 
     ScrollTrigger.matchMedia({
-      // Desktop animations
       "(min-width: 768px)": () => {
         gsap.fromTo(
           el2.current,
@@ -45,8 +58,6 @@ const About = () => {
           }
         );
       },
-
-      // Mobile animations
       "(max-width: 767px)": () => {
         gsap.fromTo(
           el2.current,
@@ -56,7 +67,6 @@ const About = () => {
             opacity: 1,
             skewX: 0,
             duration: 1,
-            data: 0.5,
             scrollTrigger: {
               trigger: el.current,
               start: "0% 100%",
@@ -76,20 +86,27 @@ const About = () => {
         <div className="container">
           <div className="row about-text">
             <div className="col left" ref={el}>
-              <h3>
-                Hi. I’m Hamid, nice to meet you. Please take a look around!
-              </h3>
+              <h3>{t(copy.title, lang)}</h3>
             </div>
             <div className="col right" ref={el2}>
-              <p>
-I build modern, scalable web applications that combine clean architecture, strong performance, and beautiful user interfaces. Specialized in Next.js and Spring Boot, I design secure APIs and interactive platforms focused on seamless user experience.
-<br/>
-From elegant front-end design to robust backend systems, I turn complex ideas into fast, reliable, and maintainable digital products built to scale.             </p>
+              <p>{t(copy.text, lang)}</p>
+              <div className="about-buttons">
+                        <a href="#contact" className="cta btn-border">
+                  {t(copy.contact, lang)}
+                </a>
+                <a
+                  href="elyamani_hamid.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cta cta_sec btn-border"
+                >
+                  {t(copy.cv, lang)}
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <Charte />
     </>
   );
 };

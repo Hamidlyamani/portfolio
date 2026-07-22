@@ -1,14 +1,23 @@
-import React, { StrictMode, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import Hero from "./components/hero_sction/hero";
 import About from "./components/about/about";
 import Services from "./components/services/services";
 import Projects from "./components/projects/progects";
 import Technologies from "./components/Technologies/Technologies";
+import Charte from "./components/charte/charte";
+import Offer from "./components/offer/offer";
+import Process from "./components/process/process";
 import Contact from "./components/contact/contact";
 import Mouse from "./components/parts/mouse";
 import Nav from "./components/parts/nav";
+import Controls from "./components/parts/controls";
+import WhatsappButton from "./components/parts/whatsapp";
 import Loader from "./components/loader/loader";
+import CharteTimeline from "./components/timeline/timeline";
 
 export default function App() {
   const [x, setX] = useState(0);
@@ -18,11 +27,11 @@ export default function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoaded(true); // Show content after 2 seconds
-    }, 1400);
+      setIsLoaded(true);
+    }, 500);
 
     const handlePageLoad = () => {
-      setIsContentLoaded(true); // Content is fully loaded
+      setIsContentLoaded(true);
     };
 
     if (document.readyState === "complete") {
@@ -32,12 +41,25 @@ export default function App() {
     }
 
     return () => {
-      clearTimeout(timer); // Clear timer if component unmounts
+      clearTimeout(timer);
       window.removeEventListener("load", handlePageLoad);
     };
   }, []);
-  // Display content only if both loading animation and page load are complete
+
   const shouldShowContent = isLoaded && isContentLoaded;
+
+  // Content mounts AFTER the window "load" event, so ScrollTrigger's automatic
+  // position refresh has already happened. Late-loading images then shift the
+  // layout and every trigger fires too early. Re-measure once things settle.
+  useEffect(() => {
+    if (!shouldShowContent) return;
+    const t1 = setTimeout(() => ScrollTrigger.refresh(), 800);
+    const t2 = setTimeout(() => ScrollTrigger.refresh(), 2500);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [shouldShowContent]);
 
   const handleMouseMovement = (e) => {
     setX(e.clientX);
@@ -53,17 +75,24 @@ export default function App() {
 
   return (
     <div className={`app-container ${isLoaded ? "loaded" : "not_loaded"}`}>
-    <Loader />
+      <Loader />
       {shouldShowContent && (
         <div>
           <Hero />
           <About />
           <Services />
           <Projects />
+          <Offer />
           <Technologies />
+          {/* <Charte /> */}
+        <CharteTimeline />
+          <Process />
           <Contact />
+          
           <Mouse x={x} y={y} />
           <Nav />
+          <Controls />
+          <WhatsappButton />
         </div>
       )}
     </div>

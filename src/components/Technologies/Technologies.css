@@ -14,10 +14,10 @@
 }
 
 .box-tech {
-  background-color: #fff;
+  background-color: var(--card-bg);
   display: flex;
   border-radius: 16px;
-  color: black;
+  color: var(--text-strong);
   width: 226px;
   min-width: 220px;
   padding: 15px;

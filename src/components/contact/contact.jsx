@@ -4,72 +4,97 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import linkdin from "../../assets/imgs/social/linkedin.png";
-import insta from "../../assets/imgs/social/instagram.png";
 import behance from "../../assets/imgs/social/behance.png";
 import github from "../../assets/imgs/social/github.png";
 import whatsapp from "../../assets/imgs/social/whatsapp.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { useLang, t } from "../../i18n.jsx";
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 gsap.registerPlugin(ScrollTrigger);
 
+const copy = {
+  soustitle: {
+    fr: "Décrivez votre besoin en deux phrases — devis gratuit sous 24h. Pressé ? WhatsApp, c'est encore plus rapide.",
+    en: "Describe your need in two sentences — free quote within 24h. In a hurry? WhatsApp is even faster.",
+  },
+  title: { fr: "PARLONS DE VOTRE PROJET", en: "LET'S TALK ABOUT YOUR PROJECT" },
+  details: { fr: "Coordonnées", en: "Contact details" },
+  location: { fr: "Localisation", en: "Location" },
+  whatsappCta: { fr: "Discuter sur WhatsApp", en: "Chat on WhatsApp" },
+  name: { fr: "Votre nom *", en: "Your name *" },
+  email: { fr: "Votre email *", en: "Your email *" },
+  subject: {
+    fr: "Quel service recherchez-vous ?",
+    en: "What service are you looking for?",
+  },
+  message: { fr: "Votre message... *", en: "Your message... *" },
+  send: { fr: "ENVOYER MA DEMANDE", en: "SEND MY REQUEST" },
+  successTitle: { fr: "Message reçu !", en: "Message received!" },
+  successText: {
+    fr: "Je vous réponds avec un devis sous 24h.",
+    en: "I'll reply with a quote within 24 hours.",
+  },
+  errorTitle: { fr: "Une erreur est survenue", en: "An error occurred" },
+  errorText: {
+    fr: "Réessayez, ou contactez-moi directement sur WhatsApp.",
+    en: "Try again, or contact me directly on WhatsApp.",
+  },
+  copyright: {
+    fr: "© 2026 Elyamani Hamid - Développeur web, Casablanca",
+    en: "© 2026 Elyamani Hamid - Web developer, Casablanca",
+  },
+};
+
 export default function Contact() {
+  const { lang } = useLang();
   const title = useRef(null);
   const left = useRef(null);
   const right = useRef(null);
-  useGSAP(
-    () => {
-      gsap.from(title.current, {
-        opacity: 0,
-        scale: 1.1,
-        duration: 0.7,
-        scrollTrigger: {
-          trigger: title.current,
-          start: "0% 100%",
-          toggleActions: "play play pause reverse",
-        },
-      });
-      gsap.from(left.current, {
-        x: "-40vw",
-        duration: 0.9,
-        scrollTrigger: {
-          trigger: left.current,
-          start: "0% 100%",
-          toggleActions: "play play pause reverse",
-        },
-      });
-
-      gsap.from(right.current, {
-        opacity: 0,
-        duration: 0.9,
-        scrollTrigger: {
-          trigger: right.current,
-          start: "0% 100%",
-          toggleActions: "play play pause reverse",
-        },
-      });
-
+  useGSAP(() => {
+    gsap.from(title.current, {
+      opacity: 0,
+      scale: 1.1,
+      duration: 0.7,
+      scrollTrigger: {
+        trigger: title.current,
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
     });
+    gsap.from(left.current, {
+      x: "-40vw",
+      duration: 0.9,
+      scrollTrigger: {
+        trigger: left.current,
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
+    });
+    gsap.from(right.current, {
+      opacity: 0,
+      duration: 0.9,
+      scrollTrigger: {
+        trigger: right.current,
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
+    });
+  });
 
-
-
-
-
-
-
-
-
-
-
-  const [formData, setFormData] = useState({ name: '', email: '', sub: '', message: '' });
-  const [responseMessage, setResponseMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    sub: "",
+    message: "",
+  });
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,14 +103,16 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (sending) return;
+    setSending(true);
 
     try {
       const domain = window.location.origin;
 
       const response = await fetch(`${domain}/contact.php`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: formData.name,
@@ -95,45 +122,51 @@ export default function Contact() {
         }),
       });
 
-      const result = await response.json(); // Parse JSON response
-console.log(result)
-      setResponseMessage(result.message);
-      Swal.fire({
-        title: "Message Received",
-        text: "We will respond in approximately 24 Heures",
-        icon: 'success'
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const result = await response.json();
+      if (result && result.success === false) {
+        throw new Error(result.message || "Send failed");
+      }
+
+      setFormData({ name: "", email: "", sub: "", message: "" });
+      MySwal.fire({
+        title: t(copy.successTitle, lang),
+        text: t(copy.successText, lang),
+        icon: "success",
       });
     } catch (error) {
-      setResponseMessage('An error occurred. Please try again.');
-      Swal.fire({
-        title: "An error occurred.",
-        text: "Please try again.",
-        icon: 'warning'
+      MySwal.fire({
+        title: t(copy.errorTitle, lang),
+        text: t(copy.errorText, lang),
+        icon: "warning",
       });
+    } finally {
+      setSending(false);
     }
   };
-
-
-
-
-
-
-
 
   return (
     <>
       <section className="contact" id="contact">
         <div className="container">
           <div className="title-part" ref={title}>
-            <div className="soustitle">
-              I am available for freelancing work. Got a question or proposal,
-              or just want to say hello? Don't be shy and message me now.
-            </div>
-            <h2>GET IN TOUCH</h2>
+            <div className="soustitle">{t(copy.soustitle, lang)}</div>
+            <h2>{t(copy.title, lang)}</h2>
           </div>
           <div className="row row-cont">
             <div className="col-xl-4 info-contact" ref={left}>
-              <h3>Contact Details</h3>
+              <a
+                href="https://wa.me/+212628142424?text=Salam Hamid! Je veux discuter d'un projet."
+                target="_blank"
+                rel="noreferrer"
+                className="cta btn-border whatsapp-cta"
+              >
+               <img src={whatsapp} alt='WhatsApp' className='whatap_button' /> {t(copy.whatsappCta, lang)}
+              </a>
+              <h3>{t(copy.details, lang)}</h3>
               <div className="info-item">
                 <FontAwesomeIcon
                   icon={faEnvelope}
@@ -147,10 +180,10 @@ console.log(result)
                 <FontAwesomeIcon icon={faPhone} style={{ color: "#f37500" }} />
                 <a href="tel:+212628142424">+212 628142424</a>
               </div>
-              <h3>Location</h3>
+              <h3>{t(copy.location, lang)}</h3>
               <div className="info-item">
                 <FontAwesomeIcon icon={faHouse} style={{ color: "#f37500" }} />
-                <span>Marrakech - Morocco</span>
+                <span>Casablanca - Morocco</span>
               </div>
             </div>
             <div className="col-xl-8 form-contact" ref={right}>
@@ -162,7 +195,7 @@ console.log(result)
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="What's your name ?*"
+                      placeholder={t(copy.name, lang)}
                       className="inptFld"
                       required
                     />
@@ -174,7 +207,7 @@ console.log(result)
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="What's your email ?*"
+                      placeholder={t(copy.email, lang)}
                       className="inptFld"
                       required
                     />
@@ -186,7 +219,7 @@ console.log(result)
                       name="sub"
                       value={formData.sub}
                       onChange={handleChange}
-                      placeholder="What service are you looking for ?"
+                      placeholder={t(copy.subject, lang)}
                       className="inptFld"
                     />
                   </div>
@@ -199,7 +232,7 @@ console.log(result)
                       value={formData.message}
                       onChange={handleChange}
                       name="message"
-                      placeholder="Your Message...*"
+                      placeholder={t(copy.message, lang)}
                       required
                     ></textarea>
                   </div>
@@ -209,8 +242,9 @@ console.log(result)
                       type="submit"
                       name="submit"
                       className="inptBtn btn-border"
+                      disabled={sending}
                     >
-                      SEND YOUR MESSAGE
+                      {t(copy.send, lang)}
                     </button>
                   </div>
                 </div>
@@ -223,9 +257,10 @@ console.log(result)
                 href="https://www.linkedin.com/in/hamid-el-yamani-63bb57376"
                 className="social linkedIn hvr-sweep-to-top"
                 target="_blank"
+                rel="noreferrer"
               >
                 <div className="image">
-                  <img src={linkdin} alt="linkdIn" />
+                  <img src={linkdin} alt="LinkedIn" />
                 </div>
                 <p className="name">linkedIn</p>
               </a>
@@ -234,9 +269,10 @@ console.log(result)
                 href="https://github.com/Hamidlyamani"
                 className="social GitHub"
                 target="_blank"
+                rel="noreferrer"
               >
                 <div className="image">
-                  <img src={github} alt="github" />
+                  <img src={github} alt="GitHub" />
                 </div>
                 <p className="name">GitHub</p>
               </a>
@@ -244,6 +280,7 @@ console.log(result)
                 href="https://www.behance.net/mnhxhx"
                 className="social Behance"
                 target="_blank"
+                rel="noreferrer"
               >
                 <div className="image">
                   <img src={behance} alt="Behance" />
@@ -251,19 +288,10 @@ console.log(result)
                 <p className="name">Behance</p>
               </a>
               <a
-                href="https://www.instagram.com/alyamani__hd/"
-                className="social Instagram"
-                target="_blank"
-              >
-                <div className="image">
-                  <img src={insta} alt="Instagram" />
-                </div>
-                <p className="name">Instagram</p>
-              </a>
-              <a
-                href="https://wa.me/+212628142424?text=Hey Hamid!!"
+                href="https://wa.me/+212628142424?text=Salam Hamid!"
                 className="social Whatsapp"
                 target="_blank"
+                rel="noreferrer"
               >
                 <div className="image">
                   <img src={whatsapp} alt="Whatsapp" />
@@ -272,11 +300,7 @@ console.log(result)
               </a>
             </div>
             <div className="copyright">
-              <p>No copyrights here—grab what you want ;)</p>
-              <p>
-                Made with love{" "}
-                <FontAwesomeIcon icon={faHeart} style={{ color: "#FF0000" }} />
-              </p>
+              <p>{t(copy.copyright, lang)}</p>
             </div>
           </div>
         </div>

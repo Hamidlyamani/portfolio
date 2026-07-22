@@ -1,12 +1,118 @@
 import React, { useRef } from "react";
 import "./charte.css";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useLang, t } from "../../i18n.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+const charteCopy = {
+  soustitle: {
+    fr: "Cinq ans de progression constante, de l'autodidacte au développeur full-stack.",
+    en: "Five years of steady progression, from self-taught to full-stack developer.",
+  },
+  title: { fr: "Mon Parcours", en: "My Journey" },
+};
+
+const events = [
+  {
+    title: { fr: "Premiers pas dans le code", en: "First steps in code" },
+    desc: {
+      fr: "J'apprends HTML et CSS en autodidacte, avec les moyens du bord — le début d'une discipline d'apprentissage qui ne m'a plus quitté.",
+      en: "Self-taught HTML and CSS with whatever tools I had — the start of a learning discipline that never left me.",
+    },
+  },
+  {
+    title: { fr: "Bac Sciences Économiques & Gestion", en: "Baccalaureate in Economics & Management" },
+    desc: {
+      fr: "Obtention du baccalauréat en Sciences Économiques et Gestion — une base précieuse pour comprendre les enjeux business de mes clients.",
+      en: "Earned my baccalaureate in Economics and Management — a valuable foundation for understanding my clients' business needs.",
+    },
+  },
+  {
+    title: { fr: "Deuxième Bac — Sciences de la Vie", en: "Second Baccalaureate — Life Sciences" },
+    desc: {
+      fr: "Deuxième baccalauréat, en Sciences de la Vie, préparé en un an : rigueur et capacité d'apprentissage rapide, prouvées tôt.",
+      en: "A second baccalaureate, in Life Sciences, completed in one year: rigor and fast learning, proven early.",
+    },
+  },
+  {
+    title: { fr: "Formation Multimédia & Web Design", en: "Multimedia & Web Design Program" },
+    desc: {
+      fr: "Entrée en formation de Technicien Supérieur en Multimédia et Web Design : transformer des acquis d'autodidacte en compétences professionnelles.",
+      en: "Enrolled in the Higher Technician program in Multimedia & Web Design: turning self-taught skills into professional ones.",
+    },
+  },
+  {
+    title: { fr: "Premier stage en agence web", en: "First web agency internship" },
+    desc: {
+      fr: "Un mois de production réelle en HTML, CSS et JavaScript, au rythme des projets clients d'une agence web.",
+      en: "A month of real production work in HTML, CSS and JavaScript, at the client-project pace of a web agency.",
+    },
+  },
+  {
+    title: { fr: "Stage Greencom — WordPress & PHP", en: "Greencom internship — WordPress & PHP" },
+    desc: {
+      fr: "Développement WordPress et PHP sur des projets clients : thèmes sur mesure et intégrations avancées.",
+      en: "WordPress and PHP development on client projects: custom themes and advanced integrations.",
+    },
+  },
+  {
+    title: { fr: "Diplôme de Technicien Supérieur obtenu", en: "Higher Technician Diploma earned" },
+    desc: {
+      fr: "Diplôme en Multimédia et Web Design en poche, avec deux stages en agence déjà derrière moi. Prêt pour le terrain.",
+      en: "Multimedia & Web Design diploma earned, with two agency internships already behind me. Ready for the field.",
+    },
+  },
+  {
+    title: { fr: "Intégrateur web — Agence ONCLICK", en: "Web integrator — ONCLICK Agency" },
+    desc: {
+      fr: "Sites clients en HTML, PHP et WordPress avec optimisation SEO : mes premières livraisons en production pour de vrais clients.",
+      en: "Client sites in HTML, PHP and WordPress with SEO optimization: my first production deliveries for real clients.",
+    },
+  },
+  {
+    title: { fr: "Développeur front-end — Agence Hay2", en: "Frontend developer — Hay2 Agency" },
+    desc: {
+      fr: "Interfaces modernes et responsives livrées en équipe, sur des projets clients variés et exigeants.",
+      en: "Modern, responsive interfaces delivered in a team, across varied and demanding client projects.",
+    },
+  },
+  {
+    title: { fr: "Fin de mission — Hay2", en: "Role concluded — Hay2" },
+    desc: {
+      fr: "Fin de mission après de nombreux projets web livrés : une expérience solide du développement front-end en agence.",
+      en: "Concluded after shipping numerous web projects: solid agency experience in frontend development.",
+    },
+  },
+  {
+    title: { fr: "Licence ISITW — Ingénierie Web", en: "Bachelor — ISITW Web Engineering" },
+    desc: {
+      fr: "Licence en Ingénierie des Systèmes d'Information et Technologies Web : architectures modernes, systèmes backend, applications scalables.",
+      en: "Bachelor in Information Systems Engineering & Web Technologies: modern architectures, backend systems, scalable applications.",
+    },
+  },
+  {
+    title: { fr: "Début chez 2MAG Agency", en: "" },
+    desc: {
+      fr: "Prise de poste en tant que Full-Stack Developer pour concevoir et développer des applications web performantes.",
+      en: "",
+    },
+  },
+  {
+    title: { fr: "Obtention de la Licence ISITW", en: "" },
+    desc: {
+      fr: "Diplôme en Ingénierie des Systèmes d'Information et Technologies Web, spécialisé dans le développement d'applications web modernes et les architectures logicielles.",
+      en: "",
+    },
+  },
+];
+
 export default function Charte() {
+  const { lang } = useLang();
   const el = useRef(null);
   const charte = useRef(null);
   useGSAP(() => {
@@ -74,10 +180,8 @@ export default function Charte() {
   return (
     <div className="charte">
       <div className="title-part" ref={el}>
-        <div className="soustitle">
-          Let me take you through the milestones of my journey.
-        </div>
-        <h2>My Educational and Professional Story</h2>
+        <div className="soustitle">{t(charteCopy.soustitle, lang)}</div>
+        <h2>{t(charteCopy.title, lang)}</h2>
       </div>
       <div className="charte_horisantel section2">
         <div className="line-prancipal" id="sectionPin" ref={charte}>
@@ -91,12 +195,8 @@ export default function Charte() {
                 <div className="event top">
                   <div className="box-event">
                     <p className="date-event">03/2020</p>
-                    <h6>First Code Encounte.</h6>
-                    <p className="description">
-                      I began my coding journey by learning HTML and CSS on my
-                      phone, marking my initial encounter with the field of
-                      programming.
-                    </p>
+                    <h6>{t(events[0].title, lang)}</h6>
+                    <p className="description">{t(events[0].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -111,12 +211,8 @@ export default function Charte() {
                 <div className="event bottom">
                   <div className="box-event">
                     <p className="date-event">07/2020</p>
-                    <h6>First Baccalaureate in Economics.</h6>
-                    <p className="description">
-                      I proudly earned my first bachelor's degree in Economics
-                      and Management Sciences, marking a significant milestone
-                      in my academic journey.
-                    </p>
+                    <h6>{t(events[1].title, lang)}</h6>
+                    <p className="description">{t(events[1].desc, lang)}</p>
                   </div>
                   <div className="right-line">
                     <div className="sircle"></div>
@@ -140,11 +236,8 @@ export default function Charte() {
                 <div className="event top">
                   <div className="box-event">
                     <p className="date-event">07/2021</p>
-                    <h6>Second Baccalaureate in Life Sciences.</h6>
-                    <p className="description">
-                      Achieved second baccalaureate in Life Sciences, overcoming
-                      barriers to follow the dream of software development.
-                    </p>
+                    <h6>{t(events[2].title, lang)}</h6>
+                    <p className="description">{t(events[2].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -158,12 +251,8 @@ export default function Charte() {
                 <div className="event bottom">
                   <div className="box-event">
                     <p className="date-event">10/2021</p>
-                    <h6>Embarking on Web Design Studies.</h6>
-                    <p className="description">
-                      Enrolled in the Higher Technician Certificate program in
-                      Multimedia and Web Design, embarking on a journey to
-                      deepen expertise in digital media and web development.
-                    </p>
+                    <h6>{t(events[3].title, lang)}</h6>
+                    <p className="description">{t(events[3].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -184,12 +273,8 @@ export default function Charte() {
                 <div className="event top">
                   <div className="box-event">
                     <p className="date-event">06/2022</p>
-                    <h6>HTML/CSS/JS Practical Internship Initiation</h6>
-                    <p className="description">
-                      Embarked on an internship at a web design agency,
-                      dedicating a month to hands-on practice and refinement of
-                      HTML, CSS, and JavaScript skills.
-                    </p>
+                    <h6>{t(events[4].title, lang)}</h6>
+                    <p className="description">{t(events[4].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -213,12 +298,8 @@ export default function Charte() {
                 <div className="event bottom">
                   <div className="box-event">
                     <p className="date-event">05/2023</p>
-                    <h6>Greencom Internship: Wordpress and PHP</h6>
-                    <p className="description">
-                      Engaged in an internship at Greencom agency, deepening
-                      understanding of Wordpress development while mastering PHP
-                      and advancing expertise in HTML, CSS, and JavaScript.
-                    </p>
+                    <h6>{t(events[5].title, lang)}</h6>
+                    <p className="description">{t(events[5].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -231,12 +312,8 @@ export default function Charte() {
                 <div className="event top">
                   <div className="box-event">
                     <p className="date-event">07/2023</p>
-                    <h6>Completion of Multimedia Web Design Program</h6>
-                    <p className="description">
-                      Successfully completed the Higher Technician Certificate
-                      program, marking the culmination of educational endeavors
-                      in multimedia and web design.
-                    </p>
+                    <h6>{t(events[6].title, lang)}</h6>
+                    <p className="description">{t(events[6].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -250,12 +327,8 @@ export default function Charte() {
                 <div className="event bottom">
                   <div className="box-event">
                     <p className="date-event">10/2023</p>
-                    <h6>Joining ONCLICK Agency: Web Integration Role</h6>
-                    <p className="description">
-                      Joined ONCLICK Agency as a web integrator, participating
-                      in projects encompassing HTML, PHP, SEO, and Wordpress,
-                      enriching the agency's diverse portfolio.
-                    </p>
+                    <h6>{t(events[7].title, lang)}</h6>
+                    <p className="description">{t(events[7].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -273,12 +346,8 @@ export default function Charte() {
                 <div className="event top">
                   <div className="box-event">
                     <p className="date-event">02/2024</p>
-                    <h6>Frontend Developer Role at Hay2 Agency</h6>
-                    <p className="description">
-                      Began working at Hay 2 Agency as a frontend developer,
-                      embracing fresh challenges and responsibilities within the
-                      dynamic web development landscape.
-                    </p>
+                    <h6>{t(events[8].title, lang)}</h6>
+                    <p className="description">{t(events[8].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -310,10 +379,8 @@ export default function Charte() {
                 <div className="event bottom">
                   <div className="box-event">
                     <p className="date-event">09/2025</p>
-                    <h6>End of Frontend Developer Role at Hay2 Agency</h6>
-                    <p className="description">
-                      Successfully concluded my role at Hay2 Agency after contributing to multiple web projects, strengthening my experience in frontend development and collaborative team environments.
-                    </p>
+                    <h6>{t(events[9].title, lang)}</h6>
+                    <p className="description">{t(events[9].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -325,10 +392,8 @@ export default function Charte() {
                 <div className="event top">
                   <div className="box-event">
                     <p className="date-event">10/2025</p>
-                    <h6>Admission to Bachelor Program – ISITW</h6>
-                    <p className="description">
-                      Started the Bachelor in Information Systems Engineering and Web Technologies, deepening my expertise in modern web architectures, backend systems, and scalable application design.
-                    </p>
+                    <h6>{t(events[10].title, lang)}</h6>
+                    <p className="description">{t(events[10].desc, lang)}</p>
                   </div>
 
                   <div className="right-line">
@@ -345,7 +410,8 @@ export default function Charte() {
               <div className="month"></div>
               <div className="month"></div>
               <div className="month"></div>
-              <div className="month nosircle lastmonth "></div>
+              <div className="month nosircle lastmonth ">
+                  </div>
             </div>
           </div>
         </div>

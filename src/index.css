@@ -67,6 +67,27 @@
 :root {
   --pcolor: #f37500;
   --scolor: #3f1e0052;
+  --bg: #fff;
+  --text: #111;
+  --text-strong: #31291f;
+  --card-bg: #fff;
+  --surface-warm: #fff8ea;
+  --input-bg: rgb(218, 212, 207);
+  --input-text: #111;
+  --nav-bg: rgba(255, 255, 255, 0.877);
+  --nav-bg2: rgba(255, 238, 222, 0.815);
+}
+
+[data-theme="dark"] {
+  --bg: #131313;
+  --text: #e8e8e8;
+  --text-strong: #f0e8df;
+  --card-bg: #1e1e1e;
+  --surface-warm: #1a1410;
+  --input-bg: #2a2a2a;
+  --input-text: #e8e8e8;
+  --nav-bg: rgba(30, 30, 30, 0.9);
+  --nav-bg2: rgba(45, 36, 28, 0.9);
 }
 
 html {
@@ -88,7 +109,9 @@ body {
   font-size: 16px;
   overflow-x: hidden;
   cursor: none;
-  background-color: #fff;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 p {

@@ -10,7 +10,7 @@ width: 100%;
 .services .service {
   margin-right: 30px;
   padding: 46px 30px;
-  background: rgb(255, 255, 255);
+  background: var(--card-bg);
   background: linear-gradient(
     150deg,
     rgba(255, 255, 255, 1) 0%,
@@ -55,6 +55,9 @@ background: #f12711; /* fallback for old browsers */
   font-size: 1.6rem;
   font-family: "PP_Gosha_b";
   padding-bottom: 0.5rem;
+}
+.services .service:hover .card-body .service-cta{
+  color:#fff;
 }
 .services .serial-number {
   position: absolute;

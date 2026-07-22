@@ -1,1 +1,462 @@
+/* ===== Conversion v2 additions ===== */
 
+/* Language switch (header) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.lang-switch button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.45;
+  padding: 2px 5px;
+  font-family: inherit;
+}
+.lang-switch button.active {
+  opacity: 1;
+  color: var(--pcolor);
+  font-weight: 700;
+}
+.lang-switch .sep {
+  opacity: 0.35;
+}
+
+/* Hero tagline + small CTA */
+.hero-tagline {
+  margin-top: 28px;
+  max-width: 560px;
+  position: relative;
+  z-index: 3;
+}
+.hero-tagline p {
+  font-size: 18px;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+.hero-tagline .small-cta {
+  display: inline-block;
+}
+
+/* About buttons */
+.about-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+/* Service card CTA */
+.service-cta {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--pcolor);
+  text-decoration: none;
+  font-weight: 600;
+}
+.service-cta:hover {
+  text-decoration: underline;
+  color: var(--pcolor);
+}
+
+/* Projects: demo badge + show-all toggle */
+.card-project {
+  position: relative;
+}
+.demo-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--pcolor);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  z-index: 2;
+}
+.projects-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Free homepage offer */
+.offer-section {
+  padding: 90px 0;
+  text-align: center;
+}
+.offer-section .offer-text {
+  max-width: 660px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* Arsenal toggle */
+.arsenal-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 6px 0 34px;
+}
+
+/* Process */
+.process-section {
+  padding: 90px 0;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 44px;
+}
+.process-step {
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+.process-step .step-num {
+  color: var(--pcolor);
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.process-step h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.process-step p {
+  font-size: 15px;
+  opacity: 0.8;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Contact: WhatsApp primary CTA */
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 26px;
+}
+
+/* Modal case study labels */
+.case-label {
+  color: var(--pcolor);
+  font-weight: 700;
+}
+
+
+/* ===== Theme toggle & dark-mode overrides ===== */
+.theme-toggle {
+  background: none;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  color: inherit;
+}
+.theme-toggle:hover {
+  border-color: var(--pcolor);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--card-bg);
+  color: var(--text);
+}
+[data-theme="dark"] .modal-content {
+  background-color: var(--card-bg);
+  color: var(--text);
+}
+[data-theme="dark"] .modal-header .btn-close {
+  filter: invert(1);
+}
+[data-theme="dark"] .inptFld {
+  background-color: #4f4f4f;
+  color: var(--input-text);
+}
+[data-theme="dark"] .inptFld::placeholder {
+  color: rgba(232, 232, 232, 0.6);
+}
+[data-theme="dark"] .contact .inptFld {
+  color: rgba(232, 232, 232);
+}
+
+/* ===== Bottom-left corner controls (theme + language) ===== */
+.corner-controls {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: var(--nav-bg);
+  padding: 10px 8px;
+  border-radius: 30px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+.lang-switch.vertical {
+  flex-direction: column;
+  gap: 4px;
+}
+@media (max-width: 767px) {
+  .corner-controls {
+    left: 10px;
+    bottom: 10px;
+    padding: 8px 6px;
+  }
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+}
+
+/* ===== WhatsApp floating button (bottom-right) ===== */
+.whatsapp-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1200;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 767px) {
+  .whatsapp-float {
+    right: 10px;
+    bottom: 10px;
+    width: 48px;
+    height: 48px;
+  }
+  .whatsapp-float img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — breakpoints 1200 / 992 / 668 / 440
+   (selectors are intentionally more specific than the component
+   CSS so these rules win regardless of import order)
+   ============================================================ */
+
+@media only screen and (max-width: 1200px) {
+  /* bottom navbar: tighter items */
+  .nav_bar .nav-b .item {
+    padding: 4px 10px;
+    margin: 4px;
+    font-size: 0.85rem;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .developer-text .de::before {
+    font-size: 2.6rem;
+    top: -28px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+     .nav_bar .nav-b .item {
+        padding: 3px 3px;
+        margin: 2px;
+        font-size: 0.7rem;
+    }
+
+
+  .developer-text .de::before {
+    font-size: 2rem;
+    top: -24px;
+    width: 80vw;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .offer-section,
+  .process-section {
+    padding: 70px 0;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  /* navbar is bottom-fixed here (see parts.css ≤767) — compact it */
+  .nav_bar .nav-b .item {
+    padding: 4px 8px;
+    margin: 6px 4px;
+    font-size: 0.75rem;
+  }
+
+  /* floating buttons must sit ABOVE the bottom nav bar */
+  .corner-controls {
+    bottom: 72px;
+    left: 10px;
+  }
+  .whatsapp-float {
+    bottom: 72px;
+    right: 10px;
+  }
+
+  .developer-text .de::before {
+    font-size: 1.5rem;
+    top: -20px;
+    left: 0;
+    width: 88vw;
+  }
+
+  .offer-section,
+  .process-section {
+    padding: 50px 0;
+  }
+  .offer-section .offer-text {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+  .process-step {
+    padding: 20px 16px;
+  }
+  .process-step .step-num {
+    font-size: 24px;
+  }
+  .process-step h4 {
+    font-size: 16px;
+  }
+
+  .top-nav .cta {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .nav_bar .nav-b .item {
+    padding: 4px 6px;
+    margin: 3px 2px;
+  }
+  .nav_bar .nav-b .item svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+     .developer-text .de::before {
+        font-size: 0.8rem;
+        top: -30px;
+        width: 78vw;
+    }
+
+  .offer-section,
+  .process-section {
+    padding: 40px 0;
+  }
+
+  .corner-controls {
+    bottom: 64px;
+    padding: 6px 5px;
+    gap: 6px;
+  }
+  .theme-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .whatsapp-float {
+    bottom: 64px;
+    width: 44px;
+    height: 44px;
+  }
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .top-nav .cta {
+    padding: 7px 10px;
+    font-size: 0.75rem;
+  }
+  .about-buttons .cta {
+    padding: 9px 14px;
+    font-size: 0.85rem;
+  }
+  .projects-toggle .cta,
+  .arsenal-toggle .cta {
+    font-size: 0.85rem;
+    padding: 9px 14px;
+  }
+}
+
+/* ===== Dark-mode fine-tuning ===== */
+[data-theme="dark"] .web {
+  color: #b1a5a042;
+}
+[data-theme="dark"] .web.outline {
+  -webkit-text-stroke: 5px rgb(224 218 212 / 41%);
+}
+[data-theme="dark"] .nav-b .item {
+  color: #dbdbdb;
+}
+[data-theme="dark"] .cta,
+[data-theme="dark"] .cta.cta_sec,
+[data-theme="dark"] .btn-border,
+[data-theme="dark"] .inptBtn {
+  color: #fff;
+}
+[data-theme="dark"] .services .service {
+  background: linear-gradient(150deg, rgb(73 71 71) 0%, rgb(110 78 38) 100%);
+  -webkit-box-shadow: 6px 6px 15px 1px rgb(100 100 100 / 60%);
+  -moz-box-shadow: 6px 6px 15px 1px rgb(100 100 100 / 60%);
+  box-shadow: 6px 6px 15px 1px rgb(100 100 100 / 60%);
+  color: #fff;
+}
+[data-theme="dark"] .services .card-title,
+[data-theme="dark"] .services .card-text,
+[data-theme="dark"] .services .serial-number {
+  color: #fff;
+}
+[data-theme="dark"] .services .service:hover .service-cta {
+  color: #fff;
+}
+[data-theme="dark"] .box-event {
+  box-shadow: 6px 6px 16px 3px #4b3a2c;
+  background: rgb(53 53 53);
+}
+[data-theme="dark"] .contact .social_media .social {
+  color: #f8f8f8;
+}

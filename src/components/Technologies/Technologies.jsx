@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Technologies.css";
 
 
@@ -32,11 +32,11 @@ import mysql from "../../assets/imgs/tech/mysql.png";
 import spring from "../../assets/imgs/tech/spring.png";
 import java from "../../assets/imgs/tech/java.png";
 import mongoDB from "../../assets/imgs/tech/mongoDB.png";
-import Oracle from "../../assets/imgs/tech/Oracle.jpg";
+import Oracle from "../../assets/imgs/tech/Oracle.png";
 import nodejs from "../../assets/imgs/tech/nodejs.png";
 
 import git from "../../assets/imgs/tech/git.png";
-import gitLab from "../../assets/imgs/tech/gitLab.jpg";
+import gitLab from "../../assets/imgs/tech/gitLab.png";
 import figma from "../../assets/imgs/tech/figma.png";
 import xd from "../../assets/imgs/tech/xd.png";
 import ga from "../../assets/imgs/tech/g-a.png";
@@ -50,6 +50,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TechBox from "./tech";
+import { useLang, t } from "../../i18n.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -93,8 +94,27 @@ const others = [
 
 
 
+const copy = {
+  soustitle: {
+    fr: "Les technologies derrière chaque projet.",
+    en: "The technologies behind every project.",
+  },
+  title: { fr: "Mon expertise.", en: "My Expertise." },
+  show: { fr: "Voir mon expertise", en: "Show my expertise" },
+  hide: { fr: "Masquer", en: "Hide" },
+};
+
 export default function Technologies() {
+  const { lang } = useLang();
+  const [open, setOpen] = useState(false);
   const title = useRef(null);
+
+  // The collapse changes the page height above the timeline —
+  // re-measure all ScrollTrigger positions after it renders.
+  useEffect(() => {
+    const t = setTimeout(() => ScrollTrigger.refresh(), 350);
+    return () => clearTimeout(t);
+  }, [open]);
 
 
   useGSAP(
@@ -117,14 +137,17 @@ export default function Technologies() {
     <section className="Technologies" id="skills">
       <div className="container">
         <div className="title-part" ref={title}>
-          <div className="soustitle">
-            But behind every digital masterpiece lies a toolbox of powerful
-            technologies.
-          </div>
-          <h2>Utilized Technologies Overview.</h2>
+          <div className="soustitle">{t(copy.soustitle, lang)}</div>
+          <h2>{t(copy.title, lang)}</h2>
         </div>
       </div>
 
+      <div className="arsenal-toggle">
+        <button className="cta btn-border" onClick={() => setOpen(!open)}>
+          {open ? t(copy.hide, lang) : t(copy.show, lang)}
+        </button>
+      </div>
+      {open && (
       <div className="slider-container">
         <div className="slider  slider-1">
           {frontEnds.map((item, index) => (<TechBox key={index} imgPath={item.path} nameTech={item.name} index={index}></TechBox>))}
@@ -136,6 +159,7 @@ export default function Technologies() {
           {others.map((item, index) => (<TechBox key={index} imgPath={item.path} nameTech={item.name} index={index}></TechBox>))}
         </div>
       </div>
+      )}
     </section>
   );
 }

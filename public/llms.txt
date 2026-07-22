@@ -1,0 +1,54 @@
+# Elyamani Hamid — Web Developer, Marrakech
+
+> Freelance full-stack web developer based in Marrakech, Morocco. I build
+> websites, custom web platforms, and AI-powered tools for businesses.
+> Free quote within 24 hours. Site available in French and English.
+
+## Services
+
+- Websites & web platforms: professional showcase sites, e-commerce,
+  booking systems, dashboards — fast, secure, built to convert visitors
+  into customers.
+- AI integration & automation: recommendation engines, chatbots, content
+  generation, workflow automation (OpenAI, scikit-learn).
+- Complex problem solving: diagnosing and fixing slow apps, fragile
+  architectures, performance, security and scalability issues.
+
+## Selected projects
+
+- Postra: AI social media management SaaS — AI post generation, scheduling
+  across 6 platforms, analytics. Built full-stack (Next.js, Laravel, OpenAI).
+  Used by 450+ marketers — live at https://postra.io
+- Dropleather: custom leather goods dropshipping platform serving 200+
+  brands — full front-end (Framer marketing site + React app interface).
+  Live at https://dropleather.com
+- Roomly: housing reservation platform with ML-powered recommendations
+  (Next.js, FastAPI, PostgreSQL, scikit-learn).
+- Pixo: real-time collaborative drawing platform (Next.js, Socket.IO,
+  Konva) — live at https://pixospace.onrender.com
+- TAMAIOZ: private-lessons platform with booking, messaging and virtual
+  rooms (React, PHP, MySQL).
+- OLINO: e-commerce store for traditional Moroccan clothing (Laravel, MySQL).
+- Ebooksy: online library of 400+ e-books with AI recommendations
+  (WordPress, OpenAI API) — live at https://ebooksy.site
+
+## Technologies
+
+React, Next.js, TypeScript, Tailwind CSS, GSAP, Laravel, PHP, Spring Boot,
+Java, FastAPI, Node.js, WordPress, MySQL, PostgreSQL, MongoDB, Docker, Git.
+
+## Process
+
+1. Free 30-minute discovery call
+2. Proposal and quote within 24 hours
+3. Design and development with regular checkpoints
+4. Launch plus 30 days of included support
+
+## Contact
+
+- Website: https://elyamani.me
+- Email: hamidelyamani22@gmail.com
+- WhatsApp / phone: +212 628 142 424
+- GitHub: https://github.com/Hamidlyamani
+- LinkedIn: https://www.linkedin.com/in/hamid-el-yamani-63bb57376
+- Location: Marrakech, Morocco
