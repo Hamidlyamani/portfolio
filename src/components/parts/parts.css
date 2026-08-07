@@ -3,7 +3,7 @@
 .nav_bar {
   display: inline-block;
   position: fixed;
-  margin-top: 28px;
+  margin-top: 16px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -25,25 +25,25 @@
   backdrop-filter: blur(5.6px);
   -webkit-backdrop-filter: blur(5.6px);
   border: 1px solid rgba(243, 117, 0, 0.31);
-  padding: 0px 6px !important;
+  padding: 0px 4px !important;
   border-radius: 8px;
   justify-content: center;
   display: flex;
 }
 
 .nav-b .item {
-  padding: 5px 16px;
-  margin: 5px;
-  background: var(--nav-bg);
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.8px);
+  padding: 2px 8px;
+  margin: 4px;
+  background: transparent;
+   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  /* backdrop-filter: blur(5.8px);
   -webkit-backdrop-filter: blur(5.8px);
-  color: #505050;
+    */
+    border-bottom: white solid 2px;
+  color: #fafafa;
   font-size: 0.9rem;
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 4px;
   transition:all 0.3s ease;
 }
 .nav-b .item svg {
@@ -58,6 +58,8 @@
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(45deg, #f12711, #f5af19);
   color: #ffffff;
+  border-radius: 4px;
+  border-bottom: none;
 }
 @media only screen and (max-width: 1199px) {
 }

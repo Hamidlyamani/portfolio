@@ -225,13 +225,17 @@ html[lang="en"] .de::before {
   .developer-text {
     font-size: 7.78rem;
   }
-  .developer-text .de::before
- {
-        font-size: 1.7rem;
-        top: -70px;
+
+.developer-text .de::before {
+    font-size: 1rem;
+    top: -44px;
+    width: 45vw;
+  }
+  .cta.cta_sec {
+    padding: 6px 20px;
+  }
 }
-}
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .logo-Name p {
     padding-left: 10px;
   }
@@ -254,12 +258,18 @@ html[lang="en"] .de::before {
   }
 
      .btn-border.small-cta.bottom-btn {
-        bottom: -20px;
+        bottom: -20px !important;
     }
+   .developer-text {
+    font-size: 5rem;
+    bottom: 0%;
+    position: relative;
+    line-height: unset;
+  }
 .developer-text .de::before {
   left: 0px;
-        font-size: 1.2rem;
-        top: -60px;
+    top: -32px;
+    font-size: 1rem;
     }
   .container_text_img {
     height: auto;
@@ -275,24 +285,12 @@ html[lang="en"] .de::before {
     position: relative;
   }
 
-  .developer-text {
-    font-size: 5.78rem;
-    bottom: 0%;
-    position: relative;
-    line-height: unset;
-  }
+  
 
-  .de::before {
-    top: -32px;
-    font-size: 2.5rem;
-  }
 
   .web.outline {
     display: none;
   }
-.btn-border.small-cta.bottom-btn{
-  bottom: 40;
-}
   .blob1 {
     width: 100px;
     height: 100px;
@@ -321,13 +319,23 @@ html[lang="en"] .de::before {
     font-size: 4rem;
     position: relative;
   }
-
+ .developer-text .de::before {
+        left: 0px;
+        top: -48px;
+        font-size: 1rem;
+                width: 50vw;
+    }
   .image-hero-src img {
     width: 375px;
   }
-        .de::before {
-          font-size: 2rem;
-        }
+       
+}
+@media only screen and (max-width: 440px) {
+ .developer-text .de::before {
+        font-size: 0.8rem;
+        top: -16px;
+        width: 70vw;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -339,10 +347,11 @@ html[lang="en"] .de::before {
     font-size: 3.3rem;
   }
 
-  .de::before {
-    top: -20px;
-    font-size: 1.6rem;
-  }
+  .developer-text .de::before {
+        font-size: 0.8rem;
+        top: -16px;
+        width: 80vw;
+    }
 }
 
 @media (min-width: 768px) and (min-height: 992px) {

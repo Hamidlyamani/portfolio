@@ -10,6 +10,7 @@
 
 .info-contact {
   padding: 20px;
+      font-family: "Helvetica";
 }
 .whatap_button{
   width: 35px;
@@ -222,6 +223,11 @@ font-size: 14px;
 
 .contact .social_media .GitHub:hover .image img {
   filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(7470%) hue-rotate(320deg) brightness(111%) contrast(109%);
+}
+
+/* The GitHub mark is a black PNG — invisible on the dark theme's #131313. */
+[data-theme="dark"] .contact .social_media .GitHub .image img {
+  filter: brightness(0) invert(1);
 }
 
 .contact .social_media .Behance:after {

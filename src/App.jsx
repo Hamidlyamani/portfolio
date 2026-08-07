@@ -8,7 +8,6 @@ import About from "./components/about/about";
 import Services from "./components/services/services";
 import Projects from "./components/projects/progects";
 import Technologies from "./components/Technologies/Technologies";
-import Charte from "./components/charte/charte";
 import Offer from "./components/offer/offer";
 import Process from "./components/process/process";
 import Contact from "./components/contact/contact";

@@ -222,13 +222,11 @@ export default function CharteTimeline() {
                             <div className="month"></div>
                             <div className="month"></div>
                             <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
+                            
                             <div className="month year">
                                 <div className="year-number">2021</div>
                             </div>
-                            <div className="month"></div>
-                            <div className="month"></div>
+                           
                             <div className="month"></div>
                             <div className="month"></div>
                             <div className="month"></div>
@@ -284,14 +282,11 @@ export default function CharteTimeline() {
                             </div>
                             <div className="month"></div>
                             <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
+                           
                             <div className="month"></div>
                             <div className="month  year">
                                 <div className="year-number">2023</div>
                             </div>
-                            <div className="month"></div>
                             <div className="month"></div>
                             <div className="month"></div>
                             <div className="month">
@@ -358,20 +353,13 @@ export default function CharteTimeline() {
                             <div className="month"></div>
                             <div className="month"></div>
                             <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
+                            
+                           
                             <div className="month"></div>
                             <div className="month  year">
                                 <div className="year-number">2025</div>
                             </div>
-                            <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
-                            <div className="month"></div>
+                          
                             <div className="month"></div>
                             <div className="month"></div>
                             <div className="month"></div>

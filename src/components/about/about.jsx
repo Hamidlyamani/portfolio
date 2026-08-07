@@ -3,8 +3,12 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLang, t } from "../../i18n.jsx";
+import { useLang, useTheme, t } from "../../i18n.jsx";
 gsap.registerPlugin(ScrollTrigger);
+
+// Total timeline length. Scrub maps this onto the scroll range, so the
+// absolute value only controls the ratio between the two staggers.
+const SPAN = 1;
 
 const copy = {
   title: {
@@ -19,79 +23,93 @@ const copy = {
   contact: { fr: "Me contacter", en: "Contact me" },
 };
 
+// Character splitter. Words stay unbreakable so wrapping is unaffected;
+// the readable string is kept on aria-label and the spans are hidden from
+// assistive tech, otherwise screen readers spell the text out letter by letter.
+const SplitChars = ({ text }) => (
+  <span className="split-chars" aria-label={text}>
+    {text.split(" ").map((word, w) => (
+      <React.Fragment key={w}>
+        {w > 0 && " "}
+        <span className="sc-word" aria-hidden="true">
+          {Array.from(word).map((ch, c) => (
+            <span className="sc-char" key={c}>
+              {ch}
+            </span>
+          ))}
+        </span>
+      </React.Fragment>
+    ))}
+  </span>
+);
+
 const About = () => {
   const { lang } = useLang();
-  const el = useRef(null);
-  const el2 = useRef(null);
-  useGSAP(() => {
-    gsap.fromTo(
-      el.current,
-      { x: "-50vw", opacity: 0, skewX: 65 },
-      {
-        x: 0,
-        opacity: 1,
-        skewX: 0,
-        duration: 0.9,
-        scrollTrigger: {
-          trigger: el.current,
-          start: "0% 100%",
-          toggleActions: "play play pause reverse",
-        },
-      }
-    );
+  const { theme } = useTheme();
+  const section = useRef(null);
 
-    ScrollTrigger.matchMedia({
-      "(min-width: 768px)": () => {
-        gsap.fromTo(
-          el2.current,
-          { x: "50vw", opacity: 0, skewX: -65 },
-          {
-            x: 0,
-            opacity: 1,
-            skewX: 0,
-            duration: 0.9,
-            scrollTrigger: {
-              trigger: el.current,
-              start: "0% 100%",
-              toggleActions: "play play pause reverse",
-            },
-          }
+  useGSAP(
+    () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      const titleChars = gsap.utils.toArray(".left .sc-char", section.current);
+      const bodyChars = gsap.utils.toArray(".right .sc-char", section.current);
+      if (!titleChars.length && !bodyChars.length) return;
+
+      // Read the target colour from CSS so the light/dark themes stay the
+      // single source of truth (see --sc-on in about.css).
+      const revealColor = getComputedStyle(section.current)
+        .getPropertyValue("--sc-on")
+        .trim();
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section.current,
+          // Fill completes when the section's centre reaches the middle of
+          // the viewport, not when the section has scrolled up to the top.
+          start: "top 80%",
+          end: "center center",
+          scrub: 0.75,
+        },
+      });
+
+      // Both columns fill in parallel and land together, rather than the
+      // paragraph waiting for the heading to finish.
+      if (titleChars.length) {
+        tl.set(
+          titleChars,
+          { color: revealColor, stagger: SPAN / titleChars.length },
+          0.1
         );
-      },
-      "(max-width: 767px)": () => {
-        gsap.fromTo(
-          el2.current,
-          { x: "-50vw", opacity: 0, skewX: 65 },
-          {
-            x: 0,
-            opacity: 1,
-            skewX: 0,
-            duration: 1,
-            scrollTrigger: {
-              trigger: el.current,
-              start: "0% 100%",
-              toggleActions: "play play pause reverse",
-              lazy: false,
-            },
-          }
+      }
+      if (bodyChars.length) {
+        tl.set(
+          bodyChars,
+          { color: revealColor, stagger: SPAN / bodyChars.length },
+          0.1
         );
-      },
-    });
-  });
+      }
+    },
+    { scope: section, dependencies: [lang, theme], revertOnUpdate: true }
+  );
 
   return (
     <>
-      <section className="about" id="about">
+      <section className="about" id="about" ref={section}>
         <div className="blob3"></div>
         <div className="container">
           <div className="row about-text">
-            <div className="col left" ref={el}>
-              <h3>{t(copy.title, lang)}</h3>
+            <div className="col left">
+              <h3>
+                <SplitChars text={t(copy.title, lang)} />
+              </h3>
             </div>
-            <div className="col right" ref={el2}>
-              <p>{t(copy.text, lang)}</p>
+            <div className="col right">
+              <p>
+                <SplitChars text={t(copy.text, lang)} />
+              </p>
               <div className="about-buttons">
-                        <a href="#contact" className="cta btn-border">
+                <a href="#contact" className="cta btn-border">
                   {t(copy.contact, lang)}
                 </a>
                 <a

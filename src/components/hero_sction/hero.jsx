@@ -54,6 +54,17 @@ const Hero = () => {
         toggleActions: "play play pause reverse",
       },
     });
+     gsap.from(".bottom-btn", {
+      bottom: "-100px",
+      duration: 1.2,
+      opacity: 0,
+      delay: 0.6,
+      scrollTrigger: {
+        trigger: ".developer-text",
+        start: "0% 100%",
+        toggleActions: "play play pause reverse",
+      },
+    });
     gsap.from(".hero-tagline", {
       y: 40,
       opacity: 0,

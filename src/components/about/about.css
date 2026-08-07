@@ -1,6 +1,35 @@
 .about{
   position: relative;
 }
+
+/* Character-split reveal ------------------------------------------------ */
+/* --sc-dim = un-revealed grey, --sc-on = revealed colour. The JS reads
+   --sc-on at runtime, so these two lines are the only place to change it.
+   Dark mode can't use black (#131313 background) — it inverts instead. */
+.about {
+  --sc-dim: #b5b5b5;
+  --sc-on: #111;
+}
+[data-theme="dark"] .about {
+  --sc-dim: #4a4a4a;
+  --sc-on: #e8e8e8;
+}
+.about .split-chars {
+  display: inline;
+}
+/* Keeps each word on one line so splitting doesn't change how text wraps. */
+.about .sc-word {
+  white-space: nowrap;
+}
+.about .sc-char {
+  color: var(--sc-dim);
+}
+/* No scroll animation runs, so the text must start fully readable. */
+@media (prefers-reduced-motion: reduce) {
+  .about .sc-char {
+    color: var(--sc-on);
+  }
+}
 .about-text {
   padding: 20% 0%;
 }
